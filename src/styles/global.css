@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;600&display=swap');
+/* Lekton, Roboto Mono, IBM Plex */
+
+:root {
+  --sans-font: 'Jost', 'Trebuchet MS', 'Helvetica', sans-serif;
+  --text-font: 'Bitter', 'Georgia', 'Times New Roman', Times, serif;
+  --code-font: 'Inconsolata', 'Consolas', 'Menlo', 'Courier New' , monospace;
+  --light-white: #e0e0e0;
+  --dark-white: #bababa;
+  --light-gray: #3f3f3f;
+  --dark-gray: #1f1f1f;
+  --very-gray: #141414;
+  --font-lg: 1.1em;
+  --font-md: 0.9em;
+  --font-sm: 0.8em;
+  --line-height: 2em;
+  --gap: 15px;
+  --nav-height: 60px;
+}
+* {  
+  box-sizing: border-box;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+a {
+  color: inherit;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+a:link, a:visited, a:active {
+  text-decoration: none;
+}
+a:focus, button:focus {
+  outline: none;
+}
+
+/* ----------------- LAYOUT ------------------- */
+
+.main {
+  min-height: calc(100vh - 60px);
+  padding: 80px var(--gap) 0 var(--gap);
+}
+
+/* ---------------- LIGHTBOX ----------------- */
+
+.ril__image {
+  height: 90vh;
+}
+
+/* ---------------- DESKTOP ----------------- */
+
+@media (min-width: 900px) {
+  :root {
+  --font-lg: 1.2em;
+  --font-md: 1.1em;
+  --font-sm: 0.9em;
+  --line-height: 2em;
+  --gap: 30px;
+  }
+  ::-webkit-scrollbar { width: 15px; height: 15px; }
+  ::-webkit-scrollbar-track { background-color: var(--dark-gray); }
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--dark-white);
+    background-clip: content-box;
+    border: 4px solid rgba(0, 0, 0, 0);
+  }
+}
+

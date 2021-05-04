@@ -1,0 +1,15 @@
+.footer {
+  align-items: center;
+  height: 60px;
+  padding: 0 var(--gap);
+  background-color: var(--dark-gray);
+  color: var(--light-white);
+  font-family: var(--code-font);
+  font-weight: 300;
+  font-size: var(--font-md);
+  justify-content: space-between;
+}
+.note {
+  white-space: nowrap;
+  overflow: hidden;
+}

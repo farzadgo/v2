@@ -1,0 +1,10 @@
+.body {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--code-font);
+  font-weight: bold;
+  text-align: center;
+  line-height: 1.8em;
+}

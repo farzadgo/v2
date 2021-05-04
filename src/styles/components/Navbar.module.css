@@ -1,0 +1,95 @@
+.container {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 var(--gap);
+  z-index: 1;
+  transition: top 0.2s ease-out;
+}
+.button {
+  margin-left: auto;
+  border: none;
+  background: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.directory {
+  display: flex;
+  min-height: 100%;
+  font-family: var(--code-font);
+  font-size: var(--font-md);
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+.directory li {
+  position: relative;
+  display: flex;
+}
+.nav-item {
+  display: flex;
+  align-items: center;
+}
+.nav-item-arrow {
+  display: flex;
+}
+
+/* ------------- DropMenu ------------- */
+.drop-menu {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  width: calc(100vw - var(--gap) * 2);
+  top: 75px;
+  padding: 10px 4px;
+  background-color: var(--very-gray);
+  border: 1px solid var(--dark-white);
+}
+.drop-menu a {
+  padding: 9px 20px;
+  white-space: nowrap;
+  min-width: 200px;
+}
+
+/* ----- bubble arrow ----- */
+.drop-menu:after {
+  content: "\00a0";
+  position: absolute;
+  height: 14px;
+  width: 14px;
+  top: -8px;
+  left: 20px;
+  background-clip: content-box;
+  transform: rotate( 45deg );
+  -moz-transform: rotate( 45deg );
+  -ms-transform: rotate( 45deg );
+  -o-transform: rotate( 45deg );
+  -webkit-transform: rotate( 45deg );
+  background-color: var(--very-gray);
+  border-left: 1px solid var(--dark-white);
+  border-top: 1px solid var(--dark-white);
+  border-right: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+}
+
+/* ------------- desktop -------------- */
+
+@media (min-width: 600px) {
+  .button  {
+    cursor: pointer;
+  }
+  .nav-item-button:hover {
+    cursor: pointer;
+    color: var(--dark-white);
+  }
+  .drop-menu {
+    width: auto;
+  }
+  .drop-menu a:hover {
+    background-color: var(--dark-gray);
+  }
+
+}

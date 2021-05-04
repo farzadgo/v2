@@ -1,9 +1,14 @@
 {
-  "name": "gatsby-starter-hello-world",
+  "name": "v2",
   "private": true,
-  "description": "A simplified bare-bones starter for Gatsby",
-  "version": "0.1.0",
-  "license": "0BSD",
+  "description": "Personal Website V2",
+  "author": "Farzad Golghasemi <farzadesign@gmail.com>",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/farzadgo/v2"
+  },
+  "license": "MIT",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
@@ -14,18 +19,27 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
+    "@reach/router": "^1.3.4",
     "gatsby": "^3.0.1",
+    "gatsby-image": "^3.1.0",
+    "gatsby-plugin-manifest": "^3.1.0",
+    "gatsby-plugin-offline": "^4.4.0",
+    "gatsby-plugin-sharp": "^3.1.1",
+    "gatsby-remark-external-links": "0.0.4",
+    "gatsby-source-filesystem": "^3.1.0",
+    "gatsby-transformer-remark": "^3.1.0",
+    "gatsby-transformer-sharp": "^3.1.0",
+    "gsap": "^3.6.1",
+    "lightbox-react": "^0.3.8",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "react-feather": "^2.0.9",
+    "react-github-btn": "^1.2.0",
+    "react-helmet": "^6.1.0",
+    "react-three-fiber": "^6.0.13",
+    "three": "^0.127.0"
   },
   "devDependencies": {
     "prettier": "2.2.1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-hello-world"
-  },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
   }
 }
