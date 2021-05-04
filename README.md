@@ -1,13 +1,13 @@
 <p align="center">
-  <a href="https://www.gatsbyjs.com">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
+  <a href="https://fagose.me" target="_blank">
+    <img alt="fagosemi" src="https://raw.githubusercontent.com/farzadgo/v2/master/src/images/favicons/fagosemi_logo_128.png" width="60" />
   </a>
 </p>
 <h1 align="center">
-  fagose.me
+  Farzad Golghasemi
 </h1>
 <p align="center">
-  The second version of <a href="https://fagose.me" target="_blank">Farzad Golghasemi</a> website built with <a href="https://www.gatsbyjs.org/" target="_blank">Gatsby</a> and hosted with <a href="https://www.netlify.com/" target="_blank">Netlify</a>
+  The second version of my personal website built with <a href="https://www.gatsbyjs.org/" target="_blank">Gatsby</a> and hosted with <a href="https://www.netlify.com/" target="_blank">Netlify</a>
 </p>
 <p align="center">
   Previous versions:
@@ -19,5 +19,5 @@
   </a>
 </p>
 
-![demo](https://raw.githubusercontent.com/...)
+![demo](https://raw.githubusercontent.com/farzadgo/v2/master/static/demo.png)
 
