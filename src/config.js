@@ -17,6 +17,10 @@ module.exports = {
     },
   ],
 
+  sizes: {
+    navHeight: 60
+  },
+
   pages: {
     home: {
       slug: '/',

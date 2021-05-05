@@ -13,9 +13,9 @@
   --dark-gray: #1f1f1f;
   --very-gray: #141414;
   --font-lg: 1.1em;
-  --font-md: 0.9em;
+  --font-md: 1.0em;
   --font-sm: 0.8em;
-  --line-height: 2em;
+  --line-height: 1.8em;
   --gap: 15px;
   --nav-height: 60px;
 }
@@ -48,8 +48,8 @@ a:focus, button:focus {
 /* ----------------- LAYOUT ------------------- */
 
 .main {
-  min-height: calc(100vh - 60px);
-  padding: 80px var(--gap) 0 var(--gap);
+  min-height: calc(100vh - var(--nav-height));
+  padding: var(--nav-height) var(--gap) 0 var(--gap);
 }
 
 /* ---------------- LIGHTBOX ----------------- */

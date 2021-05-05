@@ -3,8 +3,7 @@ import { useStaticQuery, graphql, Link, navigate } from 'gatsby'
 import * as styles from '../styles/components/Navbar.module.css'
 import * as Icon from 'react-feather'
 import { debounce } from '../utilities/helpers'
-import { pages, colors } from '../config'
-// import { useLocation } from '@reach/router'
+import { pages, colors, sizes } from '../config'
 
 
 const Navbar = ({ info, setToggle }) => {
@@ -36,14 +35,14 @@ const Navbar = ({ info, setToggle }) => {
   const breakpoint = 600
   const homeTitle = 'Farzad Golghasemi'
   const [home, setHome] = useState(false)
-  const [width, setWidth] = useState(0)
   const [scrollPos, setScrollPos] = useState(0)
   const [visible, setVisible] = useState(true)
+  const [width, setWidth] = useState(0)
   // const [bgColor, setBgColor] = useState('#1d1d1d')
   // const [textColor, setTextColor] = useState('#eeeeee')
 
   const style = {
-    height: '60px',
+    height: `${sizes.navHeight}px`,
     top: visible ? '0' : '-60px',
     backgroundColor: home ? colors.clear : colors.darkGray,
     color: home ? colors.darkGray : colors.lightWhite,

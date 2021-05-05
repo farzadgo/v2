@@ -1,7 +1,3 @@
-.main {
-  background-color: var(--very-gray);
-}
-/* ---------------------------------- */
 .header {
   display: none;
 }
@@ -12,7 +8,6 @@
   transform: translateX(-50%);
   color: var(--light-white);
   font-weight: 300;
-  min-height: calc(100vh - var(--nav-height) * 3);
 }
 /* ---------------------------------- */
 .description {
@@ -37,14 +32,6 @@ thead tr, tbody tr {
 tbody tr:hover, tbody tr:focus {
   background-color: hsl(0, 0%, 13%);
 }
-/* tbody tr td:first-child {
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-}
-tbody tr td:last-child {
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-} */
 tbody td, thead th {
   padding: 0 10px;
 }
@@ -68,9 +55,8 @@ tbody td:first-child {
 }
 /* ---------------------------------- */
 .social {
+  margin-top: 40px;
   display: flex;
-  position: fixed;
-  bottom: 0px;
   min-width: 100%;
   justify-content: center;
   gap: 20px;

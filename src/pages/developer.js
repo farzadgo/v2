@@ -11,24 +11,40 @@ const Developer = ({ data }) => {
   
   const info = pages.developer
   const devs = data.allMarkdownRemark.nodes
+  // const [height, setHeight] = useState(0)
   const iconProps = {
     color: colors.lightWhite,
     size: 22,
     strokeWidth: 1
   }
+  const style = {
+    backgroundColor: colors.veryGray,
+    // minHeight: `${height - sizes.navHeight}px`,
+  }
+  console.log(style.minHeight)
+
+  // const handleResize = debounce(() => setHeight(window.innerHeight), 1000)
+
+  // useEffect(() => {
+  //   setHeight(window.innerHeight)
+  //   window.addEventListener('resize', handleResize)
+  //   return () => {
+  //     window.removeEventListener('resize', handleResize)
+  //   }
+  // }, [])
 
   return (
     <Layout info={info} >
       <Helmet title="Developer" />
 
-      <main className={`main ${styles.main}`}>
+      <main className="main" style={style}>
         <header className={styles.header}>
           <h1> Development and Design </h1>
         </header>
   
         <div className={styles.body}>
-          <div>
-            <p className={styles.description}> Here is the list of web development and design prjects I’ve worked on.. </p>
+          <div className={styles.description}>
+            <p> Here is the list of web development and design prjects I’ve worked on.. </p>
           </div>
 
           <table className={styles.table}>

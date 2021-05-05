@@ -20,17 +20,26 @@ export default function Works({ data }) {
   const works = data.allMarkdownRemark.nodes
   const length = works.length
   const [width, setWidth] = useState(0)
+  // const [height, setHeight] = useState(0)
   // const elementsRef = useRef(null)
 
-  const handleResize = debounce(() => setWidth(window.innerWidth), 1000)
+  // const style = {
+  //   minHeight: `${height - sizes.navHeight}px`
+  // }
+
+  const handleResize = debounce(() => {
+    setWidth(window.innerWidth)
+    // setHeight(window.innerHeight)
+  }, 1000)
 
   useEffect(() => {
     // elementsRef.current.map(ref => ref.current.focus())
     let elements = document.querySelectorAll('.card')
     elements.forEach(el => {
-      Draggable.create(el, { type:"x,y", edgeResistance:0.65, bounds:"#content", inertia:false }); 
+      Draggable.create(el, { type:"x,y", edgeResistance:0.65, bounds:"#content", allowEventDefault: true }); 
     })
     setWidth(window.innerWidth)
+    // setHeight(window.innerHeight)
     window.addEventListener('resize', handleResize)
     return () => {
       window.removeEventListener('resize', handleResize)
@@ -40,7 +49,7 @@ export default function Works({ data }) {
   return (
     <Layout info={info} >
       <Helmet title="Works" />
-      <main className="main">
+      <main className="main" >
         <header className={styles.header}>
           <h1> {info.directory} </h1>
         </header>
@@ -75,10 +84,10 @@ const Card = ({ index, work, length, width }) => {
 
   let cardWidth, factor;
   if (width < 700) {
-    cardWidth = 250
-    factor = ((width - 20 - cardWidth) / (length * 0.8))
+    cardWidth = 240
+    factor = ((width - cardWidth) / (length * 3))
   } else {
-    cardWidth = 450
+    cardWidth = 440
     factor = ((width - cardWidth) / (length * 1.6))
   }
   // const r = (Math.floor(Math.random() * 100) / 100)
@@ -87,7 +96,7 @@ const Card = ({ index, work, length, width }) => {
   const style = {
     // top: `${r * 25}vh`,
     // top: `${index * 50}px`,
-    top: `${index * f1}vh`,
+    top: `${(index + 0.3) * f1}vh`,
     // left: `${r * 40}vw`,
     // left: `${index * 80}px`,
     left: `${index * factor}px`,

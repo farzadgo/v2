@@ -44,9 +44,3 @@
   line-height: 40px;
   padding: 0 15px;
 }
-/* .nav ul a:hover {
-  background-color: rgba(199, 199, 199, 0.2);
-} */
-.nav ul a:focus {
-  outline: 2px dashed #5c5c5c;
-}

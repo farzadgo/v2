@@ -6,6 +6,9 @@
   flex-direction: row;
   flex-wrap: wrap;
 }
+.first-container {
+  margin-top: 20px;
+}
 .html, .cover, .image {
   width: 100%;
   height: fit-content;
@@ -64,7 +67,7 @@
   color: white;
 }
 
-/* --------------------------- */
+/* ---------------- desktop ---------------- */
 
 @media (min-width: 1000px) {
   .first-container, .second-container {
