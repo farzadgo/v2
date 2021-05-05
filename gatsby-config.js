@@ -9,8 +9,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'FarzadGolghasemi',
-        short_name: 'FarzadGolghasemi',
+        name: 'Farzad Golghasemi',
+        short_name: 'Farzad Golghasemi',
         start_url: '/',
         background_color: 'white',
         theme_color: config.colors.darkGray,
