@@ -1,6 +1,6 @@
 import React from 'react'
 import Img from 'gatsby-image'
-import LB from 'lightbox-react'
+import LightB from 'lightbox-react'
 import 'lightbox-react/style.css'
 import * as styles from '../styles/components/Lightbox.module.css'
 
@@ -23,7 +23,7 @@ const Lightbox = ({
   )
 
   return (
-    <LB
+    <LightB
       enableZoom={false}
       clickOutsideToClose={true}
       mainSrc={array[selectedImage]}

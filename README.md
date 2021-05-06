@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://fagose.me" target="_blank">
-    <img alt="fagosemi" src="https://raw.githubusercontent.com/farzadgo/v2/master/src/images/favicons/fagosemi_logo_128.png" width="60" />
+    <img alt="fagosemi" src="https://raw.githubusercontent.com/farzadgo/v2/master/src/images/favicon.png" width="60" />
   </a>
 </p>
 <h1 align="center">
