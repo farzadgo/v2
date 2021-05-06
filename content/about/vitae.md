@@ -6,17 +6,17 @@ thumb:
 
 ## Practice
 
-- *09.2020* <p>**Group performance** for *Conditions of a Necessity* Assembly — Part of *Temporary Spaces* (Prof. Asli Serbest) — Staatliche Kunsthalle Baden-Baden &#8599; [link](https://conditionsofanecessity.net/)</p>
-- *06.2020* <p>**Performance** with *Adrift* app for walking and getting lost — *Digital Media Bremen* Master project — University of the Arts Bremen (HfK) &#8599; [link](https://farzadgo.github.io/adrift-react)</p>
-- *03.2020* <p>**Installation** t owalk thec ity (with Lucas Kalmus) — Group Exhibition *How to Situate Spaces of Uncertainty* — Circa 106 Bremen &#8599; [link](https://www.random.com)</p>
+- *09.2020* <p>**Group performance** for *Conditions of a Necessity* Assembly — Part of *Temporary Spaces* (Prof. Asli Serbest) — Staatliche Kunsthalle Baden-Baden — *[link](https://conditionsofanecessity.net/)*</p>
+- *06.2020* <p>**Performance** with *Adrift* app for walking and getting lost — *Digital Media Bremen* Master project — University of the Arts Bremen (HfK) — *[link](https://farzadgo.github.io/adrift-react)*</p>
+- *03.2020* <p>**Installation** t owalk thec ity (with Lucas Kalmus) — Group Exhibition *How to Situate Spaces of Uncertainty* — Circa 106 Bremen — *[link](https://circa106.info/exhibitions/spaces-of-uncertainty/)*</p>
 - *02.2020* <p>**Installation** Co-created pavilion v2 —  Group Exhibition at *Hochschultage 2020* HfK — Gallery Nebenflut Bremen</p>
-- *04.2019* <p>**Installation** Co-created pavilion | Group Exhibition *Raw Data Material Narration* (Prof. Denis P. Paul) — Tor40 Güterbahnhof Bremen &#8599; [link](http://raw-data-material-narration.digitalmedia-bremen.de/)</p>
+- *04.2019* <p>**Installation** Co-created pavilion | Group Exhibition *Raw Data Material Narration* (Prof. Denis P. Paul) — Tor40 Güterbahnhof Bremen — *[link](http://raw-data-material-narration.digitalmedia-bremen.de/)*</p>
 
 <br>
 
 ## Research
 
-- *08.2019 – 03.2021* <p> Student Assistant at *The Dynamic Archive* — HfK Bremen — [link](https://thedynamicarchive.net/page/about) </p>
+- *08.2019 – 03.2021* <p> Student Assistant at *The Dynamic Archive* — HfK Bremen — *[link](https://thedynamicarchive.net/page/about)* </p>
 - *09.2016 – 07.2018* <p> Research assistant at Architecture department — Baskent University Ankara </p>
 
 <br>

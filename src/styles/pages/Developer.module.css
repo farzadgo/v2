@@ -62,7 +62,7 @@ tbody td:first-child {
   gap: 20px;
 }
 
-/* ---------------------------------- */
+/* ------------- mobile -------------- */
 @media (max-width: 650px) {
   .hide {
     display: none;

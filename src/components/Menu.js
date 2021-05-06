@@ -17,8 +17,8 @@ const Menu = ({ setToggle }) => {
 
       <nav className={styles.nav}>
         <ul>
-          <li><Link to={about.slug}> {about.directory} </Link></li>
           <li><Link to={works.slug}> {works.directory} </Link></li>
+          <li><Link to={about.slug}> {about.directory} </Link></li>
           <li><Link to={developer.slug}> {developer.directory} </Link></li>
         </ul>
       </nav>

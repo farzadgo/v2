@@ -18,7 +18,6 @@
   pointer-events: none;
 }
 /* --------------------------- */
-
 .html {
   font-family: var(--text-font);
   color: var(--dark-gray);
@@ -66,9 +65,7 @@
   background-color: var(--light-gray);
   color: white;
 }
-
 /* ---------------- desktop ---------------- */
-
 @media (min-width: 1000px) {
   .first-container, .second-container {
     margin: 20px 0;

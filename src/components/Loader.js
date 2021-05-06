@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import { colors } from '../config'
-import logo from '../images/favicons/fagosemi_logo_192.png'
+// import { colors } from '../config's
+import logo from '../images/favicon.png'
 
 const Loader = ({ finishLoading }) => {
 
@@ -15,7 +15,7 @@ const Loader = ({ finishLoading }) => {
     width: '100%',
     height: '100%',
     overflow: 'hidden',
-    backgroundColor: isMounted ? 'black' : colors.darkGray,
+    backgroundColor: isMounted ? 'black' : 'black',
     zIndex: '10',
     transition: 'all 0.5s ease',
   }
@@ -25,6 +25,7 @@ const Loader = ({ finishLoading }) => {
     left: '50%',
     top: '50%',
     transform: 'translate(-50%, -50%)',
+    width: '150px'
   }
 
   useEffect(() => {

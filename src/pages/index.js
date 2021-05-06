@@ -11,16 +11,8 @@ import { Canvas, useFrame } from 'react-three-fiber'
 // import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 // import model from '../models/baba.gltf'
 
-
-
-// Last content check
-// GitHub repo
-// Build and Deploy
-
-
-
 const Foyer = () => {
-
+  
   const info = pages.home
   
   // const { nodes, materials } = useLoader(GLTFLoader, model )
@@ -71,7 +63,7 @@ const Foyer = () => {
           <SpinningBox />
         </Canvas>
         <div className={styles.message}>
-          <p> foyer under construction </p>
+          <p> Foyer under construction.. </p>
         </div>
       </main>
 

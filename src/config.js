@@ -18,7 +18,7 @@ module.exports = {
   ],
 
   sizes: {
-    navHeight: 60
+    navHeight: 60,
   },
 
   pages: {

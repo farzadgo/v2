@@ -36,7 +36,6 @@
 .nav-item-arrow {
   display: flex;
 }
-
 /* ------------- DropMenu ------------- */
 .drop-menu {
   display: flex;
@@ -74,9 +73,7 @@
   border-right: 1px solid transparent;
   border-bottom: 1px solid transparent;
 }
-
 /* ------------- desktop -------------- */
-
 @media (min-width: 600px) {
   .button  {
     cursor: pointer;
@@ -91,5 +88,4 @@
   .drop-menu a:hover {
     background-color: var(--dark-gray);
   }
-
 }
