@@ -100,8 +100,10 @@ const Developer = ({ data }) => {
             </tbody>
           </table>
 
-          <div className={styles.social}>
-            {socialMedia.map((item, i) => <SocialIcon key={i} item={item}/>)}
+          <div className={styles.socialContainer}>
+            <div className={styles.social}>
+              {socialMedia.map((item, i) => <SocialIcon key={i} item={item}/>)}
+            </div>
           </div>
 
         </div>
@@ -121,11 +123,11 @@ const SocialIcon = ({ item }) => {
   }
   const TagName = Icon[item.name]
   return (
-    <div>
+    <>
       <a href={item.url} aria-label={`${item.name} Link`} target="_blank" rel="noreferrer">
         <TagName {...iconProps}/>
       </a>
-    </div>
+    </>
   )
 }
 

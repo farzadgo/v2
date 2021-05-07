@@ -26,7 +26,7 @@ const Navbar = ({ info, setToggle }) => {
 
   const { directory, workTitle } = info
   const workList = data.allMarkdownRemark.nodes.map(e => e.frontmatter)
-  const dirList = [ pages.about, pages.works, pages.developer ]
+  const dirList = [ pages.works, pages.about, pages.developer ]
 
   // const { pathname } = useLocation()
   // const pathWords = pathname.split('/').filter(e => e)

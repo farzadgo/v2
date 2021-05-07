@@ -54,12 +54,15 @@ tbody td:first-child {
   background-color: hsl(0, 0%, 18%);
 }
 /* ---------------------------------- */
-.social {
-  margin-top: 40px;
+.social-container {
+  margin-top: 30px;
   display: flex;
-  min-width: 100%;
   justify-content: center;
-  gap: 20px;
+}
+.social {
+  width: 120px;
+  display: flex;
+  justify-content: space-between;
 }
 
 /* ------------- mobile -------------- */
