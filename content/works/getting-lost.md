@@ -9,6 +9,8 @@ thumb: ./_thumbs/getting-lost.jpg
 
 During the walk to nowhere, the performers are being asked a set of questions regarding the surrounding and offered the opportunity to record the answers in the form of conversations between them, hoping to initiate another level of observation and meaning-making through the act of walking and mapping.
 
+Photo credits: Carla Anacker
+
 <!-- -->
 
 - `type` Performance, Web development and design

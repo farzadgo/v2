@@ -28,10 +28,12 @@
 .directory li {
   position: relative;
   display: flex;
+  align-items: center;
 }
 .nav-item {
   display: flex;
   align-items: center;
+  height: 26px;
 }
 .nav-item-arrow {
   display: flex;
@@ -52,7 +54,6 @@
   white-space: nowrap;
   min-width: 200px;
 }
-
 /* ----- bubble arrow ----- */
 .drop-menu:after {
   content: "\00a0";
@@ -78,7 +79,7 @@
   .button  {
     cursor: pointer;
   }
-  .nav-item-button:hover {
+  .nav-item:hover {
     cursor: pointer;
     color: var(--dark-white);
   }

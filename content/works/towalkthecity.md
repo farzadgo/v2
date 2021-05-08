@@ -15,6 +15,8 @@ To process huge amounts of meta information with A.I. can be used to antagonize 
 In a digital drawing on a continuous fabric sourced from cloud based metadata about individual dynamics in the urban fabric during two
 years time you are invited to learn about the aesthetics of visualizing such information.
 
+Photo credits: Victor Artiga Rodriguez
+
 <!--  -->
 
 - `with` Lucas Jasper Kalmus

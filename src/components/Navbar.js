@@ -138,17 +138,17 @@ const NavItem = ({ home, list, deep, children }) => {
 
   return (
     <li ref={node}>
-      <div className={styles.navItem}>
+      <div
+        className={styles.navItem}
+        role="button"
+        tabIndex="-1"
+        onClick={handleClickOn}
+        onKeyDown={handleClickOn}
+      >
         {list && <span className={styles.navItemArrow}>
           <Icon.ChevronRight {...iconProps}/>
         </span>}
-        <span
-          role="button"
-          tabIndex="-1"
-          className={styles.navItemButton}
-          onClick={handleClickOn}
-          onKeyDown={handleClickOn}
-        >
+        <span className={styles.navItemSpan}>
           {children}
         </span>
       </div>
@@ -181,15 +181,18 @@ const DropMenu = ({ list, deep }) => {
 
 
 const BackBtn = ({ workTitle }) => {
+
   const [backWorks, setBackWorks] = useState(false)
   const iconProps = {
     color: '#eeeeee',
-    size: 28,
+    size: 24,
     strokeWidth: 1
   }
+  const icon = backWorks ? <Icon.ArrowLeft {...iconProps}/> : <Icon.Home {...iconProps}/>
   const handleClick = () => {
     backWorks ? navigate("/works") : navigate("/")
   }
+
   useEffect(() => {
     if (workTitle) {
       setBackWorks(true)
@@ -203,7 +206,7 @@ const BackBtn = ({ workTitle }) => {
       aria-label="Menu"
       onClick={handleClick}
     >
-      <Icon.ArrowLeft {...iconProps}/>
+      {icon}
     </button>
   )
 }
