@@ -17,10 +17,13 @@
   align-items: center;
   margin-top: 10px;
   padding: 5px;
-  font-size: var(--font-md);
+  font-size: var(--font-sm);
 }
-.card-info h4 {
-  margin-top: 10px;
+.card-info h1 {
+  font-size: 1.15em;
+}
+.card-info h3 {
+  margin-top: 5px;
   font-weight: normal;
 }
 .card-arrow {

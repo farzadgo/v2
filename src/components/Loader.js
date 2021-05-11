@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-// import { colors } from '../config's
 import logo from '../images/favicon.png'
 
 const Loader = ({ finishLoading }) => {

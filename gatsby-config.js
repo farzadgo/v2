@@ -64,8 +64,8 @@ module.exports = {
   siteMetadata: {
     title: 'Farzad Golghasemi',
     description:
-      'Farzad Golghasemi is anartist and designer who is working on developing projects regarding the critique of urban geography and everyday life, through employing digital technologies such as the Web and mobile devices.',
-    siteUrl: 'https://fagose.me',
+      'Farzad Golghasemi is an artist and architect who is working on developing projects regarding the critique of urban geography and everyday life, through employing digital technologies such as the Web and mobile devices.',
+    siteUrl: 'https://farzadgo.xyz',
     image: '/demo.png',
     authorName: 'Farzad Golghasemi',
     twitterUsername: '@farzadgo_',

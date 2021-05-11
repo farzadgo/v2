@@ -112,8 +112,8 @@ const Card = ({ index, work, length, width }) => {
       />
       <div className={styles.cardInfo}>
         <div>
-          <h3>{ title }</h3>
-          <h4><i>{ shortDate }</i></h4>
+          <h1>{ title }</h1>
+          <h3><i>{ shortDate }</i></h3>
         </div>
         <Link
           to={"/works/" + slug}
