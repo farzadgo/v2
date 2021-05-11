@@ -1,5 +1,5 @@
 module.exports = {
-  email: 'farzadesign@gmail.com',
+  email: 'fagosemi@gmail.com',
 
   // use Feather icon names
   socialMedia: [
