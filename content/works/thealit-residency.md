@@ -3,6 +3,7 @@ title: Listen to my postcard
 date: '2021-03-01'
 slug: thealit-residency
 thumb: ./_thumbs/thealit.jpg
+video: 
 ---
 
 This project aims to extract and transfer the photography of the architecture to soundtracks. The project contents, photos by Farzad Golghasemi, soundtracks by Yara Mekawei, and texts.

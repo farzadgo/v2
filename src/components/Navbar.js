@@ -148,7 +148,7 @@ const NavItem = ({ home, list, deep, children }) => {
         {list && <span className={styles.navItemArrow}>
           <Icon.ChevronRight {...iconProps}/>
         </span>}
-        <span className={styles.navItemSpan}>
+        <span>
           {children}
         </span>
       </div>

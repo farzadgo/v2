@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import logo from '../images/favicon.png'
+import logo from '../images/logo.png'
 
 const Loader = ({ finishLoading }) => {
 

@@ -3,6 +3,7 @@ title: t owalk thec ity
 date: '2020-03-14'
 slug: towalkthecity
 thumb: ./_thumbs/towalkthecity.jpg
+video: 
 ---
 
 To walk is to give yourself access to a full experience of the path which leads through the place that is located on a three dimensional globe.

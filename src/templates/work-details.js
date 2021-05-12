@@ -9,11 +9,12 @@ import { Helmet } from 'react-helmet'
 
 const WorkDetails = ({ data }) => {
 
+  const [gallery, setGallery] = useState([])
   const { html } = data.markdownRemark
-  const { title } = data.markdownRemark.frontmatter
-  const images = data.allFile.nodes
-  const images_ = images.slice(1, images.length)
+  const { title, video } = data.markdownRemark.frontmatter
   const info = { directory: 'Works', workTitle: title }
+  const images = data.allFile.nodes
+  const cover = images[0]
 
   const [showLightbox, setShowLightbox] = useState(false)
   const [selectedImage, setSelectedImage] = useState(null)
@@ -34,6 +35,8 @@ const WorkDetails = ({ data }) => {
   }
 
   useEffect(() => {
+    video ? setGallery(images) : setGallery(images.slice(1, images.length))
+
     if (showLightbox) {
       document.body.style.overflow = 'hidden'
       document.body.style.paddingRight = '15px'
@@ -44,7 +47,7 @@ const WorkDetails = ({ data }) => {
       document.body.style.paddingRight = '0px'
       // document.removeEventListener('wheel', e => e.preventDefault(), { passive: false })
     }
-  }, [showLightbox])
+  }, [showLightbox, images, video])
 
 
   return (
@@ -61,24 +64,16 @@ const WorkDetails = ({ data }) => {
             className={styles.html}
             dangerouslySetInnerHTML={{__html: html}}
           />
-          <div
-            role="button"
-            tabIndex="-1"
-            className={styles.cover}
-            onClick={() => handleOpen(0)}
-            onKeyDown={() => handleOpen(0)}
-          >
-            <Img fluid={images[0].childImageSharp.fluid} />
-          </div>
+          <Cover video={video} cover={cover}/>
         </div>
   
         <div className={styles.secondContainer}>
-          {images_.map((image, i) => (
+          {gallery.map((image, i) => (
             <div
               key={image.id}
+              className={styles.image}
               role="button"
               tabIndex="0"
-              className={styles.image}
               onClick={() => handleOpen(i + 1)}
               onKeyDown={() => handleOpen(i + 1)}
             >
@@ -105,12 +100,36 @@ const WorkDetails = ({ data }) => {
 export default WorkDetails
 
 
+const Cover = ({ video, cover }) => {
+  const VideoFrame = () => {
+    return (
+      <div style={{padding: '56.25% 0 0 0', position: 'relative'}}>
+        <iframe
+          title={video}
+          src={`https://player.vimeo.com/video/${video}`}
+          style={{position: 'absolute', top: '0', left: '0', width:'100%', height: '100%'}}
+          frameBorder="0"
+          allow="autoplay; fullscreen; picture-in-picture"
+          allowFullScreen
+        />
+      </div>
+    )
+  }
+  return (
+    <div className={styles.cover}>
+      {video ? <VideoFrame /> : <Img fluid={cover.childImageSharp.fluid} />}
+    </div>
+  )
+}
+
+
 export const query = graphql`
   query WorkPage($slug: String, $dir: String) {
     markdownRemark(frontmatter: {slug: {eq: $slug}}) {
       html
       frontmatter {
         title
+        video
         thumb {
           childImageSharp {
             fluid {
@@ -127,7 +146,6 @@ export const query = graphql`
       nodes {
         name
         id
-        relativeDirectory
         childImageSharp {
           fluid(maxWidth: 1200, quality: 100) {
             ...GatsbyImageSharpFluid

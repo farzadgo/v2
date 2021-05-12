@@ -14,7 +14,7 @@
   height: fit-content;
   margin-bottom: 40px;
 }
-.cover, .image {
+.image {
   pointer-events: none;
 }
 /* --------------------------- */
@@ -78,7 +78,6 @@
   .cover {
     width: 50%;
     padding-left: 10px;
-    pointer-events: none;
   }
   .image {
     pointer-events: all;

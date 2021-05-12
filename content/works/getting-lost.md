@@ -3,6 +3,7 @@ title: Getting lost in the Neighborhood
 date: '2020-06-01'
 slug: getting-lost
 thumb: ./_thumbs/getting-lost.jpg
+video: '497023117'
 ---
 
 ***Adrift*** deconstructs Google Maps direction text* and by doing so it offers a new set of directions based on the original one, thus it enables the performers to get lost in their very own environment. "Getting lost" refers to the perception of the urban fabric in a different way than what we usually experience in **everyday life**.

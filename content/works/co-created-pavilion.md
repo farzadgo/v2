@@ -3,6 +3,7 @@ title: Co-created Pavilion
 date: '2019-04-12'
 slug: co-created-pavilion
 thumb: ./_thumbs/co-created-pavilion.jpg
+video: 
 ---
 
 **Co-Created Pavilion** —by performing the practice of space [re]production (digital and physical) based on the activities between the author's own bodily experiences and his living room— tries to recapture the idea that our environments that we live in are in fact getting reproduced and co-created based on our interactions with them.
