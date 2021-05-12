@@ -18,12 +18,12 @@ module.exports = {
       resolve: 'gatsby-plugin-manifest',
       options: {
         name: 'Farzad Golghasemi',
-        short_name: 'Farzad Golghasemi',
+        short_name: 'farzadgo',
         start_url: '/',
         background_color: 'white',
         theme_color: config.colors.darkGray,
-        display: 'minimal-ui',
-        icon: './src/images/favicon.png',
+        display: 'standalone',
+        icon: './src/images/logo.png',
       },
     },
     {
