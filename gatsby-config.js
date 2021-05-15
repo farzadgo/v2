@@ -23,7 +23,7 @@ module.exports = {
         background_color: 'white',
         theme_color: config.colors.darkGray,
         display: 'standalone',
-        icon: './src/images/logo.png',
+        icon: './src/images/favicon.png',
       },
     },
     {
