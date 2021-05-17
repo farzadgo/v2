@@ -6,13 +6,13 @@ thumb:
 
 ## Practice
 
-- *04.2021*	<p>**Stage design** (with Lauren Müller) for performing arts at IRGENDWO — Kulturbeutel e.V. — Bremen</p>
+- *04.2021*	<p>**Stage design** (with Lauren Müller) for performing arts at *IRGENDWO* — Kulturbeutel e.V. — Bremen</p>
 - *04.2021*	<p>**Online residency** *Listen to my Postcard* (with Yara Mekawei) — Intermedia collaborative work in *Virtual Arbeitszimmer* — Thealit F.K.L — Bremen/Cairo — *[link](https://www.thealit.de/lab/coapparation/en/listen-to-my-postcard)*</p>
 - *09.2020* <p>**Group performance** for *Conditions of a Necessity* Assembly — Part of *Temporary Spaces* (Prof. Asli Serbest) — Staatliche Kunsthalle Baden-Baden — *[link](https://conditionsofanecessity.net/)*</p>
 - *06.2020* <p>**Performance** with *Adrift* app for walking and getting lost — *Digital Media Bremen* Master project — University of the Arts Bremen (HfK) — *[link](https://adrift.city/)*</p>
-- *03.2020* <p>**Installation** t owalk thec ity (with Lucas Kalmus) — Group Exhibition *How to Situate Spaces of Uncertainty* — Circa 106 Bremen — *[link](https://circa106.info/exhibitions/spaces-of-uncertainty/)*</p>
-- *02.2020* <p>**Installation** Co-created pavilion v2 — Group exhibition at *Hochschultage 2020* HfK — Gallery Nebenflut Bremen</p>
-- *04.2019* <p>**Installation** Co-created pavilion — Group exhibition *Raw Data Material Narration* (Prof. Dennis P. Paul) — Tor40 Güterbahnhof Bremen — *[link](http://raw-data-material-narration.digitalmedia-bremen.de/)*</p>
+- *03.2020* <p>**Installation** *t owalk thec ity* (with Lucas Kalmus) — Group Exhibition *How to Situate Spaces of Uncertainty* — Circa 106 Bremen — *[link](https://circa106.info/exhibitions/spaces-of-uncertainty/)*</p>
+- *02.2020* <p>**Installation** *Co-created pavilion* v2 — Group exhibition at *Hochschultage 2020* HfK — Gallery Nebenflut Bremen</p>
+- *04.2019* <p>**Installation** *Co-created pavilion* — Group exhibition *Raw Data Material Narration* (Prof. Dennis P. Paul) — Tor40 Güterbahnhof Bremen — *[link](http://raw-data-material-narration.digitalmedia-bremen.de/)*</p>
 
 <br>
 
