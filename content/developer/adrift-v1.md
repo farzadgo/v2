@@ -2,7 +2,7 @@
 title: Adrift App v1
 date: '2020-06-01'
 github: https://github.com/farzadgo/adrift-js
-external: https://adrift.digital
+external: https://farzadgo.github.io/adrift-js
 stack:
   - VanillaJS
   - CSS

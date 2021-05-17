@@ -2,7 +2,7 @@
 title: Adrift App v2
 date: '2021-02-01'
 github: https://github.com/farzadgo/adrift-react
-external: https://farzadgo.github.io/adrift-react/
+external: https://adrift.city
 stack:
   - React
   - CSS

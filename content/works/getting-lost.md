@@ -21,6 +21,7 @@ Photo credits: Carla Anacker
 
 <!-- -->
 
-- [Adrift app](https://farzadgo.github.io/adrift-react/)
+- [Adrift app](https://adrift.city)
 - [The Dynamic Archive](https://thedynamicarchive.net/component/how-to-get-lost-in-the-neighborhood)
-- [Source code](https://github.com/farzadgo/adrift-js)
+- [Source code v1](https://github.com/farzadgo/adrift-js)
+- [Source code v2](https://github.com/farzadgo/adrift-react)
