@@ -14,7 +14,7 @@ module.exports = {
     {
       name: 'Linkedin',
       url: 'https://www.linkedin.com/in/farzadgo/',
-    },
+    }
   ],
 
   sizes: {

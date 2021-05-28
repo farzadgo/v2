@@ -48,7 +48,7 @@ export default function Works({ data }) {
 
   return (
     <Layout info={info} >
-      <Helmet title="Works" />
+      <Helmet title={info.directory} />
       <main className="main" >
         <header className={styles.header}>
           <h1> {info.directory} </h1>

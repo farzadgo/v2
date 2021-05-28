@@ -11,6 +11,8 @@ module.exports = {
         anonymize: true,
       },
     },
+    'gatsby-plugin-robots-txt',
+    'gatsby-plugin-react-helmet',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     'gatsby-plugin-offline',
@@ -18,12 +20,19 @@ module.exports = {
       resolve: 'gatsby-plugin-manifest',
       options: {
         name: 'Farzad Golghasemi',
-        short_name: 'farzadgo',
+        short_name: 'Farzad Golghasemi',
         start_url: '/',
         background_color: 'white',
         theme_color: config.colors.darkGray,
         display: 'standalone',
-        icon: './src/images/favicon.png',
+        icon: './src/images/logo.png',
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/images`,
       },
     },
     {
@@ -72,9 +81,9 @@ module.exports = {
   siteMetadata: {
     title: 'Farzad Golghasemi',
     description:
-      'Farzad Golghasemi is an artist and architect who is working on developing projects regarding the critique of urban geography and everyday life, through employing digital technologies such as the Web and mobile devices.',
-    siteUrl: 'https://farzadgo.xyz',
-    image: '/demo.png',
+      'Farzad Golghasemi is an artist and architect who is working on developing projects regarding the critique of urban geography and everyday life through employing digital technologies such as the Web and mobile devices.',
+    siteUrl: 'https://fagose.me',
+    image: '/og.png',
     authorName: 'Farzad Golghasemi',
     twitterUsername: '@farzadgo_',
   }

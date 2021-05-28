@@ -16,7 +16,7 @@ const About = ({ data }) => {
 
   return (
     <Layout info={info}>
-      <Helmet title="About" />
+      <Helmet title={info.directory} />
 
       <main className="main">
         <header className={styles.header}>

@@ -1,10 +1,10 @@
 <p align="center">
-  <a href="https://farzadgo.xyz" target="_blank">
-    <img alt="fagosemi" src="https://raw.githubusercontent.com/farzadgo/v2/master/src/images/favicon.png" width="60" />
+  <a href="https://fagose.me" target="_blank">
+    <img alt="fagosemi" src="https://raw.githubusercontent.com/farzadgo/v2/master/src/images/logo.png" width="60" />
   </a>
 </p>
 <h1 align="center">
-  farzadgo.xyz
+  fagose.me
 </h1>
 <p align="center">
   The second version of my personal website built with <a href="https://www.gatsbyjs.org/" target="_blank">Gatsby</a> and hosted with <a href="https://www.netlify.com/" target="_blank">Netlify</a>

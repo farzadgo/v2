@@ -57,7 +57,6 @@
   border: 1px solid var(--light-gray);
   padding: 11px 15px 12px 15px;
   transition: all 0.05s ease-out;
-  border-radius: 2px;
 }
 .html a:hover {
   background-color: var(--light-gray);
@@ -77,7 +76,7 @@
   }
   .cover {
     width: 50%;
-    padding-left: 10px;
+    padding: 10px 0 0 10px;
   }
   .image {
     pointer-events: all;

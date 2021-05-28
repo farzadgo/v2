@@ -1,8 +1,8 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import Layout from '../components/Layout'
 import * as Icon from 'react-feather'
 import { Helmet } from 'react-helmet'
+import Layout from '../components/Layout'
 import * as styles from '../styles/pages/Developer.module.css'
 import { colors, pages, socialMedia } from '../config'
 
@@ -11,7 +11,6 @@ const Developer = ({ data }) => {
   
   const info = pages.developer
   const devs = data.allMarkdownRemark.nodes
-  // const [height, setHeight] = useState(0)
   const iconProps = {
     color: colors.lightWhite,
     size: 22,
@@ -19,23 +18,11 @@ const Developer = ({ data }) => {
   }
   const style = {
     backgroundColor: colors.veryGray,
-    // minHeight: `${height - sizes.navHeight}px`,
   }
-  console.log(style.minHeight)
-
-  // const handleResize = debounce(() => setHeight(window.innerHeight), 1000)
-
-  // useEffect(() => {
-  //   setHeight(window.innerHeight)
-  //   window.addEventListener('resize', handleResize)
-  //   return () => {
-  //     window.removeEventListener('resize', handleResize)
-  //   }
-  // }, [])
 
   return (
     <Layout info={info} >
-      <Helmet title="Developer" />
+      <Helmet title={info.directory} />
 
       <main className="main" style={style}>
         <header className={styles.header}>
@@ -100,10 +87,8 @@ const Developer = ({ data }) => {
             </tbody>
           </table>
 
-          <div className={styles.socialContainer}>
-            <div className={styles.social}>
-              {socialMedia.map((item, i) => <SocialIcon key={i} item={item}/>)}
-            </div>
+          <div className={styles.social}>
+            {socialMedia.map((item, i) => <SocialIcon key={i} item={item}/>)}
           </div>
 
         </div>

@@ -54,17 +54,14 @@ tbody td:first-child {
   background-color: hsl(0, 0%, 18%);
 }
 /* ---------------------------------- */
-.social-container {
+.social {
   margin-top: 30px;
   display: flex;
   justify-content: center;
 }
-.social {
-  width: 120px;
-  display: flex;
-  justify-content: space-between;
+.social a {
+  margin: 0 10px;
 }
-
 /* ------------- mobile -------------- */
 @media (max-width: 650px) {
   .hide {
