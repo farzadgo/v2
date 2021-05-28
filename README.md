@@ -19,5 +19,5 @@
   </a>
 </p>
 
-![demo](https://raw.githubusercontent.com/farzadgo/v2/master/static/demo.png)
+![demo](https://raw.githubusercontent.com/farzadgo/v2/master/src/images/demo.png)
 
