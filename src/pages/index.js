@@ -5,7 +5,7 @@ import Layout from '../components/Layout'
 import * as styles from '../styles/pages/Foyer.module.css'
 import { pages } from '../config'
 import * as THREE from 'three'
-import { OrbitControls } from 'three/examples/js/controls/OrbitControls'
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 
 // import "useLoader" here
 // import { Canvas, useFrame } from 'react-three-fiber'
@@ -16,21 +16,26 @@ import { OrbitControls } from 'three/examples/js/controls/OrbitControls'
 const Foyer = () => {
   
   const info = pages.home
+
+  const webGlContainer = {
+    position: 'absolute',
+    width: '100%',
+    height: '100%'
+  }
+
+  const webGlSlider = {
+    position: 'absolute',
+    cursor: 'ew-resize',
+    width: '40px',
+    height: '40px',
+    backgroundColor: '#F32196',
+    opacity: '0.7',
+    borderRadius: '50%',
+    top: 'calc(50% - 20px)',
+    left: 'calc(50% - 20px)'
+  }
   
   // const { nodes, materials } = useLoader(GLTFLoader, model )
-
-  // implement three.js
-  // const data = useStaticQuery(graphql`
-  //   query Foyer {
-  //     allFile(filter: {ext: {eq: ".gltf"}}) {
-  //       nodes {
-  //         base
-  //         id
-  //       }
-  //     }
-  //   }
-  // `)
-
   
   // useEffect(() => {
   //   const loader = new GLTFLoader();
@@ -43,7 +48,6 @@ const Foyer = () => {
   //   // }
   // }, [])
 
-  
   // const SpinningBox = () => {
   //   const mesh = useRef(null)
   //   useFrame(() => (mesh.current.rotation.x = mesh.current.rotation.y += 0.01))
@@ -63,7 +67,6 @@ const Foyer = () => {
     return () => clearTimeout(timeout)
   });
 
-
   useEffect(() => {
     // const el = document.getElementById('can');
     // const canvas = document.createElement('canvas');
@@ -73,147 +76,126 @@ const Foyer = () => {
     // }
 
     if (isMounted) {
-      var scene = new THREE.Scene();
-      var camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 );
-      var renderer = new THREE.WebGLRenderer();
 
-      renderer.setSize( window.innerWidth, window.innerHeight );
-      mountRef.current.appendChild( renderer.domElement );
+      let container, camera, renderer, controls;
+      let sceneL, sceneR;
 
-      var geometry = new THREE.BoxGeometry( 1, 1, 1 );
-      var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
-      var cube = new THREE.Mesh( geometry, material );
+      let sliderPos = window.innerWidth / 2;
 
-      scene.add( cube );
-      camera.position.z = 5;
+      init();
 
-      var animate = function () {
-        requestAnimationFrame( animate );
-        cube.rotation.x += 0.01;
-        cube.rotation.y += 0.01;
-        renderer.render( scene, camera );
-      };
+      function init() {
 
-      let onWindowResize = function () {
+        container = document.querySelector('.webgl-container');
+
+        sceneL = new THREE.Scene();
+        sceneL.background = new THREE.Color( '#383838' );
+
+        sceneR = new THREE.Scene();
+        sceneR.background = new THREE.Color( '#F0F0F0' );
+
+        camera = new THREE.PerspectiveCamera( 35, window.innerWidth / window.innerHeight, 0.1, 100 );
+        camera.position.z = 6;
+
+        controls = new OrbitControls( camera, container );
+
+        const light = new THREE.HemisphereLight( 0xffffff, 0x444444, 1 );
+        light.position.set( - 2, 2, 2 );
+        sceneL.add( light.clone() );
+        sceneR.add( light.clone() );
+
+        const directionalLight = new THREE.DirectionalLight( 0xffffff, 0.125 );
+
+				directionalLight.position.x = Math.random() - 0.5;
+				directionalLight.position.y = Math.random() - 0.5;
+				directionalLight.position.z = Math.random() - 0.5;
+				directionalLight.position.normalize();
+
+				sceneL.add( directionalLight );
+
+        initMeshes();
+        initSlider();
+
+        renderer = new THREE.WebGLRenderer( { antialias: true } );
+        renderer.setPixelRatio( window.devicePixelRatio );
+        renderer.setSize( window.innerWidth, window.innerHeight );
+        renderer.setScissorTest( true );
+        renderer.setAnimationLoop( render );
+        container.appendChild( renderer.domElement );
+
+        window.addEventListener( 'resize', onWindowResize );
+
+      }
+
+      function initMeshes() {
+
+        const geometry = new THREE.IcosahedronGeometry( 1, 3 );
+
+        const meshL = new THREE.Mesh( geometry, new THREE.MeshStandardMaterial( { flatShading: true, specular: 0x009900 } ) );
+        sceneL.add( meshL );
+
+        const meshR = new THREE.Mesh( geometry, new THREE.MeshStandardMaterial( { wireframe: true } ) );
+        sceneR.add( meshR );
+
+      }
+
+      function initSlider() {
+
+        const slider = document.querySelector('.webgl-slider');
+
+        function onPointerDown( event ) {
+
+          if ( event.isPrimary === false ) return;
+
+          controls.enabled = false;
+
+          window.addEventListener( 'pointermove', onPointerMove );
+          window.addEventListener( 'pointerup', onPointerUp );
+
+        }
+
+        function onPointerUp() {
+
+          controls.enabled = true;
+
+          window.removeEventListener( 'pointermove', onPointerMove );
+          window.removeEventListener( 'pointerup', onPointerUp );
+
+        }
+
+        function onPointerMove( event ) {
+
+          if ( event.isPrimary === false ) return;
+
+          sliderPos = Math.max( 0, Math.min( window.innerWidth, event.pageX ) );
+
+          slider.style.left = sliderPos - ( slider.offsetWidth / 2 ) + "px";
+
+        }
+
+        slider.style.touchAction = 'none'; // disable touch scroll
+        slider.addEventListener( 'pointerdown', onPointerDown );
+
+      }
+
+      function onWindowResize() {
+
         camera.aspect = window.innerWidth / window.innerHeight;
         camera.updateProjectionMatrix();
+
         renderer.setSize( window.innerWidth, window.innerHeight );
-      };
 
-      window.addEventListener("resize", onWindowResize, false);
-      
-      animate();
+      }
 
-      // let container, camera, renderer, controls;
-      // let sceneL, sceneR;
+      function render() {
 
-      // let sliderPos = window.innerWidth / 2;
+        renderer.setScissor( 0, 0, sliderPos, window.innerHeight );
+        renderer.render( sceneL, camera );
 
-      // init();
+        renderer.setScissor( sliderPos, 0, window.innerWidth, window.innerHeight );
+        renderer.render( sceneR, camera );
 
-      // function init() {
-
-      // 		container = document.querySelector( '.container' );
-
-      // 		sceneL = new THREE.Scene();
-      // 		sceneL.background = new THREE.Color( 0xBCD48F );
-
-      // 		sceneR = new THREE.Scene();
-      // 		sceneR.background = new THREE.Color( 0x8FBCD4 );
-
-      // 		camera = new THREE.PerspectiveCamera( 35, window.innerWidth / window.innerHeight, 0.1, 100 );
-      // 		camera.position.z = 6;
-
-      // 		controls = new OrbitControls( camera, container );
-
-      // 		const light = new THREE.HemisphereLight( 0xffffff, 0x444444, 1 );
-      // 		light.position.set( - 2, 2, 2 );
-      // 		sceneL.add( light.clone() );
-      // 		sceneR.add( light.clone() );
-
-      // 		initMeshes();
-      // 		initSlider();
-
-      // 		renderer = new THREE.WebGLRenderer( { antialias: true } );
-      // 		renderer.setPixelRatio( window.devicePixelRatio );
-      // 		renderer.setSize( window.innerWidth, window.innerHeight );
-      // 		renderer.setScissorTest( true );
-      // 		renderer.setAnimationLoop( render );
-      // 		container.appendChild( renderer.domElement );
-
-      // 		window.addEventListener( 'resize', onWindowResize );
-
-      // 	}
-
-      // 	function initMeshes() {
-
-      // 		const geometry = new THREE.IcosahedronGeometry( 1, 3 );
-
-      // 		const meshL = new THREE.Mesh( geometry, new THREE.MeshStandardMaterial() );
-      // 		sceneL.add( meshL );
-
-      // 		const meshR = new THREE.Mesh( geometry, new THREE.MeshStandardMaterial( { wireframe: true } ) );
-      // 		sceneR.add( meshR );
-
-      // 	}
-
-      // 	function initSlider() {
-
-      // 		const slider = document.querySelector( '.slider' );
-
-      // 		function onPointerDown() {
-
-      // 			if ( event.isPrimary === false ) return;
-
-      // 			controls.enabled = false;
-
-      // 			window.addEventListener( 'pointermove', onPointerMove );
-      // 			window.addEventListener( 'pointerup', onPointerUp );
-
-      // 		}
-
-      // 		function onPointerUp() {
-
-      // 			controls.enabled = true;
-
-      // 			window.removeEventListener( 'pointermove', onPointerMove );
-      // 			window.removeEventListener( 'pointerup', onPointerUp );
-
-      // 		}
-
-      // 		function onPointerMove( e ) {
-
-      // 			if ( event.isPrimary === false ) return;
-
-      // 			sliderPos = Math.max( 0, Math.min( window.innerWidth, e.pageX ) );
-
-      // 			slider.style.left = sliderPos - ( slider.offsetWidth / 2 ) + "px";
-
-      // 		}
-
-      // 		slider.style.touchAction = 'none'; // disable touch scroll
-      // 		slider.addEventListener( 'pointerdown', onPointerDown );
-
-      // 	}
-
-      // 	function onWindowResize() {
-
-      // 		camera.aspect = window.innerWidth / window.innerHeight;
-      // 		camera.updateProjectionMatrix();
-
-      // 		renderer.setSize( window.innerWidth, window.innerHeight );
-
-      // 	}
-
-      // 	function render() {
-
-      // 		renderer.setScissor( 0, 0, sliderPos, window.innerHeight );
-      // 		renderer.render( sceneL, camera );
-
-      // 		renderer.setScissor( sliderPos, 0, window.innerWidth, window.innerHeight );
-      // 		renderer.render( sceneR, camera );
-
-      // 	}
+      }
 
     }
 
@@ -230,8 +212,12 @@ const Foyer = () => {
           <SpinningBox />
         </Canvas> */}
 
-        <div className={styles.message}>
+        {/* <div className={styles.message}>
           <p> Foyer under construction.. </p>
+        </div> */}
+
+        <div className="webgl-container" style={webGlContainer}>
+          <div className="webgl-slider" style={webGlSlider}></div>
         </div>
 
       </main>

@@ -45,7 +45,7 @@ const Navbar = ({ info, setToggle }) => {
     height: `${sizes.navHeight}px`,
     top: visible ? '0' : `-${sizes.navHeight}px`,
     backgroundColor: home ? colors.clear : colors.darkGray,
-    color: home ? colors.darkWhite : colors.lightWhite,
+    color: home ? colors.darkGray : colors.lightWhite,
     fontWeight: home ? '600' : '300'
   }
 
