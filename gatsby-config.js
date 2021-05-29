@@ -3,14 +3,6 @@ const config = require('./src/config');
 module.exports = {
 
   plugins: [
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: "UA-196785734-1",
-        head: true ,
-        anonymize: true,
-      },
-    },
     'gatsby-plugin-robots-txt',
     'gatsby-plugin-react-helmet',
     'gatsby-transformer-sharp',
