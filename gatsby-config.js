@@ -3,11 +3,12 @@ const config = require('./src/config');
 module.exports = {
 
   plugins: [
-    'gatsby-plugin-robots-txt',
     'gatsby-plugin-react-helmet',
+    'gatsby-plugin-robots-txt',
+    'gatsby-plugin-offline',
+    'gatsby-plugin-netlify',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
-    'gatsby-plugin-offline',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
