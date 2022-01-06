@@ -38,15 +38,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `developer`,
+        name: `about`,
         path: `${__dirname}/content/about`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `developer`,
-        path: `${__dirname}/content/developer`,
       },
     },
     {
@@ -74,10 +67,10 @@ module.exports = {
   siteMetadata: {
     title: 'Farzad Golghasemi',
     description:
-      'Farzad Golghasemi is an artist and architect who is working on developing projects regarding the critique of urban geography and everyday life through employing digital technologies such as the Web and mobile devices.',
-    siteUrl: 'https://fagose.me',
+      'Farzad Golghasemi is an intermedia artist and designer who is working on developing projects regarding the critique of urban geography and everyday life through employing digital technologies such as the 3D CGI, Web and mobile devices.',
+    siteUrl: 'https://fagosemi.xyz',
     image: '/og.png',
     authorName: 'Farzad Golghasemi',
-    twitterUsername: '@farzadgo_',
+    twitterUsername: '@fagosemi',
   }
 }

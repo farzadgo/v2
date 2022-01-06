@@ -19,11 +19,12 @@
 }
 /* --------------------------- */
 .html {
-  font-family: var(--text-font);
-  color: var(--dark-gray);
+  font-family: var(--sans-font);
+  color: var(--light-white);
   font-size: var(--font-lg);
   line-height: var(--line-height);
   margin-bottom: 20px;
+  font-weight: 300;
 }
 .html > p {
   margin-bottom: 20px;
@@ -53,14 +54,16 @@
   white-space: nowrap;
   line-height: 1em;
   font-size: 0.9em;
-  color: var(--light-gray);
+  color: var(--light-white);
   border: 1px solid var(--light-gray);
-  padding: 11px 15px 12px 15px;
-  transition: all 0.05s ease-out;
+  padding: 12px 15px 8px;
+  /* transition: all 0.1s ease-out; */
+  /* background-color: var(--light-gray); */
 }
 .html a:hover {
-  background-color: var(--light-gray);
-  color: white;
+  /* background-color: var(--light-gray); */
+  /* color: white; */
+  border: 1px solid var(--code-green);
 }
 /* ---------------- desktop ---------------- */
 @media (min-width: 1000px) {

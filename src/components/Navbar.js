@@ -6,7 +6,7 @@ import { debounce } from '../utilities/helpers'
 import { pages, colors, sizes } from '../config'
 
 
-const Navbar = ({ info, setToggle }) => {
+const Navbar = ({ info /*setToggle*/ }) => {
 
   const data = useStaticQuery(graphql`
     query WorkList {
@@ -26,27 +26,22 @@ const Navbar = ({ info, setToggle }) => {
 
   const { directory, workTitle } = info
   const workList = data.allMarkdownRemark.nodes.map(e => e.frontmatter)
-  const dirList = [ pages.works, pages.about, pages.developer ]
-
+  const dirList = [ pages.works, pages.about ]
   // const { pathname } = useLocation()
   // const pathWords = pathname.split('/').filter(e => e)
   // const depth = pathWords.length
 
   const breakpoint = 600
-  const homeTitle = 'Farzad Golghasemi'
+  const homeTitle = 'farzad golghasemi'
   const [home, setHome] = useState(false)
   const [scrollPos, setScrollPos] = useState(0)
   const [visible, setVisible] = useState(true)
   const [width, setWidth] = useState(0)
-  // const [bgColor, setBgColor] = useState('#1d1d1d')
-  // const [textColor, setTextColor] = useState('#eeeeee')
 
   const style = {
     height: `${sizes.navHeight}px`,
     top: visible ? '0' : `-${sizes.navHeight}px`,
     backgroundColor: home ? colors.clear : colors.darkGray,
-    color: home ? colors.darkGray : colors.lightWhite,
-    fontWeight: home ? '600' : '300'
   }
 
   const handleScroll = debounce(() => {
@@ -56,13 +51,6 @@ const Navbar = ({ info, setToggle }) => {
   }, 100)
 
   const handleResize = debounce(() => setWidth(window.innerWidth), 1000)
-
-  // const handleColor = () => {
-  //   if (home) {
-  //     setBgColor('#00000000')
-  //     setTextColor('#272727')
-  //   }
-  // }
 
   useEffect(() => {
     if (!directory && !workTitle) {
@@ -90,7 +78,6 @@ const Navbar = ({ info, setToggle }) => {
         {workTitle && <NavItem list={workList} deep={true}> {workTitle} </NavItem>}
       </ul>
 
-      {home && <MenuBtn setToggle={setToggle} color={style.color}/>}
       {width < breakpoint && !home && <BackBtn workTitle={workTitle}/>}
 
     </nav>
@@ -105,7 +92,7 @@ const NavItem = ({ home, list, deep, children }) => {
   const node = useRef()
 
   const iconProps = {
-    color: '#eeeeee',
+    color: colors.lightWhite,
     size: 24,
     strokeWidth: 1
   }
@@ -116,7 +103,7 @@ const NavItem = ({ home, list, deep, children }) => {
     } else if (!home) {
       navigate("/")
     } else {
-      console.log('fagosemi')
+      console.log('fagosemi.xyz')
     }
   }
 
@@ -181,7 +168,6 @@ const DropMenu = ({ list, deep }) => {
 
 
 const BackBtn = ({ workTitle }) => {
-
   const [backWorks, setBackWorks] = useState(false)
   const iconProps = {
     color: '#eeeeee',
@@ -207,25 +193,6 @@ const BackBtn = ({ workTitle }) => {
       onClick={handleClick}
     >
       {icon}
-    </button>
-  )
-}
-
-
-const MenuBtn = ({ setToggle, color }) => {
-  const iconProps = {
-    color: color,
-    size: 32,
-    strokeWidth: 1
-  }
-  return (
-    <button
-      className={styles.button}
-      type="button"
-      aria-label="Menu"
-      onClick={() => setToggle()}
-    >
-      <Icon.Menu {...iconProps}/>
     </button>
   )
 }

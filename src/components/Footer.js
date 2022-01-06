@@ -23,7 +23,7 @@ const Footer = ({ info }) => {
 
   return (
     <footer className={styles.footer} style={style}>
-      <p className={styles.note}> Designed & developed by Farzad Golghasemi - 2021 </p>
+      <p className={styles.note}> Designed /developed by Farzad Golghasemi - 2021 </p>
     </footer>
   )
 }

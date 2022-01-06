@@ -30,3 +30,26 @@ exports.createPages = async ({ graphql, actions }) => {
   })
 
 }
+
+exports.onCreateWebpackConfig = ({
+  stage,
+  rules,
+  loaders,
+  plugins,
+  actions,
+}) => {
+  actions.setWebpackConfig({
+    module: {
+      rules: [
+        {
+          test: /\.(glb|gltf)$/i,
+          use: [
+            {
+              loader: "json-loader",
+            },
+          ],
+        },
+      ],
+    },
+  })
+}

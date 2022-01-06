@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   padding: 0 var(--gap);
-  z-index: 1;
+  z-index: 20;
   transition: top 0.2s ease-out;
 }
 .button {
@@ -20,10 +20,12 @@
   min-height: 100%;
   font-family: var(--code-font);
   font-size: var(--font-md);
+  font-weight: 300;
   user-select: none;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
+  color: var(--code-green);
 }
 .directory li {
   position: relative;
@@ -81,7 +83,7 @@
   }
   .nav-item:hover {
     cursor: pointer;
-    color: var(--dark-white);
+    /* color: var(--dark-white); */
   }
   .drop-menu {
     width: auto;

@@ -1,227 +1,325 @@
 import React, { useEffect, useRef, useState } from 'react'
-// import { useStaticQuery, graphql, Link } from 'gatsby'
 import { Helmet } from 'react-helmet'
 import Layout from '../components/Layout'
-import * as styles from '../styles/pages/Foyer.module.css'
+import Spinner from '../components/Spinner'
+import Menu from '../components/Menu'
 import { pages } from '../config'
+
 import * as THREE from 'three'
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
+import { Octree } from 'three/examples/jsm/math/Octree.js'
+import { Capsule } from 'three/examples/jsm/math/Capsule.js'
 
-// import "useLoader" here
-// import { Canvas, useFrame } from 'react-three-fiber'
-
-// import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
-// import model from '../models/baba.gltf'
 
 const Foyer = () => {
   
   const info = pages.home
+  const mountRef = useRef(null)
+  const [modelLoaded, setModelLoaded] = useState(false)
+  const [modelError, setModelError] = useState(false)
+  const [pause, setPause] = useState(true)
+
+  const mainStyle = {
+    width: '100%',
+    height: '100%',
+    padding: 0,
+    margin: 0
+  }
 
   const webGlContainer = {
     position: 'absolute',
     width: '100%',
-    height: '100%'
+    height: '100%',
+    display: modelLoaded ? 'block' : 'none'
   }
 
-  const webGlSlider = {
+  const ctrlStyle = {
     position: 'absolute',
-    cursor: 'ew-resize',
-    width: '40px',
-    height: '40px',
-    backgroundColor: '#F32196',
-    opacity: '0.7',
-    borderRadius: '50%',
-    top: 'calc(50% - 20px)',
-    left: 'calc(50% - 20px)'
+    bottom: '0',
+    zIndex: '5',
+    padding: 'var(--gap)',
+    color: 'rgb(0, 180, 0',
+    lineHeight: '1.4em',
+    fontFamily: 'var(--code-font)',
+    fontWeight: 'bold',
+    fontSize: 'var(--font-lg)',
+    textShadow: '1px 1px 0 rgb(33, 33, 33)',
   }
   
-  // const { nodes, materials } = useLoader(GLTFLoader, model )
-  
-  // useEffect(() => {
-  //   const loader = new GLTFLoader();
-  //   loader.load(model, (gltf) => {
-  //     console.log(gltf);
-  //     // scene.add()
-  //   })
-  //   // return () => {
-  //   //   cleanup
-  //   // }
-  // }, [])
-
-  // const SpinningBox = () => {
-  //   const mesh = useRef(null)
-  //   useFrame(() => (mesh.current.rotation.x = mesh.current.rotation.y += 0.01))
-  //   return (
-  //     <mesh ref={mesh}>
-  //       <boxBufferGeometry attach='geometry' args={1, 1, 1} />
-  //       <meshStandardMaterial attach='material' />
-  //     </mesh>
-  //   )
-  // }
-  
-  const [isMounted, setIsMounted] = useState(false)
-  const mountRef = useRef(null);
-
   useEffect(() => {
-    const timeout = setTimeout(() => setIsMounted(true), 2200)
-    return () => clearTimeout(timeout)
-  });
 
-  useEffect(() => {
-    // const el = document.getElementById('can');
-    // const canvas = document.createElement('canvas');
-    // mountRef.current = el;
-    // return () => {
-    //   console.log("ref", mountRef.current);
-    // }
+    let animID
+    const GRAVITY = 30
+    const STEPS_PER_FRAME = 5
+    const modelUrl = 'https://raw.githubusercontent.com/farzadgo/v2/master/src/models/collision-world.glb'
 
-    if (isMounted) {
+    // CLOCK & SCENE & CAMERA
+    const clock = new THREE.Clock()
 
-      let container, camera, renderer, controls;
-      let sceneL, sceneR;
+    const scene = new THREE.Scene()
+    scene.background = new THREE.Color('#494949')
 
-      let sliderPos = window.innerWidth / 2;
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000)
+    camera.rotation.order = 'YXZ'
+    // camera.position.z = 5
 
-      init();
+    // LIGHTS
+    const ambientlight = new THREE.AmbientLight(0x6688cc)
+    scene.add(ambientlight)
 
-      function init() {
+    const fillLight1 = new THREE.DirectionalLight(0xff9999, 0.5)
+    fillLight1.position.set(- 1, 1, 2)
+    scene.add(fillLight1)
 
-        container = document.querySelector('.webgl-container');
+    const fillLight2 = new THREE.DirectionalLight(0x8888ff, 0.2)
+    fillLight2.position.set(0, - 1, 0)
+    scene.add(fillLight2)
 
-        sceneL = new THREE.Scene();
-        sceneL.background = new THREE.Color( '#383838' );
+    const directionalLight = new THREE.DirectionalLight(0xffffaa, 1.2)
+    directionalLight.position.set(- 5, 25, - 1)
+    directionalLight.castShadow = true;
+    directionalLight.shadow.camera.near = 0.01
+    directionalLight.shadow.camera.far = 500
+    directionalLight.shadow.camera.right = 30
+    directionalLight.shadow.camera.left = - 30
+    directionalLight.shadow.camera.top	= 30
+    directionalLight.shadow.camera.bottom = - 30
+    directionalLight.shadow.mapSize.width = 1024
+    directionalLight.shadow.mapSize.height = 1024
+    directionalLight.shadow.radius = 4
+    directionalLight.shadow.bias = - 0.00006
+    scene.add(directionalLight)
 
-        sceneR = new THREE.Scene();
-        sceneR.background = new THREE.Color( '#F0F0F0' );
+    // const light = new THREE.HemisphereLight(0xffffff, 0x444444, 1);
+    // light.position.set(- 2, 2, 2)
+    // scene.add(light.clone())
 
-        camera = new THREE.PerspectiveCamera( 35, window.innerWidth / window.innerHeight, 0.1, 100 );
-        camera.position.z = 6;
+    // CONTAINER & RENDERER & LOADER
+    const container = document.querySelector('.webgl-container')
 
-        controls = new OrbitControls( camera, container );
+    const renderer = new THREE.WebGLRenderer({antialias: true})
+    renderer.setPixelRatio(window.devicePixelRatio)
+    renderer.setSize(window.innerWidth, window.innerHeight)
+    renderer.shadowMap.enabled = true
+    renderer.shadowMap.type = THREE.VSMShadowMap
+    container.appendChild(renderer.domElement)
 
-        const light = new THREE.HemisphereLight( 0xffffff, 0x444444, 1 );
-        light.position.set( - 2, 2, 2 );
-        sceneL.add( light.clone() );
-        sceneR.add( light.clone() );
+    const worldOctree = new Octree()
+    const playerCollider = new Capsule(new THREE.Vector3(0, 0.35, 0), new THREE.Vector3(0, 1, 0), 0.35)
+    const playerVelocity = new THREE.Vector3()
+    const playerDirection = new THREE.Vector3()
+      
+    const keyStates = {}
 
-        const directionalLight = new THREE.DirectionalLight( 0xffffff, 0.125 );
-
-				directionalLight.position.x = Math.random() - 0.5;
-				directionalLight.position.y = Math.random() - 0.5;
-				directionalLight.position.z = Math.random() - 0.5;
-				directionalLight.position.normalize();
-
-				sceneL.add( directionalLight );
-
-        initMeshes();
-        initSlider();
-
-        renderer = new THREE.WebGLRenderer( { antialias: true } );
-        renderer.setPixelRatio( window.devicePixelRatio );
-        renderer.setSize( window.innerWidth, window.innerHeight );
-        renderer.setScissorTest( true );
-        renderer.setAnimationLoop( render );
-        container.appendChild( renderer.domElement );
-
-        window.addEventListener( 'resize', onWindowResize );
-
+    const keydownFunc = event => keyStates[event.code] = true
+    const keyupFunc = event => keyStates[event.code] = false
+    const clickFunc = event => {
+      let mainClass
+      let allClass = event.target.className
+      if (typeof allClass === 'string') {
+        mainClass = allClass.split(' ')[0]
       }
-
-      function initMeshes() {
-
-        const geometry = new THREE.IcosahedronGeometry( 1, 3 );
-
-        const meshL = new THREE.Mesh( geometry, new THREE.MeshStandardMaterial( { flatShading: true, specular: 0x009900 } ) );
-        sceneL.add( meshL );
-
-        const meshR = new THREE.Mesh( geometry, new THREE.MeshStandardMaterial( { wireframe: true } ) );
-        sceneR.add( meshR );
-
+      if (mainClass === 'play-btn' && window.innerWidth > 600) {
+        document.body.requestPointerLock()
+        animate()
+        setPause(false)
       }
-
-      function initSlider() {
-
-        const slider = document.querySelector('.webgl-slider');
-
-        function onPointerDown( event ) {
-
-          if ( event.isPrimary === false ) return;
-
-          controls.enabled = false;
-
-          window.addEventListener( 'pointermove', onPointerMove );
-          window.addEventListener( 'pointerup', onPointerUp );
-
-        }
-
-        function onPointerUp() {
-
-          controls.enabled = true;
-
-          window.removeEventListener( 'pointermove', onPointerMove );
-          window.removeEventListener( 'pointerup', onPointerUp );
-
-        }
-
-        function onPointerMove( event ) {
-
-          if ( event.isPrimary === false ) return;
-
-          sliderPos = Math.max( 0, Math.min( window.innerWidth, event.pageX ) );
-
-          slider.style.left = sliderPos - ( slider.offsetWidth / 2 ) + "px";
-
-        }
-
-        slider.style.touchAction = 'none'; // disable touch scroll
-        slider.addEventListener( 'pointerdown', onPointerDown );
-
+      if (mainClass === 'play-btn' && window.innerWidth < 599) {
+        alert('3D space functions only on desktop mode!')
       }
-
-      function onWindowResize() {
-
-        camera.aspect = window.innerWidth / window.innerHeight;
-        camera.updateProjectionMatrix();
-
-        renderer.setSize( window.innerWidth, window.innerHeight );
-
+      
+    }
+    const onPointerLockChange = () => {
+      if (document.pointerLockElement !== document.body) {
+        stopAnim()
+        setPause(true)
       }
-
-      function render() {
-
-        renderer.setScissor( 0, 0, sliderPos, window.innerHeight );
-        renderer.render( sceneL, camera );
-
-        renderer.setScissor( sliderPos, 0, window.innerWidth, window.innerHeight );
-        renderer.render( sceneR, camera );
-
+      // setPause(prev => !prev)
+    }
+    const mousemoveFunc = event => {
+      if (document.pointerLockElement === document.body) {
+        camera.rotation.y -= event.movementX / 500
+        camera.rotation.x -= event.movementY / 500
       }
-
+    }
+    function onWindowResize() {
+      camera.aspect = window.innerWidth / window.innerHeight
+      camera.updateProjectionMatrix()
+      renderer.setSize(window.innerWidth, window.innerHeight)
     }
 
-  }, [isMounted])
+    document.addEventListener('keydown', keydownFunc)
+    document.addEventListener('keyup', keyupFunc)
+    document.addEventListener('click', clickFunc)
+    document.addEventListener('pointerlockchange', onPointerLockChange)
+    document.body.addEventListener('mousemove', mousemoveFunc)
+    window.addEventListener('resize', onWindowResize)
+
+    let playerOnFloor = false;
+
+    function playerCollisions() {
+      const result = worldOctree.capsuleIntersect(playerCollider)
+      playerOnFloor = false
+      if (result) {
+        playerOnFloor = result.normal.y > 0
+        if (!playerOnFloor) {
+          playerVelocity.addScaledVector( result.normal, - result.normal.dot(playerVelocity))
+        }
+        playerCollider.translate(result.normal.multiplyScalar(result.depth))
+      }
+    }
+
+    function updatePlayer(deltaTime) {
+      let damping = Math.exp(- 4 * deltaTime) - 1
+      if (!playerOnFloor) {
+        playerVelocity.y -= GRAVITY * deltaTime
+        // small air resistance
+        damping *= 0.1
+      }
+      playerVelocity.addScaledVector(playerVelocity, damping)
+      const deltaPosition = playerVelocity.clone().multiplyScalar(deltaTime)
+      playerCollider.translate(deltaPosition)
+      playerCollisions()
+      camera.position.copy(playerCollider.end)
+    }
+
+    function getForwardVector() {
+      camera.getWorldDirection(playerDirection)
+      playerDirection.y = 0
+      playerDirection.normalize()
+      return playerDirection
+    }
+
+    function getSideVector() {
+      camera.getWorldDirection(playerDirection)
+      playerDirection.y = 0
+      playerDirection.normalize()
+      playerDirection.cross(camera.up)
+      return playerDirection
+    }
+
+    function controls(deltaTime) {
+      // gives a bit of air control
+      const speedDelta = deltaTime * (playerOnFloor ? 25 : 8);
+      if (keyStates['KeyW']) {
+        playerVelocity.add(getForwardVector().multiplyScalar(speedDelta));
+      }
+      if (keyStates['KeyS']) {
+        playerVelocity.add(getForwardVector().multiplyScalar(-speedDelta));
+      }
+      if (keyStates['KeyA']) {
+        playerVelocity.add(getSideVector().multiplyScalar(-speedDelta));
+      }
+      if (keyStates['KeyD']) {
+        playerVelocity.add(getSideVector().multiplyScalar(speedDelta));
+      }
+      if (playerOnFloor) {
+        if (keyStates['Space']) {
+          playerVelocity.y = 15;
+        }
+      }
+    }
+    
+    // start of --- LOADER
+    const loader = new GLTFLoader()
+
+    loader.load(
+      modelUrl, 
+      gltf => {
+        const objects = gltf.scene.children
+        // console.log(objects)
+        // objects.map(e => {
+        //   e.material = new THREE.MeshNormalMaterial({wireframe: true, color: 0xffffff})
+        // })
+        scene.add(gltf.scene)
+        if (objects) {
+          // console.log('model loaded')
+          setModelLoaded(true)
+        }
+        worldOctree.fromGraphNode(gltf.scene)
+        gltf.scene.traverse(child => {
+          if (child.isMesh) {
+            child.castShadow = true;
+            child.receiveShadow = true;
+            if (child.material.map) {
+              child.material.map.anisotropy = 8
+            }
+          }
+        })
+        // originally animate was called here > animate()
+      },
+      xhr => {
+        console.log((xhr.loaded / xhr.total * 100) + '% loaded')
+      },
+      error => {
+        // console.log('model load error')
+        alert('3D model loading failed! Please continue to check the website :)')
+        setModelLoaded(true)
+        setModelError(true)
+      }
+    )
+    // end of --- LOADER
+
+
+    function teleportPlayerIfOob() {
+      if (camera.position.y <= -25) {
+        playerCollider.start.set(0, 0.35, 0)
+        playerCollider.end.set(0, 1, 0)
+        playerCollider.radius =  0.35
+        camera.position.copy(playerCollider.end)
+        camera.rotation.set(0, 0, 0)
+      }
+    }
+
+
+    function animate() {
+      // console.log('animating')
+      const deltaTime = Math.min( 0.05, clock.getDelta()) / STEPS_PER_FRAME
+      // we look for collisions in substeps to mitigate the risk of
+      // an object traversing another too quickly for detection.
+      for (let i = 0; i < STEPS_PER_FRAME; i ++) {
+        controls(deltaTime)
+        updatePlayer(deltaTime)
+        teleportPlayerIfOob()
+      }
+      renderer.render(scene, camera)
+      animID = requestAnimationFrame(animate)
+    }
+
+    const stopAnim = () => {
+      // console.log('animation cancelled')
+      cancelAnimationFrame(animID)
+    }
+
+
+    return () => {
+      // console.log('unmounting Foyer...')
+      document.removeEventListener('keydown', keydownFunc)
+      document.removeEventListener('keyup', keyupFunc)
+      document.removeEventListener('click', clickFunc)
+      document.removeEventListener('pointerlockchange', onPointerLockChange)
+      document.body.removeEventListener('mousemove', mousemoveFunc)
+      window.removeEventListener('resize', onWindowResize)
+    }
+
+  }, [])
+
   
-
   return (
-    <Layout info={info}>
+    <Layout info={info} pause={pause} >
       <Helmet title={info.directory}/>
-
-      <main className={`main ${styles.main}`} ref={mountRef}>
-        
-        {/* <Canvas>
-          <SpinningBox />
-        </Canvas> */}
-
-        {/* <div className={styles.message}>
-          <p> Foyer under construction.. </p>
-        </div> */}
-
-        <div className="webgl-container" style={webGlContainer}>
-          <div className="webgl-slider" style={webGlSlider}></div>
-        </div>
-
+      <main style={mainStyle} ref={mountRef}>
+        {modelLoaded ? <Menu pause={pause} modelError={modelError}/> : <Spinner />}
+        <div className='webgl-container' style={webGlContainer}> </div>
+        {!pause && <div style={ctrlStyle}>
+          <ul>
+            <li>menu <span>_Esc</span></li>
+            <li>walk directions <span>_W_A_S_D</span></li>
+            <li>jump <span>_Space</span></li>
+            <li>look around <span>_Mouse</span></li>
+          </ul>
+        </div>}
       </main>
-
     </Layout>
   )
 }

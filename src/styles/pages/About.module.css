@@ -3,13 +3,14 @@
 }
 .body {
   position: relative;
-  max-width: 900px;
+  max-width: 1000px;
   left: 50%;
   transform: translateX(-50%);
-  color: var(--dark-gray);
-  font-family: var(--text-font);
+  color: var(--light-white);
+  font-family: var(--sans-font);
   font-size: var(--font-md);
   line-height: var(--line-height);
+  font-weight: 100;
 }
 /* --------------------------------- */
 .bio {
@@ -22,7 +23,7 @@
   margin-top: 0;
 }
 .profile {
-  max-width: 560px;
+  max-width: 480px;
   margin: 0 auto;
 }
 /* --------------------------------- */
@@ -35,19 +36,21 @@
   margin-bottom: 15px;
 }
 .vitae > ul > li {
-  display: flex;
-  line-height: 1.6em;
-  margin-bottom: 0.8em;
+  line-height: 1.5em;
+  margin-bottom: 1.0em;
 }
 .vitae > ul > li > em {
-  min-width: 110px;
   font-style: normal;
+}
+.vitae li a {
+  font-family: var(--code-font);
+  color: var(--code-green);
 }
 /* --------------------------------- */
 .imprint {
   margin-bottom: 40px;
-  background-color: #ececec;
   padding: 20px 20px 10px;
+  background-color: var(--dark-gray);
 }
 .imprint p {
   font-size: var(--font-sm);
@@ -55,14 +58,18 @@
   margin-bottom: 10px;
 }
 /* ------------ desktop ------------ */
-@media (min-width: 900px) {
+@media (min-width: 600px) {
   .profile {
-    margin: 0 auto 0 150px;
+    margin: 0 auto 0 165px;
   }
   .bio p, .vitae ul {
     font-size: var(--font-md);
   }
+  .vitae > ul > li {
+    display: flex;
+  }
   .vitae > ul > li > em {
-    min-width: 150px;
+    min-width: 165px;
+    word-break: normal;
   }
 }

@@ -5,15 +5,11 @@ module.exports = {
   socialMedia: [
     {
       name: 'Instagram',
-      url: 'https://www.instagram.com/fagosemi',
+      url: 'https://www.instagram.com/dis___orient',
     },
     {
       name: 'GitHub',
       url: 'https://github.com/farzadgo',
-    },
-    {
-      name: 'Linkedin',
-      url: 'https://www.linkedin.com/in/farzadgo/',
     }
   ],
 
@@ -29,27 +25,23 @@ module.exports = {
     },
     about: {
       slug: '/about',
-      directory: 'About',
+      directory: 'about',
       workTitle: '',
     },
     works: {
       slug: '/works',
-      directory: 'Works',
+      directory: 'works',
       workTitle: '',
-    },
-    developer: {
-      slug: '/developer',
-      directory: 'Developer',
-      workTitle: '',
-    },
+    }
   },
 
   colors: {
     lightWhite: '#e0e0e0',
     darkWhite :'#bbbbbb',
     lightGray: '#3f3f3f',
-    darkGray: '#1f1f1f',
-    veryGray: '#141414',
-    clear: '#ffffff1f',
+    darkGray: '#1b1b1b',
+    veryGray: '#111111',
+    clear: '#00000000',
+    codeGreen: '#00b400'
   }
 }

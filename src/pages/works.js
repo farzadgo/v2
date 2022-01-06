@@ -8,7 +8,7 @@ import { Draggable } from 'gsap/Draggable'
 import * as Icon from 'react-feather'
 import { Helmet } from 'react-helmet'
 import { debounce } from '../utilities/helpers'
-import { pages } from '../config'
+import { pages, colors } from '../config'
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(Draggable);
@@ -19,32 +19,46 @@ export default function Works({ data }) {
   const info = pages.works
   const works = data.allMarkdownRemark.nodes
   const length = works.length
-  const [width, setWidth] = useState(0)
-  // const [height, setHeight] = useState(0)
-  // const elementsRef = useRef(null)
 
-  // const style = {
-  //   minHeight: `${height - sizes.navHeight}px`
-  // }
+  const allCategories = works.map(e => {
+    return e.frontmatter.categories
+  })
+  const categories = [...new Set(allCategories.flat(1))]
+  const [category, setCategory] = useState('all work')
+
+  const mobileWidth = 600
+  const [width, setWidth] = useState(0)
+  
+  const handleCategory = e => {
+    setCategory(e.target.value)
+  }
+  // console.log(category)
 
   const handleResize = debounce(() => {
     setWidth(window.innerWidth)
-    // setHeight(window.innerHeight)
   }, 1000)
 
+
   useEffect(() => {
+    setWidth(window.innerWidth)
     // elementsRef.current.map(ref => ref.current.focus())
-    let elements = document.querySelectorAll('.card')
+    let elements = document.querySelectorAll('.drag')
     elements.forEach(el => {
       Draggable.create(el, { type:"x,y", edgeResistance:0.65, bounds:"#content", allowEventDefault: true }); 
     })
-    setWidth(window.innerWidth)
-    // setHeight(window.innerHeight)
+
+    if (width < mobileWidth) {
+      // console.log('draggable deactivated')
+      elements.forEach(el => {
+        Draggable.get(el).kill() 
+      })
+    }
+
     window.addEventListener('resize', handleResize)
     return () => {
       window.removeEventListener('resize', handleResize)
     }
-  }, [handleResize])
+  }, [handleResize, width])
 
   return (
     <Layout info={info} >
@@ -55,6 +69,14 @@ export default function Works({ data }) {
         </header>
         
         <div className={styles.body}>
+          
+          <div className={styles.selectorBox}>
+            <select onChange={handleCategory}>
+              <option value='all work'> all work </option>
+              {categories.map((e, i) => <option key={i} value={e}>{e}</option>)}
+            </select>
+          </div>
+
           {works.map((e, i) =>
             <Card
               key={i}
@@ -62,6 +84,8 @@ export default function Works({ data }) {
               work={e}
               length={length}
               width={width}
+              mobileWidth={mobileWidth}
+              category={category}
             />
           )}
         </div>
@@ -72,48 +96,75 @@ export default function Works({ data }) {
 }
 
 
-const Card = ({ index, work, length, width }) => {
+const Card = ({ index, work, length, width, mobileWidth, category }) => {
 
+  const [selected, setSelected] = useState(false)
   const iconProps = {
-    color: '#272727',
+    color: colors.lightWhite,
     size: 28,
-    strokeWidth: 1.5
-  }
-  const { title, thumb, slug, date } = work.frontmatter
-  const shortDate = date.slice(0, -3)
-
-  let cardWidth, factor;
-  if (width < 700) {
-    cardWidth = 240
-    factor = ((width - cardWidth) / (length * 3))
-  } else {
-    cardWidth = 440
-    factor = ((width - cardWidth) / (length * 1.6))
+    strokeWidth: 1
   }
   // const r = (Math.floor(Math.random() * 100) / 100)
-  const f1 = 28 / (length - 1)
-
-  const style = {
-    // top: `${r * 25}vh`,
-    // top: `${index * 50}px`,
-    top: `${(index + 0.3) * f1}vh`,
-    // left: `${r * 40}vw`,
-    // left: `${index * 80}px`,
-    left: `${index * factor}px`,
-    // width: `${width / 3}px`
-    width: `${cardWidth}px`
+  const {title, thumb, slug, date, exhibition, categories} = work.frontmatter
+  let cardWidth, pairs
+  let style = {
+    opacity: !selected ? 0.2 : 1
   }
 
+  if (width < mobileWidth) {
+    pairs = {
+      position: 'relative',
+      width: width - 50,
+      marginBottom: '20px'
+    }
+  } else {
+    cardWidth = 290
+    let factor = ((width - cardWidth) / (length))
+    pairs = {
+      position: 'absolute',
+      // top: `${r * 50}vh`,
+      top: `${(index + 1) * 33}px`,
+      left: `${index * factor}px`,
+      width: cardWidth
+    }
+  }
+  style = {...style, ...pairs}
+
+  useEffect(() => {
+    if (categories.includes(category) || category === 'all work') {
+      setSelected(true)
+    } else {
+      setSelected(false)
+    }
+    return () => {
+      // console.log('categoty selector')
+    }
+  }, [categories, category])
+
+  // const f1 = 28 / (length - 1)
+  // const style = {
+  //   top: `${r * 50}vh`,
+  //   // top: `${index * 50}px`,
+  //   // top: `${(index + 0.3) * f1}vh`,
+  //   // left: `${r * 40}vw`,
+  //   // left: `${index * 80}px`,
+  //   left: `${index * factor}px`,
+  //   // width: `${width / 3}px`
+  //   width: `${cardWidth}px`
+  // }
+
   return (
-    <div style={style} className={`${styles.card} card`}>
-      <Img
+    <div style={style} className={`${styles.card} drag`}>
+      {thumb && <Img
         fluid={thumb.childImageSharp.fluid}
-        // className={styles.cardImg}
-      />
+        className={styles.cardImage}
+      />}
       <div className={styles.cardInfo}>
         <div>
-          <h1>{ title }</h1>
-          <h3><i>{ shortDate }</i></h3>
+          <h1>{title}</h1>
+          <p style={{color: colors.codeGreen, fontWeight: 200}}>{date}</p>
+          {/* <p>{categories}</p> */}
+          {/* {exhibition && <p>Exhibition: {exhibition}</p>} */}
         </div>
         <Link
           to={"/works/" + slug}
@@ -135,9 +186,11 @@ export const query = graphql`
     ) {
       nodes {
         frontmatter {
-          slug
           title
           date
+          slug
+          categories
+          exhibition
           thumb {
             childImageSharp {
               fluid(maxHeight: 440, maxWidth: 660, cropFocus: CENTER) {

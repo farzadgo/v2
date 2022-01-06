@@ -1,16 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap');
+/* Lekton, Roboto Mono, IBM Plex, Jost, Quicksand */
+@import url('https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100;0,200;0,400;0,800;1,100;1,200;1,400;1,800&family=Quicksand:wght@300;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,200;0,400;0,600;1,200;1,400;1,600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;600&display=swap');
-/* Lekton, Roboto Mono, IBM Plex */
 :root {
-  --sans-font: 'Jost', 'Trebuchet MS', 'Helvetica', sans-serif;
+  --sans-font: 'Overpass', 'Helvetica', 'Trebuchet MS', 'Arial', sans-serif;
   --text-font: 'Bitter', 'Georgia', 'Times New Roman', Times, serif;
   --code-font: 'Inconsolata', 'Consolas', 'Menlo', 'Courier New' , monospace;
   --light-white: #e0e0e0;
   --dark-white: #bababa;
-  --light-gray: #3f3f3f;
-  --dark-gray: #1f1f1f;
-  --very-gray: #141414;
+  --light-gray: #333333;
+  --dark-gray: #1b1b1b;
+  --very-gray: #111111;
+  --code-green: #00b400;
   --font-lg: 1.1em;
   --font-md: 1.0em;
   --font-sm: 0.8em;
@@ -30,6 +31,9 @@ html, body, #root {
   margin: 0;
   padding: 0;
 }
+body {
+  background: var(--very-gray);
+}
 a {
   color: inherit;
   user-select: none;
@@ -46,7 +50,7 @@ a:focus, button:focus {
 /* ----------------- LAYOUT ----------------- */
 .main {
   min-height: calc(100vh - var(--nav-height));
-  padding: var(--nav-height) var(--gap) 0 var(--gap);
+  padding: var(--nav-height) 25px 0 25px;
 }
 /* ---------------- LIGHTBOX ---------------- */
 .ril__image {
@@ -70,3 +74,11 @@ a:focus, button:focus {
   }
 }
 
+::selection {
+  color: var(--code-green);
+  background: var(--light-gray);
+}
+::-moz-selection {
+  color: var(--code-green);
+  background: var(--light-gray);
+}

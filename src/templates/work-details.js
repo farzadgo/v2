@@ -11,10 +11,22 @@ const WorkDetails = ({ data }) => {
 
   const [gallery, setGallery] = useState([])
   const { html } = data.markdownRemark
-  const { title, video } = data.markdownRemark.frontmatter
-  const info = { directory: 'Works', workTitle: title }
+  const {
+    categories,
+    collabs,
+    date, exhibition,
+    imagenotes,
+    links,
+    location,
+    photocredits,
+    title,
+    videos
+  } = data.markdownRemark.frontmatter
+  // const { title, videos } = data.markdownRemark.frontmatter
+  const info = { directory: 'works', workTitle: title }
   const images = data.allFile.nodes
   const cover = images[0]
+  console.log(data)
 
   const [showLightbox, setShowLightbox] = useState(false)
   const [selectedImage, setSelectedImage] = useState(null)
@@ -35,7 +47,7 @@ const WorkDetails = ({ data }) => {
   }
 
   useEffect(() => {
-    video ? setGallery(images) : setGallery(images.slice(1, images.length))
+    videos ? setGallery(images) : setGallery(images.slice(1, images.length))
 
     if (showLightbox) {
       document.body.style.overflow = 'hidden'
@@ -47,7 +59,7 @@ const WorkDetails = ({ data }) => {
       document.body.style.paddingRight = '0px'
       // document.removeEventListener('wheel', e => e.preventDefault(), { passive: false })
     }
-  }, [showLightbox, images, video])
+  }, [showLightbox, images, videos])
 
 
   return (
@@ -64,7 +76,7 @@ const WorkDetails = ({ data }) => {
             className={styles.html}
             dangerouslySetInnerHTML={{__html: html}}
           />
-          <Cover video={video} cover={cover}/>
+          <Cover videos={videos} cover={cover}/>
         </div>
   
         <div className={styles.secondContainer}>
@@ -100,7 +112,9 @@ const WorkDetails = ({ data }) => {
 export default WorkDetails
 
 
-const Cover = ({ video, cover }) => {
+const Cover = ({ videos, cover }) => {
+  console.log(cover)
+  const video = videos ? videos[0] : null
   const VideoFrame = () => {
     return (
       <div style={{padding: '56.25% 0 0 0', position: 'relative'}}>
@@ -118,6 +132,7 @@ const Cover = ({ video, cover }) => {
   return (
     <div className={styles.cover}>
       {video ? <VideoFrame /> : <Img fluid={cover.childImageSharp.fluid} />}
+      {/* <Img fluid={cover.childImageSharp.fluid} /> */}
     </div>
   )
 }
@@ -129,14 +144,15 @@ export const query = graphql`
       html
       frontmatter {
         title
-        video
-        thumb {
-          childImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
+        date
+        videos
+        categories
+        exhibition
+        collabs
+        links
+        location
+        photocredits
+        imagenotes
       }
     }
     allFile(filter: {
@@ -147,7 +163,7 @@ export const query = graphql`
         name
         id
         childImageSharp {
-          fluid(maxWidth: 1200, quality: 100) {
+          fluid(maxWidth: 1920, quality: 100) {
             ...GatsbyImageSharpFluid
           }
         }

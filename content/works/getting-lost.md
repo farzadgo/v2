@@ -1,27 +1,33 @@
 ---
 title: Getting lost in the Neighborhood
-date: '2020-06-01'
+date: '2021-08'
 slug: getting-lost
 thumb: ./_thumbs/getting-lost.jpg
-video: '497023117'
+categories:
+  - video installation
+  - exhibition
+  - theory
+exhibition: Temporal Redirections
+collabs:
+location: Open Space Domshof Bremen
+videos:
+  - '591426969'
+imagenotes:
+  - description one
+  - description two
+  - description three
+photocredits:
+links: 
+  - https://influencerstaubenheim.de/kalender/kunst-design/delay-2.html
 ---
 
-***Adrift*** deconstructs Google Maps direction text* and by doing so it offers a new set of directions based on the original one, thus it enables the performers to get lost in their very own environment. "Getting lost" refers to the perception of the urban fabric in a different way than what we usually experience in **everyday life**.
+The two channel video installation depicting a drift performance using Adrift app in Viertel neighborhood of Bremen. The performers are 
 
-During the walk to nowhere, the performers are being asked a set of questions regarding the surrounding and offered the opportunity to record the answers in the form of conversations between them, hoping to initiate another level of observation and meaning-making through the act of walking and mapping.
+The exhibition of master's projects by master's students in digital media Bremen. The exhibitions included projects ranging from multimedia installations to performances and video projections. Playing with the term "Temporal Redirections" is a way to summarize, joke, reflect, and exorcise the long gestation of this exhibition, which was actually scheduled for April 2021, in hopes of a good ending.
 
-Photo credits: Carla Anacker
-
-<!-- -->
-
+<!--
 - `type` Performance, Web development and design
 - `part of` Digital Media Master Project
 - `when` June 2020
 - `where` Bremen
-
-<!-- -->
-
-- [Adrift app](https://adrift.city)
-- [The Dynamic Archive](https://thedynamicarchive.net/component/how-to-get-lost-in-the-neighborhood)
-- [Source code v1](https://github.com/farzadgo/adrift-js)
-- [Source code v2](https://github.com/farzadgo/adrift-react)
+-->

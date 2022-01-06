@@ -1,47 +1,24 @@
-import React, { useState, useEffect } from 'react'
-import logo from '../images/logo.png'
+import React, { useEffect } from 'react'
 
 const Loader = ({ finishLoading }) => {
-
-  const [isMounted, setIsMounted] = useState(false)
-
-  // const animate = () => {
-  //   setTimeout(() => finishLoading(), 2000)
-  // }
 
   const style = {
     position: 'fixed',
     width: '100%',
     height: '100%',
     overflow: 'hidden',
-    backgroundColor: isMounted ? 'black' : 'black',
+    backgroundColor: 'tomato',
     zIndex: '10',
-    transition: 'all 0.5s ease',
-  }
-
-  const logoStyle = {
-    position:'absolute',
-    left: '50%',
-    top: '50%',
-    transform: 'translate(-50%, -50%)',
-    width: '120px'
+    transition: 'all 0.6s ease',
   }
 
   useEffect(() => {
-    // setIsMounted(true)
-    const timeout = setTimeout(() => setIsMounted(true), 10)
-    const animate = () => {
-      setTimeout(() => finishLoading(), 2000)
-    }
-    animate()
+    const timeout = setTimeout(() => finishLoading(), 1000)
     return () => clearTimeout(timeout)
   }, [finishLoading])
 
-
   return (
-    <div style={style}>
-      <img src={logo} alt="Logo" style={logoStyle}/>
-    </div>
+    <div style={style}></div>
   )
 }
 
