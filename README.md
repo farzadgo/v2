@@ -4,7 +4,7 @@
   </a>
 </p>
 <h1 align="center">
-  fagose.me
+  fagosemi.xyz
 </h1>
 <p align="center">
   The second version of my personal website built with <a href="https://www.gatsbyjs.org/" target="_blank">Gatsby</a> and hosted with <a href="https://www.netlify.com/" target="_blank">Netlify</a>
