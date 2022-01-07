@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import * as styles from '../styles/components/Footer.module.css'
 import { colors, sizes } from '../config'
 
 
@@ -8,11 +7,21 @@ const Footer = ({ info }) => {
   const { directory, workTitle } = info
   const [home, setHome] = useState(false)
 
-  const style = {
+  const footStyle = {
     display: home ? 'none' : 'flex',
     height: sizes.navHeight,
     backgroundColor: colors.darkGray,
     color: colors.lightWhite,
+    alignItems: 'center',
+    padding: '0 var(--gap)',
+    fontFamily: 'var(--code-font)',
+    fontWeight: 300,
+    fontSize: 'var(--font-sm)',
+  }
+
+  const noteStyle = {
+    whiteSpace: 'nowrap',
+    overflow: 'hidden'
   }
 
   useEffect(() => {
@@ -22,8 +31,8 @@ const Footer = ({ info }) => {
   }, [workTitle, directory])
 
   return (
-    <footer className={styles.footer} style={style}>
-      <p className={styles.note}> Designed /developed by Farzad Golghasemi - 2021 </p>
+    <footer style={footStyle}>
+      <p style={noteStyle}> Designed /developed by Farzad Golghasemi - 2021 </p>
     </footer>
   )
 }

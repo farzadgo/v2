@@ -7,13 +7,15 @@ thumb:
 ## Education
 
 - *2018 – present* <p>Master of Arts (M.A.) — Digital Media — University of the Arts (HfK) — Bremen DE</p>
-- *2016 – 2018*	<p>Master of Architecture (M.Arch.) — Middle East Technical University — Ankara TR</p>
+<!-- - *2016 – 2018*	<p>Master of Architecture (M.Arch.) — Middle East Technical University — Ankara TR</p> -->
 - *2009 – 2014*	<p>Bachelor of Architecture (B.Arch.) — Middle East Technical University — Ankara TR</p>
 
 <br>
 
 ## Artistic Practice
 
+<!-- here goes photography for Irena -->
+<!-- here goes book photography for TDA -->
 - *2021-10* <p>**3D Artist** — in collaboration with artist Gabriela Valdespino — Video work for the semester opening — HfK Bremen</p>
 - *2021-09* <p>**3D Artist** — in collaboration with artists Mona Mahall and Asli Serbest for the work *Digital Twin* — part of Studio Bosporus Festival — Kunstraum Kreuzberg/Bethanien Berlin</p>
 - *2021-07*	<p>**3D Artist** — in collaboration with artist Aria Farajnejad for their work *Listening to the Rainbirds* — BLG Forum Bremen</p>
@@ -50,7 +52,6 @@ thumb:
 - *2020-03* <p>**DJ** — Domestic Tales live @ Radio Angrezi 2020 — *[link](https://soundcloud.com/dis_orient/domestic-tales)*</p>
 - *2020-09* <p>**Group Performance** — *Muhatap* (مخاطب) @ Conditions of a Necessity Assembly — Kunsthalle Baden-Baden  — *[link](https://conditionsofanecessity.net/)*</p>
 
-<!-- chaos-office-2021 -->
 <br>
 
 ## Residencies

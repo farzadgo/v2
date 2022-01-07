@@ -2,7 +2,6 @@ import React from 'react'
 import Img from 'gatsby-image'
 import LightB from 'lightbox-react'
 import 'lightbox-react/style.css'
-import * as styles from '../styles/components/Lightbox.module.css'
 
 
 const Lightbox = ({
@@ -13,11 +12,20 @@ const Lightbox = ({
   handleNextRequest,
 }) => {
 
+  const style = {
+    position: 'relative',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    maxWidth: '80%',
+    height: '100%'
+  }
+
   const array = []
   images.forEach(image =>
     array.push(<Img 
       fluid={image.childImageSharp.fluid}
-      className={styles.lbImg}
+      style={style}
       imgStyle={{ objectFit: 'contain' }}
     />)
   )

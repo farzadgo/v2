@@ -9,7 +9,6 @@
 .spinner {
   width: 60px;
   height: 60px;
-  /* background-color: var(--light-white); */
   border: 1px solid var(--light-white);
   -webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;
   animation: sk-rotateplane 1.2s infinite ease-in-out;
