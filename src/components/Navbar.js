@@ -6,7 +6,7 @@ import { debounce } from '../utilities/helpers'
 import { pages, colors, sizes } from '../config'
 
 
-const Navbar = ({ info /*setToggle*/ }) => {
+const Navbar = ({ info }) => {
 
   const data = useStaticQuery(graphql`
     query WorkList {
@@ -100,10 +100,8 @@ const NavItem = ({ home, list, deep, children }) => {
   const handleClickOn = () => {
     if (list) {
       setOpen(!open)
-    } else if (!home) {
+    } else if (!home || !list) {
       navigate("/")
-    } else {
-      console.log('fagosemi.xyz')
     }
   }
 

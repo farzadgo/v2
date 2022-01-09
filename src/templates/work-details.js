@@ -22,11 +22,10 @@ const WorkDetails = ({ data }) => {
     title,
     videos
   } = data.markdownRemark.frontmatter
-  // const { title, videos } = data.markdownRemark.frontmatter
   const info = { directory: 'works', workTitle: title }
   const images = data.allFile.nodes
   const cover = images[0]
-  console.log(data)
+  // console.log(data)
 
   const [showLightbox, setShowLightbox] = useState(false)
   const [selectedImage, setSelectedImage] = useState(null)
