@@ -26,32 +26,17 @@ To walk is to give yourself access to a full experience of the path which leads 
 
 **t owalk thec ity** invites you to recreate momentary perspectives of the artists in your own three dimensional experience. In a digital drawing on a continuous fabric sourced from cloud based metadata about individual dynamics in the urban fabric during two years time you are invited to learn about the aesthetics of visualizing such information.
 
-<!--
-- `with` Lucas Jasper Kalmus
-- `type` Installation
-- `part of` <p> Group Exhibition: *How to Situate Spaces of Uncertainty* </p>
-- `when` 12—14 March 2020
-- `where` <p> *Circa 106* - Bremen </p>
- -->
+
+- `type` installation – exhibition
+- `when` March 2020
+- `collaboration` Lucas Jaspar Kalmus
+- `exhibition` How to Situate Spaces of Uncertainty
+- `where` Circa 106 Bremen
+- `photo credits` Victor Artiga Rodriguez
+
+<!--  -->
 
 - [Exhibition](https://circa106.info/exhibitions/spaces-of-uncertainty/)
 - [Announcement](https://www.hfk-bremen.de/en/events/circa-106-how-situate-spaces-uncertainty)
-- [Open call](https://www.hfk-bremen.de/en/t/neuigkeiten-und-presse/n/open-call-projectspace-circa-106)
 
-
-<!--
-
-title:
-date:
-slug:
-thumbnail: 
-categories:
-exhibition:
-collabs:
-location:
-videos:
-imagenotes:
-photocredits:
-links:
-
--->
+<!-- [Open call](https://www.hfk-bremen.de/en/t/neuigkeiten-und-presse/n/open-call-projectspace-circa-106) -->

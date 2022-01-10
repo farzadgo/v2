@@ -8,7 +8,7 @@ import { Draggable } from 'gsap/Draggable'
 import * as Icon from 'react-feather'
 import { Helmet } from 'react-helmet'
 import { debounce } from '../utilities/helpers'
-import { pages, colors } from '../config'
+import { pages, colors, sizes } from '../config'
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(Draggable);
@@ -25,15 +25,13 @@ export default function Works({ data }) {
   })
   const categories = [...new Set(allCategories.flat(1))]
   const [category, setCategory] = useState('all work')
-
-  const mobileWidth = 600
   const [width, setWidth] = useState(0)
+  const mobileWidth = sizes.mobileWidth
   
   const handleCategory = e => {
     setCategory(e.target.value)
   }
-  // console.log(category)
-
+ 
   const handleResize = debounce(() => {
     setWidth(window.innerWidth)
   }, 1000)
@@ -58,7 +56,7 @@ export default function Works({ data }) {
     return () => {
       window.removeEventListener('resize', handleResize)
     }
-  }, [handleResize, width])
+  }, [handleResize, width, mobileWidth])
 
   return (
     <Layout info={info} >
@@ -105,7 +103,7 @@ const Card = ({ index, work, length, width, mobileWidth, category }) => {
     strokeWidth: 1
   }
   // const r = (Math.floor(Math.random() * 100) / 100)
-  const {title, thumb, slug, date, exhibition, categories} = work.frontmatter
+  const {title, thumb, slug, date, categories} = work.frontmatter
   let cardWidth, pairs
   let style = {
     opacity: !selected ? 0.2 : 1

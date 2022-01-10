@@ -16,8 +16,7 @@ imagenotes:
   - images one
   - image two
   - image three
-  - image four
-photocredits:
+photocredits: Carla Anacker
 links:
   - https://adrift.city
   - https://thedynamicarchive.net/component/how-to-get-lost-in-the-neighborhood
@@ -29,13 +28,11 @@ links:
 
 During the walk to nowhere, the performers are being asked a set of questions regarding their surrounding and offered the opportunity to record answers in the form of conversations between them, hoping to initiate another level of observation and meaning-making through the act of walking and mapping.
 
-<!--
-- `type` Performance, Web development and design
-- `part of` Digital Media Master Project
+- `type` theory – web development – design
 - `when` June 2020
-- `where` Bremen
--->
+- `photo credits` Carla Anacker
 
+<!--  -->
 
 - [Adrift app](https://adrift.city)
 - [The Dynamic Archive](https://thedynamicarchive.net/component/how-to-get-lost-in-the-neighborhood)

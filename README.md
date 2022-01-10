@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://fagose.me" target="_blank">
+  <a href="https://fagosemi.xyz" target="_blank">
     <img alt="fagosemi" src="https://raw.githubusercontent.com/farzadgo/v2/master/src/images/logo.png" width="60" />
   </a>
 </p>

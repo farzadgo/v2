@@ -75,6 +75,11 @@ const WorkDetails = ({ data }) => {
             className={styles.html}
             dangerouslySetInnerHTML={{__html: html}}
           />
+          {/* <ul>
+            {links.map((e, i) => (
+            <li><a key={i} href={e} target='_blank'>click</a></li>
+            ))}
+          </ul> */}
           <Cover videos={videos} cover={cover}/>
         </div>
   
@@ -112,7 +117,7 @@ export default WorkDetails
 
 
 const Cover = ({ videos, cover }) => {
-  console.log(cover)
+  // console.log(cover)
   const video = videos ? videos[0] : null
   const VideoFrame = () => {
     return (

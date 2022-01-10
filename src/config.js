@@ -15,6 +15,7 @@ module.exports = {
 
   sizes: {
     navHeight: 60,
+    mobileWidth: 600
   },
 
   pages: {

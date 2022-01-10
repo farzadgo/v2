@@ -5,7 +5,7 @@ import { colors } from '../config'
 
 const NotFound = () => {
   const info = { directory: '', workTitle: ''}
-  const style = {
+  const notFoundStyle = {
     position: 'absolute',
     top: '50%',
     left: '50%',
@@ -17,12 +17,18 @@ const NotFound = () => {
     fontSize: '1.5em'
   }
 
+  const emojiStyle = {
+    fontSize: '1.8em'
+  }
+
   return (
     <Layout info={info}>
-      <Helmet title="Not Found" />
-      <main className="main">
-        <div style={style}>
-          <p style={{fontSize: '1.8em'}}>😱</p>
+      <Helmet title='Not Found' />
+      <main className='main'>
+        <div style={notFoundStyle}>
+          <p style={emojiStyle}>
+            <span role='img' aria-label='not found scream'>😱</span>
+          </p>
           <p>page not found</p>
         </div>
       </main>

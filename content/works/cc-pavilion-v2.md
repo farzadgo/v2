@@ -5,8 +5,8 @@ slug: cc-pavilion-v2
 thumb: ./_thumbs/cc-pavilion-v2.jpg
 categories:
   - installation
+  - fabrication
   - exhibition
-  - 3D
 exhibition: Hochschultage 2020
 collabs:
 location: Gallery Nebenflut Bremen
@@ -15,9 +15,22 @@ imagenotes:
   - images one
   - image two
   - image three
-  - image four
 photocredits:
 links:
+  - https://www.thedynamicarchive.net/component/personal-architecture
+  - https://fagosemi.xyz/works/cc-pavilion
 ---
 
-Second version of the installation was build with different fabrication methodology. 
+The second version of Co-Created Pavilion build with a different fabrication methodology. For more information about its theoretical and design background check the links below.
+
+- `type` installation – fabrication
+- `when` February 2020
+- `exhibition` HfK Hochschultage
+- `where` Gallery Nebenflut Bremen
+
+<!--  -->
+
+- [Methodology](https://www.thedynamicarchive.net/component/personal-architecture/)
+- [First version](https://fagosemi.xyz/works/cc-pavilion)
+
+

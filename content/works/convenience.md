@@ -4,8 +4,8 @@ date: 2020-06
 slug: convenience
 thumb: ./_thumbs/convenience.jpg
 categories:
-  - 3D
   - theory
+  - 3D development
 exhibition:
 collabs:
 location:
@@ -26,3 +26,11 @@ links:
 <li>a suitable time</li>
 <li>freedom from discomfort : ease</li>
 <li>designed for quick and easy preparation or use</li>
+
+- `type` theory – 3D development
+- `when` June 2020
+- `publication` Muhatap (مخاطب) by Temporary Spaces
+
+<!--  -->
+
+- 
