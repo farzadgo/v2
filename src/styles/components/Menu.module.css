@@ -56,14 +56,14 @@
   100% { border-right: 2px solid var(--code-green); }
 }
 
-@media (max-width: 600px) {
+/* @media (max-width: 600px) {
   .nav li span {
     display: none;
   }
   .nav li a {
     display: inline-block;
   }
-}
+} */
 
 /* -------------- Play Cube -------------- */
 .box-scene {

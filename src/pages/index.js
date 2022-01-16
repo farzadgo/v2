@@ -30,7 +30,8 @@ const Foyer = () => {
     position: 'absolute',
     width: '100%',
     height: '100%',
-    display: modelLoaded ? 'block' : 'none'
+    display: modelLoaded ? 'block' : 'none',
+    overflow: 'hidden'
   }
 
   const ctrlStyle = {
