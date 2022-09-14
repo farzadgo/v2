@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Layout from '../components/Layout'
 import Img from 'gatsby-image'
-import LightBox from '../components/Lightbox'
 import * as styles from '../styles/pages/WorkDetails.module.css'
 import { graphql } from 'gatsby'
 import { Helmet } from 'react-helmet'
@@ -15,10 +14,6 @@ const WorkDetails = ({ data }) => {
   const images = data.allFile.nodes
   const cover = images[0]
   const vidID = videos ? videos[0] : null
-
-  // TODO code your own lightbox image viewer
-  const [showLightbox, setShowLightbox] = useState(false)
-  const [selectedImage, setSelectedImage] = useState(null)
   const [gallery, setGallery] = useState([])
 
   
@@ -38,43 +33,8 @@ const WorkDetails = ({ data }) => {
     )
   }
 
-  const handleOpen = (event, index) => {
-    event.preventDefault()
-    let i = index
-    vidID ? setSelectedImage(i) : setSelectedImage(i + 1)
-    setShowLightbox(true)
-  }
-
-  const handleClose = event => {
-    event.preventDefault()
-    setShowLightbox(false)
-    setSelectedImage(null)
-  }
-
-  const handlePrevRequest = (i, length) => e => {
-    // event.preventDefault()
-    setSelectedImage((i - 1 + length) % length)
-  }
-
-  const handleNextRequest = (i, length) => e => {
-    // event.preventDefault()
-    setSelectedImage((i + 1) % length)
-  }
-
-  // TODO fix the page reload issue
   useEffect(() => {
     vidID ? setGallery(images) : setGallery(images.slice(1, images.length))
-
-    if (showLightbox) {
-      document.body.style.overflow = 'hidden'
-      document.body.style.paddingRight = '15px'
-      // document.addEventListener('wheel', e => e.preventDefault(), { passive: false })
-    }
-    return () => {
-      document.body.style.overflow = 'unset'
-      document.body.style.paddingRight = '0px'
-      // document.removeEventListener('wheel', e => e.preventDefault(), { passive: false })
-    }
   }, [])
 
 
@@ -96,29 +56,12 @@ const WorkDetails = ({ data }) => {
   
         <div className={styles.secondContainer}>
           {gallery.map((image, i) => (
-            <div
-              key={image.id}
-              className={styles.image}
-              role="button"
-              // ref={imgbtn}
-              tabIndex="0"
-              onClick={(e) => handleOpen(e, i)}
-              onKeyDown={(e) => handleOpen(e, i)}
-            >
+            <div key={image.id} className={styles.image}>
               <Img fluid={image.childImageSharp.fluid} />
             </div>
           ))}
         </div>
-  
-        {showLightbox && selectedImage !== null && (
-          <LightBox
-            images={images}
-            handleClose={handleClose}
-            handleNextRequest={handleNextRequest}
-            handlePrevRequest={handlePrevRequest}
-            selectedImage={selectedImage}
-          />
-        )}
+
       </main>
 
     </Layout>

@@ -14,9 +14,6 @@
   height: fit-content;
   margin-bottom: 40px;
 }
-.image {
-  pointer-events: none;
-}
 /* --------------------------- */
 .html {
   font-family: var(--sans-font);
@@ -64,7 +61,7 @@
   border: 1px solid var(--code-green);
 }
 /* ---------------- desktop ---------------- */
-@media (min-width: 1000px) {
+@media (min-width: 1080px) {
   .first-container, .second-container {
     margin: 20px 0;
   }
@@ -80,14 +77,8 @@
     padding: 10px 0 0 10px;
   }
   .image {
-    pointer-events: all;
-    width: calc(25% - 20px);
-    cursor: pointer;
+    width: calc(50% - 20px);
     margin-right: 20px;
-    margin-bottom: 20px;
-    transition: all 0.1s ease-out;
-  }
-  .image:hover {
-    opacity: 0.7;
+    margin-bottom: 60px;
   }
 }
