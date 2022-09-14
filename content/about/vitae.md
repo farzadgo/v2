@@ -14,12 +14,15 @@ thumb:
 
 ## Artistic Practice
 
+- *2022-08* <p>**3D Artist** — homepage for the project *Liminal Space* — Brighton — *[link](https://archive23.space)*</p>
+- *2022-05* <p>**3D Artist** — in collaboration with artist Aria Farajnejad for the video work *Toppled from the Horizontal Axis* — Gerhard-Marcks-Haus Bremen — *[link](https://weavingechoes.xyz/artists/aria-farajnezhad)*</p>
+- *2022-03* <p>**Co-Curator & Web** — *RESTORE_ Interdisciplinary Performances in Context* — as member of *hacer sitio corp.* collective Bremen — *[link](https://restore-bremen.space)*</p> 
 - *2021-11* <p>**Photographer** — Documentation for the book *The Dynamic Archive 3* — *[link](https://thedynamicarchive.net/page/library)*</p>
 - *2021-10* <p>**3D Artist** — in collaboration with artist Gabriela Valdespino — Video work for the semester opening — HfK Bremen</p>
 - *2021-09* <p>**3D Artist** — in collaboration with artists Mona Mahall and Asli Serbest for the work *Digital Twin* — part of Studio Bosporus Festival — Kunstraum Kreuzberg/Bethanien Berlin</p>
 - *2021-07*	<p>**3D Artist** — in collaboration with artist Aria Farajnejad for their work *Listening to the Rainbirds* — BLG Forum Bremen</p>
 - *2021-06*	<p>**3D Artist** — in collaboration with artist Nurah Farahat — 3D animation series for *Carat Footwear*</p>
-- *2021-04*	<p>**Stage Designer** — in collaboration with artist Lauren Müller — for *IRGENDWO* Kulturbeutel e.V. — Bremen</p>
+- *2021-04*	<p>**Stage Designer** — in collaboration with Lauren Müller — for *IRGENDWO* Kulturbeutel e.V. — Bremen</p>
 - *2021-03* <p>**Graphic Designer** — Booklet design for Antonia Baehr Workshop — *The Dynamic Archive*</p>
 - *2021-01* <p>**3D Artist** — in collaboration with artist Zainab Haidary for their work *Führung (So wie wir sind 2.0)* — Weserburg Museum Bremen</p>
 - *2020-12* <p>**Photographer** — Documentation for the exhibition *Untie – Unite* by Lucas Odahara und Elbruz Fidan — Circa 106 Bremen — *[link](https://circa106.info/version-room/untie-unite/)*</p>
@@ -37,6 +40,7 @@ thumb:
 
 ## Exhibitions
 
+- *2021-12* <p>Video Installation: ***Überseestock*** — part of group exhibition *Conditions of a Necessity* — Kunsthalle Baden-Baden — *[link](https://kunsthalle-baden-baden.de/en/program/conditions-of-a-necessity-3/)*</p>
 - *2021-08* <p>Two-channel Video Installation: ***How to get lost in the neighborhood*** — part of *Temporal Redirections* — Open Space Domshof Bremen — *[link](https://influencerstaubenheim.de/kalender/kunst-design/delay-2.html)*</p>
 - *2020-03* <p>Installation: ***t owalk thec ity*** — with artist Lucas Kalmus — part of *How to Situate Spaces of Uncertainty* — Circa 106 Bremen — *[link](https://circa106.info/exhibitions/spaces-of-uncertainty/)*</p>
 - *2020-02* <p>Installation: ***Co-created pavilion v2*** — part of HfK Hochschultage — Gallery Nebenflut Bremen</p>
@@ -46,6 +50,7 @@ thumb:
 
 ## Performance
 
+- *2022-06* <p>**Group Performance** — *Lacuna Inside a Dumpling* @ Hochschultage 2022 — HfK Bremen</p>
 - *2021-11* <p>**DJ** — dis&#x5f;orient live @ AStA Flutung 2021 — *[link](https://pretix.eu/hfkasta/FLUTUNG/)*</p>
 - *2021-07* <p>**DJ** — dis&#x5f;orient live @ Chaos Office 2021 — *[link](https://soundcloud.com/dis_orient/chaos-office-2021)*</p>
 - *2020-03* <p>**DJ** — Domestic Tales live @ Radio Angrezi 2020 — *[link](https://soundcloud.com/dis_orient/domestic-tales)*</p>
@@ -62,6 +67,7 @@ thumb:
 
 ## Working Experience
 
+- *2022-04 – present* <p>**Fellow Artist & Web Developer** @ nota association — Berlin — *[link](https://nota.space)* </p>
 - *2021-07 – 2021-10* <p>**Web Designer** @ collectAI GmbH — Hamburg</p>
 - *2019-06 – 2021-05* <p>**UI/UX Designer** @ BIBA GmbH — Bremen</p>
 - *2019-08 – 2021-03* <p>**Research Assistant** @ *The Dynamic Archive* — HfK Bremen — *[link](https://thedynamicarchive.net/page/about)*</p>
