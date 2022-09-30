@@ -52,7 +52,7 @@ const Foyer = () => {
     let animID
     const GRAVITY = 30
     const STEPS_PER_FRAME = 5
-    const modelUrl = 'https://res.cloudinary.com/dd3tumnu6/image/upload/v1664447654/getlost-models/fagosemi-getlost-a_gjubs2.glb'
+    const modelUrl = 'https://res.cloudinary.com/dd3tumnu6/image/upload/v1664537341/getlost-models/fagosemi-getlost-c_ggxqxl.glb'
 
     // CLOCK & SCENE & CAMERA
     const clock = new THREE.Clock()
@@ -65,18 +65,18 @@ const Foyer = () => {
     // camera.position.z = 5
 
     // LIGHTS
-    const ambientlight = new THREE.AmbientLight(0xFFF2FB, 1.0)
+    const ambientlight = new THREE.AmbientLight(0xFFFFFF, 1.0)
     scene.add(ambientlight)
 
     // const fillLight1 = new THREE.DirectionalLight(0xFF9999, 0.1)
     // fillLight1.position.set(- 1, 1, 2)
     // scene.add(fillLight1)
 
-    const fillLight2 = new THREE.DirectionalLight(0x8888FF, 0.2)
+    const fillLight2 = new THREE.DirectionalLight(0xFFFFFF, 0.2)
     fillLight2.position.set(0, - 1, 0)
     scene.add(fillLight2)
 
-    const directionalLight = new THREE.DirectionalLight(0xFFFFAA, 1.2)
+    const directionalLight = new THREE.DirectionalLight(0xFFFFFF, 1.2)
     directionalLight.position.set(- 5, 25, - 1)
     directionalLight.castShadow = true;
     directionalLight.shadow.camera.near = 0.01
