@@ -9,6 +9,7 @@ import * as THREE from 'three'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { Octree } from 'three/examples/jsm/math/Octree.js'
 import { Capsule } from 'three/examples/jsm/math/Capsule.js'
+import { Sky } from 'three/examples/jsm/objects/Sky';
 
 
 const Foyer = () => {
@@ -64,19 +65,15 @@ const Foyer = () => {
     camera.rotation.order = 'YXZ'
     // camera.position.z = 5
 
-    // LIGHTS
-    const ambientlight = new THREE.AmbientLight(0xFFFFFF, 1.0)
+    // --------------- LIGHTS ---------------
+    const ambientlight = new THREE.AmbientLight(0xFFFFFF, 0.8)
     scene.add(ambientlight)
 
-    // const fillLight1 = new THREE.DirectionalLight(0xFF9999, 0.1)
-    // fillLight1.position.set(- 1, 1, 2)
-    // scene.add(fillLight1)
+    const hemlight = new THREE.HemisphereLight(0xFFFFFF, 0x444444, 1)
+    hemlight.position.set(- 2, 2, 2)
+    scene.add(hemlight)
 
-    const fillLight2 = new THREE.DirectionalLight(0xFFFFFF, 0.2)
-    fillLight2.position.set(0, - 1, 0)
-    scene.add(fillLight2)
-
-    const directionalLight = new THREE.DirectionalLight(0xFFFFFF, 1.2)
+    const directionalLight = new THREE.DirectionalLight(0xFFFFFF, 0.3)
     directionalLight.position.set(- 5, 25, - 1)
     directionalLight.castShadow = true;
     directionalLight.shadow.camera.near = 0.01
@@ -91,9 +88,22 @@ const Foyer = () => {
     directionalLight.shadow.bias = - 0.00006
     scene.add(directionalLight)
 
-    // const light = new THREE.HemisphereLight(0xffffff, 0x444444, 1);
-    // light.position.set(- 2, 2, 2)
-    // scene.add(light.clone())
+    // ------ sky shader ------
+    const sky = new Sky();
+    sky.scale.setScalar(450000);
+    scene.add(sky);
+
+    const uniforms = sky.material.uniforms;
+    uniforms['turbidity'].value = 4.5;
+    uniforms['rayleigh'].value = 1.66;
+    uniforms['mieCoefficient'].value = 0.076;
+    uniforms['mieDirectionalG'].value = 0.223;
+
+    const sun = new THREE.Vector3();
+    const phi = THREE.MathUtils.degToRad(87.6);   // elevation
+		const theta = THREE.MathUtils.degToRad(180);  // azimuth
+    sun.setFromSphericalCoords(1, phi, theta);
+		uniforms['sunPosition'].value.copy(sun);
 
     // CONTAINER & RENDERER & LOADER
     const container = document.querySelector('.webgl-container')
@@ -101,8 +111,14 @@ const Foyer = () => {
     const renderer = new THREE.WebGLRenderer({antialias: true})
     renderer.setPixelRatio(window.devicePixelRatio)
     renderer.setSize(window.innerWidth, window.innerHeight)
+    renderer.outputEncoding = THREE.sRGBEncoding
+
     renderer.shadowMap.enabled = true
     renderer.shadowMap.type = THREE.VSMShadowMap
+
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    renderer.toneMappingExposure = 0.48;
+
     container.appendChild(renderer.domElement)
 
     const worldOctree = new Octree()
