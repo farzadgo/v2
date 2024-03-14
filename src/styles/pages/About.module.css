@@ -1,75 +1,105 @@
-.header {
-  display: none;
-}
 .body {
-  position: relative;
-  max-width: 1000px;
-  left: 50%;
-  transform: translateX(-50%);
-  color: var(--light-white);
+  width: 100%;
+  overflow-y: auto;
+  margin-top: var(--nav-height);
+  padding: var(--padding);
+  transition: opacity 0.2s ease-in-out;
   font-family: var(--sans-font);
   font-size: var(--font-md);
   line-height: var(--line-height);
-  font-weight: 100;
 }
-/* --------------------------------- */
-.bio {
-  margin: 20px 0 40px;
+
+.body > * {
+  margin-bottom: 40px;
+  max-width: 980px;
 }
-.bio p {
-  margin-top: 20px;
+
+/* --------- bio (html) ---------- */
+.bio > p {
+  margin-bottom: 1.5rem;
 }
-.bio p:first-of-type {
-  margin-top: 0;
+
+/* ---------- contact ----------- */
+.contact > div {
+  display: flex;
+  gap: 20px;
+  align-items: center;
 }
-.profile {
-  max-width: 480px;
-  margin: 0 auto;
+.contact svg { 
+  stroke-width: 1;
+  height: var(--fontmd);
+  width: var(--font-md);
 }
-/* --------------------------------- */
-.vitae {
-  margin: 50px 0;
-  font-size: var(--font-sm);
+
+/* ------------ print ------------ */
+.print {
+  display: flex;
+  justify-content: center;
 }
-.vitae h2 {
-  font-size: 1.2em;
-  margin-bottom: 15px;
+.print button {
+  display: flex;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+@media print {
+  .body {
+    margin-top: 0;
+  }
+  .print,
+  .imprint {
+    display: none;
+  }
+}
+
+/* ---------- cv (html) ---------- */
+.vitae > h2 {
+  position: relative;
+  font-size: var(--font-lg);
+  margin-bottom: 2.5rem;
+  padding-top: 2.5rem;
 }
 .vitae > ul > li {
-  line-height: 1.5em;
-  margin-bottom: 1.0em;
+  margin-bottom: 2rem;
 }
-.vitae > ul > li > em {
-  font-style: normal;
+.vitae > ul > li > p {
+  padding-top: 0.6rem;
 }
-.vitae li a {
-  font-family: var(--code-font);
-  color: var(--code-green);
+.vitae a {
+  text-decoration: #5a5a5a underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
 }
-/* --------------------------------- */
+.vitae > ul:last-child {
+  margin-bottom: 150px;
+}
+
+/* ----------- imprint ----------- */
 .imprint {
-  margin-bottom: 40px;
+  font-size: calc(var(--font-sm) * 0.9);
   padding: 20px 20px 10px;
-  background-color: var(--dark-gray);
+  border: 1px dotted var(--light-gray);
 }
 .imprint p {
-  font-size: var(--font-sm);
-  line-height: 1.8em;
-  margin-bottom: 10px;
+  margin-bottom: 1.5rem;
 }
-/* ------------ desktop ------------ */
-@media (min-width: 600px) {
-  .profile {
-    margin: 0 auto 0 165px;
-  }
-  .bio p, .vitae ul {
-    font-size: var(--font-md);
+
+
+/* ----------- desktop ----------- */
+@media (min-width: 900px), print {
+  .vitae > h2 {
+    left: 220px;
   }
   .vitae > ul > li {
     display: flex;
   }
   .vitae > ul > li > em {
-    min-width: 165px;
+    font-style: normal;
+    min-width: 220px;
     word-break: normal;
+  }
+  .vitae > ul > li > p {
+    padding-top: 0;
   }
 }

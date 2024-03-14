@@ -1,22 +1,29 @@
-/* Lekton, Roboto Mono, IBM Plex, Jost, Quicksand */
-@import url('https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100;0,200;0,400;0,800;1,100;1,200;1,400;1,800&family=Quicksand:wght@300;600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,200;0,400;0,600;1,200;1,400;1,600&display=swap');
+/* Lekton, Roboto Mono, IBM Plex, Jost, Quicksand, Overpass */
+
+@import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,200;0,300;0,400;0,600;1,200;1,300;1,400;1,600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic&display=swap');
+
 :root {
-  --sans-font: 'Overpass', 'Helvetica', 'Trebuchet MS', 'Arial', sans-serif;
+  --sans-font: 'Roboto', 'Helvetica', 'Trebuchet MS', 'Arial', 'Noto Naskh Arabic', sans-serif;
   --text-font: 'Bitter', 'Georgia', 'Times New Roman', Times, serif;
   --code-font: 'Inconsolata', 'Consolas', 'Menlo', 'Courier New' , monospace;
-  --light-white: #e0e0e0;
-  --dark-white: #bababa;
-  --light-gray: #333333;
-  --dark-gray: #1b1b1b;
-  --very-gray: #111111;
-  --code-green: #00b400;
-  --font-lg: 1.1em;
-  --font-md: 1.0em;
-  --font-sm: 0.8em;
-  --line-height: 1.8em;
-  --gap: 15px;
+  
+  --very-white: hsl(0, 0%, 93%);
+  --light-white: hsl(0, 0%, 88%);
+  --dark-white: hsl(0, 0%, 73%);
+  --light-gray: hsl(0, 0%, 22%);
+  --dark-gray: hsl(0, 0%, 9%);
+  --very-gray: hsl(0, 0%, 6%);
+  /* #c069ff; #cb49ff; */
+
+  --font-lg: 1.4rem;
+  --font-md: 1.1rem;
+  --font-sm: 0.95rem;
+  --line-height: 1.5;
+
+  --padding: 15px;
   --nav-height: 60px;
 }
 * {  
@@ -28,57 +35,89 @@
 html, body, #root {
   height: 100%;
   width: 100%;
-  margin: 0;
-  padding: 0;
 }
 body {
-  background: var(--very-gray);
+  /* background: var(--dark-gray);
+  color: var(--dark-white); */
+  background: var(--very-white);
+  color: var(--dark-dark);
+  font-family: var(--sans-font);
+  font-weight: 300;
 }
 a {
   color: inherit;
-  user-select: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
 }
 a:link, a:visited, a:active {
   text-decoration: none;
 }
-a:focus, button:focus {
-  outline: none;
+a:hover {
+  font-style: italic;
+  font-family: var(--text-font);
+  /* font-weight: 300; */
 }
+strong, b, h1, h2, h3, h4, h5, h6 {
+  font-weight: 500;
+}
+
 /* ----------------- LAYOUT ----------------- */
 .main {
-  min-height: calc(100vh - var(--nav-height));
-  padding: var(--nav-height) 25px 0 25px;
+  display: flex;
+  height: 100vh;
+  height: 100dvh;
+  width: 100%;
 }
-/* ---------------- LIGHTBOX ---------------- */
-.ril__image {
-  height: 90vh;
-}
-/* ---------------- DESKTOP ----------------- */
-@media (min-width: 900px) {
-  :root {
-  --font-lg: 1.2em;
-  --font-md: 1.1em;
-  --font-sm: 0.9em;
-  --line-height: 2em;
-  --gap: 30px;
-  }
-  ::-webkit-scrollbar { width: 15px; height: 15px; }
-  ::-webkit-scrollbar-track { background-color: var(--dark-gray); }
-  ::-webkit-scrollbar-thumb {
-    background-color: var(--dark-white);
-    background-clip: content-box;
-    border: 4px solid rgba(0, 0, 0, 0);
+
+@media print {
+  .main {
+    display: block;
   }
 }
 
-::selection {
-  color: var(--code-green);
-  background: var(--light-gray);
+/* ----------------- GALLERY ----------------- */
+.gallery {
+  white-space: nowrap;
+  /* % IMPORTANT */
+  width: calc(100% + var(--padding));
+  overflow-x: scroll;
+  overflow-y: hidden;
+  padding-top: var(--padding);
+  margin-bottom: calc(var(--padding) * 2);
 }
-::-moz-selection {
-  color: var(--code-green);
-  background: var(--light-gray);
+.audio-container,
+.video-container {
+  max-width: 700px;
+  padding-top: calc(var(--padding) * 1.5);
+  margin-bottom: var(--padding);
+}
+.audio-container audio {
+  width: 100%;
+}
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* ---------------- DESKTOP ----------------- */
+@media (min-width: 900px) {
+  :root {
+  --font-lg: 1.7rem;
+  --font-md: 1.3rem;
+  --font-sm: 1.1rem;
+  --padding: 30px;
+  }
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--dark-white);
+    border-radius: 5px;
+  }
+
+  .gallery {
+    width: calc(100% + var(--padding) * 1.5);
+  }
 }

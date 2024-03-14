@@ -7,46 +7,33 @@ module.exports = {
     'gatsby-plugin-robots-txt',
     'gatsby-plugin-offline',
     'gatsby-plugin-netlify',
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-sharp',
+    'gatsby-plugin-image', // for images
+    'gatsby-plugin-sharp', // to customize images (e.g. placeholder, formats) here
+    'gatsby-transformer-sharp', // with this in GraphQL we can resize, crop, etc.
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
         name: 'Farzad Golghasemi',
         short_name: 'Farzad Golghasemi',
         start_url: '/',
-        background_color: 'white',
-        theme_color: config.colors.darkGray,
+        background_color: '#ededed',
+        theme_color: '#383838',
         display: 'standalone',
         icon: './src/images/logo.png',
       },
     },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-source-filesystem', // for static images (assets)
       options: {
-        name: `images`,
+        name: 'images',
         path: `${__dirname}/src/images`,
       },
     },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-source-filesystem',
       options: {
         name: 'content',
         path: `${__dirname}/content/`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `about`,
-        path: `${__dirname}/content/about`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `works`,
-        path: `${__dirname}/content/works`,
       },
     },
     {
@@ -67,7 +54,7 @@ module.exports = {
   siteMetadata: {
     title: 'Farzad Golghasemi',
     description:
-      'Farzad Golghasemi is an intermedia artist and designer who is working on developing projects regarding the critique of urban geography and everyday life through employing digital technologies such as the 3D CGI, Web and mobile devices.',
+      'Farzad Golghasemi is an interdisciplinary artist and researcher who focuses on architecture and spatial production through the agency of technology. By incorporating speculation, programming, and 3D modeling they explore the new modes of world-making through synthetic and temporal aspects of construction.',
     siteUrl: 'https://fagosemi.xyz',
     image: '/og.png',
     authorName: 'Farzad Golghasemi',

@@ -6,3 +6,16 @@ export const debounce = (callback, wait) => {
     timeout = setTimeout(next, wait)
   }
 }
+
+// export const throttle = (callback, limit) => {
+//   let throttling = false;
+//   return (...args) => {
+//     if (!throttling) {
+//       throttling = true;
+//       callback(...args);
+//       setTimeout(() => {
+//         throttling = false;
+//       }, limit);
+//     }
+//   }
+// }

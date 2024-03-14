@@ -1,40 +1,105 @@
-import React, { useState, useEffect } from 'react'
-import Layout from '../components/Layout'
-import Img from 'gatsby-image'
+import React, { useEffect, useRef, useState } from 'react';
+import { createRoot } from 'react-dom/client';
+import Layout from '../components/Layout';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import * as styles from '../styles/pages/WorkDetails.module.css'
-import { graphql } from 'gatsby'
-import { Helmet } from 'react-helmet'
+import { graphql } from 'gatsby';
+import { Helmet } from 'react-helmet';
+import WorkList from '../components/WorkList';
 
+const isBrowser = typeof window !== 'undefined';
 
 const WorkDetails = ({ data }) => {
-
-  const {html} = data.markdownRemark
-  const {title, videos} = data.markdownRemark.frontmatter
-  const info = {directory: 'works', workTitle: title}
-  const images = data.allFile.nodes
-  const cover = images[0]
-  const vidID = videos ? videos[0] : null
-  const [gallery, setGallery] = useState([])
-
   
-  const VideoFrame = () => {
-    let video = vidID ? vidID : null
-    return (
-      <div style={{padding: '56.25% 0 0 0', position: 'relative'}}>
-        <iframe
-          title={video}
-          src={`https://player.vimeo.com/video/${video}`}
-          style={{position: 'absolute', top: '0', left: '0', width:'100%', height: '100%'}}
-          frameBorder="0"
-          allow="autoplay; fullscreen; picture-in-picture"
-          allowFullScreen
-        />
-      </div>
-    )
+  const { html } = data.markdownRemark;
+  const { title } = data.markdownRemark.frontmatter;
+  const images = data.allFile.nodes;
+
+  const info = {directory: 'works', workTitle: title};
+  const htmlRef = useRef(null);
+
+  const [showAlt, setShowAlt] = useState(true);
+  const altGalleryRef = useRef(null);
+
+  const [root, setRoot] = useState(null);
+  
+  const [show, setShow] = useState(0);
+  const [width, setWidth] = useState(isBrowser && window.innerWidth);
+  
+
+  const groupImages = (imgs) => {
+    const grouped = {}
+    imgs.forEach((img) => {
+      const prefix = img.name.split('_')[0]
+      if (!grouped[prefix]) {
+        grouped[prefix] = []
+      }
+      grouped[prefix].push(img)
+    })
+    return grouped
   }
 
+  const appendImages = (container, imgs) => {
+    const images = imgs.map((img) => {
+      return (
+        <div key={img.id} className={styles.image}>
+          <GatsbyImage
+            image={getImage(img)}
+            alt={img.name}
+          />
+        </div>
+      )
+    });
+
+    const credits = container.getAttribute('data-credits');
+    const caption = credits ? <div key={container.className} className={styles.caption}> {credits} </div> : null;
+
+    if (!root) {
+      let root = createRoot(container);
+      setRoot(root);
+      let allContent = [caption, images];
+      // root.render(images);
+      root.render(allContent);
+    }
+  }
+
+  const appendImagesInGroups = (container, imgs) => {
+    // console.log(imgs);
+    const groups = groupImages(imgs);
+    Object.keys(groups).forEach((prefix) => {
+      const imgContainer = container.querySelector(`.${prefix}`);
+      if (groups[prefix]) {
+        appendImages(imgContainer, groups[prefix]);
+      }
+    })
+  }
+
+
   useEffect(() => {
-    vidID ? setGallery(images) : setGallery(images.slice(1, images.length))
+
+    setTimeout(() => {
+      setShow(1);
+    }, 100);
+
+    if (htmlRef.current) {
+      let imageContainers = htmlRef.current.querySelectorAll('.gallery');
+      if (imageContainers.length > 1) {
+        appendImagesInGroups(htmlRef.current, images);
+        setShowAlt(false);
+      } else if (imageContainers.length === 1) {
+        appendImages(imageContainers[0], images);
+        setShowAlt(false);
+      } else {
+        if (images.length > 0) {
+          appendImages(altGalleryRef.current, images);
+        } else {
+          setShowAlt(false);
+        }
+      }
+    }
+
+    window.addEventListener('resize', () => setWidth(window.innerWidth));
+    return () => window.removeEventListener('resize', () => setWidth(window.innerWidth));
   }, [])
 
 
@@ -43,27 +108,15 @@ const WorkDetails = ({ data }) => {
       <Helmet title={title} />
       <main className="main">
 
-        <header className={styles.header}>
-          <h1>{title}</h1>
-        </header>
-  
-        <div className={styles.firstContainer}>
-          <div className={styles.html} dangerouslySetInnerHTML={{__html: html}} />
-          <div className={styles.cover}>
-            {vidID ? <VideoFrame /> : <Img fluid={cover.childImageSharp.fluid} />}
-          </div>
-        </div>
-  
-        <div className={styles.secondContainer}>
-          {gallery.map((image, i) => (
-            <div key={image.id} className={styles.image}>
-              <Img fluid={image.childImageSharp.fluid} />
-            </div>
-          ))}
+        {width > 900 && <WorkList dir={'../'}/>}
+
+        <div className={styles.container} style={{opacity: show}}>
+          <header><h1 style={{display: 'none'}}> {title} </h1></header>
+          <div className={styles.html} dangerouslySetInnerHTML={{__html: html}} ref={htmlRef}/>
+          {showAlt && <div><div ref={altGalleryRef} className='gallery'></div></div>}
         </div>
 
       </main>
-
     </Layout>
   )
 }
@@ -78,27 +131,21 @@ export const query = graphql`
       frontmatter {
         title
         date
-        videos
-        categories
-        exhibition
-        collabs
-        links
-        location
-        photocredits
-        imagenotes
       }
     }
     allFile(filter: {
       extension: {regex: "/(jpg)|(png)|(jpeg)/"}, relativeDirectory: {eq: $dir}}
-      sort: {fields: name}
+      sort: {name: ASC}
     ) {
       nodes {
         name
         id
         childImageSharp {
-          fluid(maxWidth: 1920, quality: 100) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(
+            quality: 90,
+            layout: CONSTRAINED,
+            placeholder: BLURRED,
+          )
         }
       }
     }

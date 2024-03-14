@@ -1,12 +1,7 @@
 ---
 title: imprint
 order: 3
-thumb:
 ---
-
-***fagosemi.xyz***
-
-<br>
 
 **Imprint**
 

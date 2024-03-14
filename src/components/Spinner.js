@@ -1,26 +1,11 @@
-import React, { useEffect, useState } from 'react'
-import * as styles from '../styles/components/Spinner.module.css'
+import React from 'react';
+import * as styles from '../styles/components/Menu.module.css';
 
-
-const Spinner = () => {
-
-  const [message, setMessage] = useState(false)
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setMessage(true)
-    }, 30000);
-    return () => clearTimeout(timer);
-  }, [])
-
+const Spinner = ({ mobile }) => {
+  if (mobile) return null;
   return (
-    <div className={styles.spinContainer}>
-      { message === false ?
-				<div className={styles.spinner}></div> :
-				<div className={styles.message}>
-					Model couldn't load, please continue to the website!
-				</div>
-			}
+    <div className={styles.spinnerContainer}>
+      <div className={styles.spinner}></div>
     </div>
   )
 }

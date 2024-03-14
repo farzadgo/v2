@@ -4,9 +4,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const { data } = await graphql(`
     query Works {
-      allMarkdownRemark(
-        filter: {fileAbsolutePath: {regex: "/works/"}}
-      ) {
+      allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/works/"} }) {
         nodes {
           frontmatter {
             slug

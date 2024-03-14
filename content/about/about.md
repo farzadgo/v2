@@ -1,9 +1,8 @@
 ---
 title: bio
 order: 1
-thumb: ./farzad-golghasemi.jpg
 ---
 
-Farzad Golghasemi is an intermedia artist who studied architecture at Middle East Technical University in Ankara. He practiced and taught architectural design, 3D/algorithmic modeling before starting the Digital Media masters program at the University of the Arts Bremen. Currently, he is working on developing projects regarding the critique of urban geography and everyday life, through employing digital technologies such as the web, 3D computer graphics, and mobile devices. He is interested in discovering phenomenological aspects of architecture and the built environment over applying methodologies such as walking.
+Farzad Golghasemi is an interdisciplinary artist and researcher who focuses on architecture and spatial production through the agency of technology. By incorporating speculation, programming, and 3D modeling they explore the new modes of world-making through synthetic and temporal aspects of construction.
 
-He was born in Urmia Iran, lived 2010—2018 in Ankara Turkey, and lives and works in Bremen Germany.
+Farzad studied architecture at Middle East Technical University (2014) and finished Digital Media master’s degree at the University of Arts Bremen (2023). As a member of *nota* association They offered workshops and talks on coding at the Filmwinter festival in Stuttgart. Together with Gabriela Valdespino their performance *Endless Twist* premiered at Schwankhalle Bremen in March 2023. And, as part of *hacer sitio* collective they initiated the project *RESTORE_* a series of projects and performances of temporary occupation of empty stores in the city of Bremen.

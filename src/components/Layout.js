@@ -1,7 +1,6 @@
-import React from 'react'
-import Head from './Head'
-import Navbar from './Navbar'
-import Footer from './Footer'
+import React from 'react';
+import Head from './Head';
+import Navbar from './Navbar';
 
 
 const Layout = ({ children, info }) => {
@@ -9,13 +8,8 @@ const Layout = ({ children, info }) => {
     <>
       <Head />
       <div id="root">
-        <>
-          <Navbar info={info} />
-          <div id="content">
-            { children }
-            <Footer info={info}/>
-          </div>
-        </>
+        <Navbar info={info} />
+        <div id="content"> {children} </div>
       </div>
     </>
   )

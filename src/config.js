@@ -4,19 +4,16 @@ module.exports = {
   // use Feather icon names
   socialMedia: [
     {
-      name: 'Instagram',
+      title: 'Instagram',
       url: 'https://www.instagram.com/dis___orient',
+      username: '@dis___orient'
     },
     {
-      name: 'GitHub',
+      title: 'GitHub',
       url: 'https://github.com/farzadgo',
+      username: 'farzadgo'
     }
   ],
-
-  sizes: {
-    navHeight: 60,
-    mobileWidth: 600
-  },
 
   pages: {
     home: {
@@ -34,15 +31,5 @@ module.exports = {
       directory: 'works',
       workTitle: '',
     }
-  },
-
-  colors: {
-    lightWhite: '#e0e0e0',
-    darkWhite :'#bbbbbb',
-    lightGray: '#3f3f3f',
-    darkGray: '#1b1b1b',
-    veryGray: '#111111',
-    clear: '#00000000',
-    codeGreen: '#00b400'
   }
 }
