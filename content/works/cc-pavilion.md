@@ -5,9 +5,7 @@ slug: cc-pavilion
 thumb: ./_thumbs/cc-pavilion.jpg
 ---
 
-**Co-Created Pavilion** aims to recapture the idea that our environments we live in are in fact getting reproduced and co-created based on our interactions with them by performing the practice of space [re]production (digital and physical) based on the activities between the author's own bodily experiences and his living room—
-
-While the existing space is represented by an enclosing cube, the bodily experience generates corresponding form. The co-created space is the void as the result of subtraction of either forms.
+**Co-Created Pavilion** aims to recapture the idea that our environments we live in are in fact getting reproduced and co-created based on our interactions with them by performing the practice of space [re]production (digital and physical) based on the activities between the author's own bodily experiences and their living room—While the existing space is represented by an enclosing cube, the bodily experience generates corresponding form. The co-created space is the void as the result of subtraction of either forms.
 
 For more about conceptual development and fabrication methodologies visit the relevant [Dynamic Archive](https://www.thedynamicarchive.net/component/personal-architecture/) component.
 

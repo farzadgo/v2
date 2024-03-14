@@ -42,10 +42,11 @@ const WorkDetails = ({ data }) => {
   const appendImages = (container, imgs) => {
     const images = imgs.map((img) => {
       return (
-        <div key={img.id} className={styles.image}>
+        <div key={img.id} className={styles.imageContainer}>
           <GatsbyImage
             image={getImage(img)}
             alt={img.name}
+            className={styles.image}
           />
         </div>
       )

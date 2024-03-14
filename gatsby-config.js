@@ -54,7 +54,7 @@ module.exports = {
   siteMetadata: {
     title: 'Farzad Golghasemi',
     description:
-      'Farzad Golghasemi is an interdisciplinary artist and researcher who focuses on architecture and spatial production through the agency of technology. By incorporating speculation, programming, and 3D modeling they explore the new modes of world-making through synthetic and temporal aspects of construction.',
+      'Farzad Golghasemi (he/they) is an interdisciplinary artist and researcher who focuses on architecture and spatial production through the agency of technology. By incorporating speculation, programming, and 3D modeling they explore the new modes of world-making through synthetic and temporal aspects of construction.',
     siteUrl: 'https://fagosemi.xyz',
     image: '/og.png',
     authorName: 'Farzad Golghasemi',

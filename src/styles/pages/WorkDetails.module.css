@@ -73,11 +73,12 @@ blockquote p:last-child {
   bottom: -2px;
 }
 
-.image {
+.image-container {
   display: inline-block;
   margin-right: var(--padding);
 }
-.image img {
+.image-container .image {
+  display: flex;
   width: 90vw;
   height: auto;
 }
@@ -93,13 +94,13 @@ blockquote p:last-child {
     margin-top: 0;
     padding: calc(var(--nav-height) + var(--padding)) calc(var(--padding) * 2);
   }
-  .image {
+  .image-container {
     margin-bottom: 20px;
   }
-  .image:last-child {
+  .image-container:last-child {
     margin-right: 0;
   }
-  .image img {
+  .image-container .image {
     height: 50vh;
     width: auto;
   }
