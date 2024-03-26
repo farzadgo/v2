@@ -21,7 +21,7 @@ The installation the annual graduates exhibition was consist of collected constr
 Farzad Golghasemi were recognized for their work with *Frese Design Commendations* by an An international jury composed of Marie du Chastel, Simon Busse, and Serge Rompza.
 
 - `date` November 2023
-- `location` Speicher XIa
+- `location` Speicher XI A Bremen
 
 <div class="gallery endless-jahres" data-credits="photos by Gabriela Valdespino"></div>
 

@@ -18,4 +18,4 @@ The result of this residency as a dialogue between artists Yara Mekawei and Farz
 <div class="gallery" data-credits="2020-21 Bremen — © Farzad Golghasemi"></div>
 
 <!-- ## screnshots from the lab page -->
-<!-- ## information regarding zine/publication -->s
+<!-- ## information regarding zine/publication -->

@@ -34,26 +34,15 @@ The exhibition of master's projects by master's students in digital media Bremen
 
 <div class="gallery temporal-redirections" data-credits="photos by Lucas Klose"></div>
 
-<div class="gallery ui-22" data-credits="Adrift UI"></div>
-
-
-<!-- ### Audio walk expansion for Tender Absence -->
-<!-- In collboration with Gabriela Valdespino, has been implemented in the app, enabling... -->
-
 <!-- <div class="video-container">
   <video width="100%" height="100%"
     disablepictureinpicture controls
     controlsList="nodownload noplaybackrate">
-    <source src="https://cloud.disorient.xyz/s/tWbpa3DJwJFbe48/download/adrift_neustadt_2020-06.mp4" type="video/mp4">
+    <source src="https://cloud.disorient.xyz/s/Lq8mt4aj4KfbbQe/download/adrift-in-viertel_2021-07.m4v" type="video/mp4">
   </video>
 </div> -->
 
-<!-- <div class="video-container">
-  <iframe
-    src="https://player.vimeo.com/video/497023117"
-    src="https://player.vimeo.com/video/591426969"
-    frameBorder="0"
-    allow="autoplay; fullscreen; picture-in-picture"
-    allowFullScreen>
-  </iframe>
-</div> -->
+<div class="gallery ui-22" data-credits="Adrift UI"></div>
+
+<!-- ### Audio walk expansion for Tender Absence -->
+<!-- In collboration with Gabriela Valdespino, has been implemented in the app, enabling... -->

@@ -19,7 +19,6 @@ The second version of Co-Created Pavilion build with a different fabrication met
 
 <div class="gallery cc-v2" data-credits="photos by Farzad Golghasemi"></div>
 
-<br>
 
 ### Initial Installation
 

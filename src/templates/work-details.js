@@ -65,7 +65,6 @@ const WorkDetails = ({ data }) => {
   }
 
   const appendImagesInGroups = (container, imgs) => {
-    // console.log(imgs);
     const groups = groupImages(imgs);
     Object.keys(groups).forEach((prefix) => {
       const imgContainer = container.querySelector(`.${prefix}`);
