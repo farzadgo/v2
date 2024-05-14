@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState, useCallback } from 'react';
 import { createRoot } from 'react-dom/client';
 import Layout from '../components/Layout';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
@@ -6,8 +6,8 @@ import * as styles from '../styles/pages/WorkDetails.module.css'
 import { graphql } from 'gatsby';
 import { Helmet } from 'react-helmet';
 import WorkList from '../components/WorkList';
+import useWindowSize from '../hooks/useWindowSize';
 
-const isBrowser = typeof window !== 'undefined';
 
 const WorkDetails = ({ data }) => {
   
@@ -24,8 +24,7 @@ const WorkDetails = ({ data }) => {
   const [root, setRoot] = useState(null);
   
   const [show, setShow] = useState(0);
-  const [width, setWidth] = useState(isBrowser && window.innerWidth);
-  
+  const width = useWindowSize();
 
   const groupImages = (imgs) => {
     const grouped = {}
@@ -39,7 +38,7 @@ const WorkDetails = ({ data }) => {
     return grouped
   }
 
-  const appendImages = (container, imgs) => {
+  const appendImages = useCallback((container, imgs) => {
     const images = imgs.map((img) => {
       return (
         <div key={img.id} className={styles.imageContainer}>
@@ -50,7 +49,7 @@ const WorkDetails = ({ data }) => {
           />
         </div>
       )
-    });
+    })
 
     const credits = container.getAttribute('data-credits');
     const caption = credits ? <div key={container.className} className={styles.caption}> {credits} </div> : null;
@@ -62,9 +61,9 @@ const WorkDetails = ({ data }) => {
       // root.render(images);
       root.render(allContent);
     }
-  }
+  }, [root])
 
-  const appendImagesInGroups = (container, imgs) => {
+  const appendImagesInGroups = useCallback((container, imgs) => {
     const groups = groupImages(imgs);
     Object.keys(groups).forEach((prefix) => {
       const imgContainer = container.querySelector(`.${prefix}`);
@@ -72,7 +71,7 @@ const WorkDetails = ({ data }) => {
         appendImages(imgContainer, groups[prefix]);
       }
     })
-  }
+  }, [appendImages])
 
 
   useEffect(() => {
@@ -98,9 +97,7 @@ const WorkDetails = ({ data }) => {
       }
     }
 
-    window.addEventListener('resize', () => setWidth(window.innerWidth));
-    return () => window.removeEventListener('resize', () => setWidth(window.innerWidth));
-  }, [])
+  }, [appendImages, appendImagesInGroups, images])
 
 
   return (

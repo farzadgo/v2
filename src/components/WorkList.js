@@ -1,10 +1,12 @@
-import React, { useEffect, useState, useRef } from 'react';
-import { graphql, Link, useStaticQuery } from 'gatsby';
+import React, { useEffect, useState, useRef, useCallback } from 'react';
+import { graphql, useStaticQuery } from 'gatsby';
 import * as styles from '../styles/components/WorkList.module.css';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-import { useLocation } from "@reach/router";
+import { useLocation } from '@reach/router';
+import useWindowSize from '../hooks/useWindowSize';
+import { throttle } from '../utilities/helpers';
+import WorkItem from './WorkItem';
 
-const isBrowser = typeof window !== 'undefined';
 
 const WorkList = ({ dir }) => {
 
@@ -38,7 +40,7 @@ const WorkList = ({ dir }) => {
 
   const works = data.allMarkdownRemark.nodes;
   
-  const [width, setWidth] = useState(isBrowser && window.innerWidth);
+  const width = useWindowSize();
   const container = useRef(null);
 
   const active = {title: '', thumb: '', date: ''}
@@ -47,29 +49,36 @@ const WorkList = ({ dir }) => {
   const [yPos, setYPos] = useState(50);
   const [shiftThumb, setShiftThumb] = useState(false);
 
-  const handleMouseMove = (event) => {
+  const handleMouseMove = throttle((event) => {
     setYPos(event.clientY - 40);
     if (event.clientY > window.innerHeight - 330) {
       setShiftThumb(true)
     } else {
       setShiftThumb(false)
     }
-  }
+  }, 20);
 
   // const changeToSemanticDate = (date) => {
   //   const d = new Date(date);
   //   return d.toLocaleDateString('en-US', { year: 'numeric', month: 'long' });
   // }
 
-  const handleHover = (title, thumb, date) => setHovered({...hovered, title, thumb, date});
+  const handleHover = useCallback((title, thumb, date) => {
+    setHovered({...hovered, title, thumb, date});
+  }, [hovered]);
 
   useEffect(() => {
+    let worklistContainer = null;
     if (container.current) {
       container.current.addEventListener('mousemove', handleMouseMove);
+      worklistContainer = container.current;
     }
-    window.addEventListener('resize', () => setWidth(window.innerWidth));
-    return () => window.removeEventListener('resize', () => setWidth(window.innerWidth));
-  }, [])
+    return () => {
+      if (worklistContainer) {
+        worklistContainer.removeEventListener('mousemove', handleMouseMove);
+      }
+    }
+  }, [handleMouseMove])
 
 
   return (      
@@ -93,23 +102,6 @@ const WorkList = ({ dir }) => {
       </div>}
 
     </div>
-  )
-}
-
-
-const WorkItem = ({ work, dir, activeSlug, handleHover }) => {
-  const { title, thumb, slug, date } = work.frontmatter;
-  let active = activeSlug === slug;
-
-  return (
-    <Link
-      to={`${dir}${slug}`} 
-      className={`${styles.workItem} ${active ? styles.active : ''}`}
-      onMouseEnter={active ? null : () => handleHover(title, thumb, date)}
-      onMouseLeave={() => handleHover('', '')}
-    >
-      <p> {title} </p>
-    </Link>
   )
 }
 

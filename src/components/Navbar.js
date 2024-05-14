@@ -3,8 +3,8 @@ import { useStaticQuery, graphql, Link, navigate } from 'gatsby';
 import * as styles from '../styles/components/Navbar.module.css';
 import * as Icon from 'react-feather';
 import { pages } from '../config';
+import useWindowSize from '../hooks/useWindowSize';
 
-const isBrowser = typeof window !== 'undefined';
 
 const Navbar = ({ info }) => {
 
@@ -33,23 +33,20 @@ const Navbar = ({ info }) => {
 
   const breakpoint = 901;
   const [home, setHome] = useState(false);
-  const [width, setWidth] = useState(isBrowser && window.innerWidth);
+  const width = useWindowSize();
   
   const wideNavbar = directory === 'about' || width < breakpoint || home;
   const homeTitle = width < breakpoint && workTitle ? 'farzad' : 'farzad golghasemi';
 
 
   const style = {
-    width: wideNavbar ? '100%' : '25vw', // '400px'
+    width: wideNavbar ? '100%' : '360px',
     backgroundColor: home ? '#00000000' : 'var(--very-white)',
     borderRight: wideNavbar ? 'none' : `1px solid var(--light-gray)`,
   }
 
   useEffect(() => {
     if (!directory && !workTitle) setHome(true);
-
-    window.addEventListener('resize', () => setWidth(window.innerWidth));
-    return () => window.removeEventListener('resize', () => setWidth(window.innerWidth));
   }, [directory, workTitle])
 
 
@@ -95,7 +92,8 @@ const NavItem = ({ home, list, deep, children }) => {
 
   return (
     <li ref={node}>
-      <div className={styles.navItem} onClick={handleClickOn} onKeyDown={handleClickOn} role="button" tabIndex="-1">
+
+      <div className={styles.navItem} onClick={handleClickOn} onKeyDown={(e) => e.key === 'Enter' && handleClickOn()} role="button" tabIndex="0">
         {list && <span className={styles.navItemArrow}>
           <Icon.ChevronRight {...{strokeWidth: 1}}/>
         </span>}
@@ -103,29 +101,24 @@ const NavItem = ({ home, list, deep, children }) => {
           {children}
         </span>
       </div>
-      {open && <DropMenu list={list} deep={deep}/>}
+
+      {open && list && <div className={styles.dropMenu}>
+        {list.map((e, i) => <DropItem key={i} item={e} deep={deep}/>)}
+      </div>}
+
     </li>
   )
 }
 
 
-const DropMenu = ({ list, deep }) => {
-  const DropItem = ({ item }) => {
-    let link, title;
-    if (deep) {
-      link = `../${item.slug}`
-      title = item.title
-    } else {
-      link = item.slug
-      title = item.directory
-    }
-    return (
-      <Link to={link}> {title} </Link>
-    )
+const DropItem = ({ item, deep }) => {
+  let link, title;
+  if (deep) {
+    link = `../${item.slug}`
+    title = item.title
+  } else {
+    link = item.slug
+    title = item.directory
   }
-  return (
-    <div className={styles.dropMenu}>
-      {list.map((e, i) => <DropItem key={i} item={e}/>)}
-    </div>
-  )
+  return <Link to={link}> {title} </Link>
 }
