@@ -94,7 +94,7 @@ const WorkList = ({ dir }) => {
         />
       )}
 
-      {hovered.thumb && width > 900 && <div className={styles.thumbContainer}>
+      {hovered.thumb && width > 1000 && <div className={styles.thumbContainer}>
         <div className={styles.thumbImage} style={{top: `${shiftThumb ? yPos - 270 : yPos}px`}}>
           <p> {hovered.date.split('-')[0]} </p>
           <GatsbyImage image={getImage(hovered.thumb)} alt={hovered.title} />

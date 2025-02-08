@@ -11,14 +11,15 @@ order: 2
 
 ## Artistic Practice
 
-- *2023-11* <p>**Installation** *Endless Twist* — HfK *[Jahresausstellung](https://www.instagram.com/jahresausstellung_hfk/) 2023* exhibition — Speicher XIa Bremen — [link](https://www.hfk-bremen.de/de/neuigkeiten/frese-design-preise-2023/1014)</p>
-- *2023-08* <p>**Co-curator** *MINE* Research-based series of events — with *notyet* collective — [UMZU](https://www.instagram.com/umzu_23/) Pavilion Bremen — [link](https://notyet.quest/)</p>
+- *2024-09* <p>**Group Performance & Installation** SUDORA*ع* presents: Sonic Tactics — GB OPEN 24 — Güterbahnhof Bremen — [link](https://gb-bremen.de/veranstaltungen/2024/09/gb-open-24)</p>
+- *2023-11* <p>**Installation** *Endless Twist* — University of the Arts Bremen (HfK) *[Jahresausstellung](https://www.instagram.com/jahresausstellung_hfk/) 2023* exhibition — Speicher XIa Bremen — [link](https://www.hfk-bremen.de/de/neuigkeiten/frese-design-preise-2023/1014)</p>
+- *2023-08* <p>**Co-curator** *MINE* Research-based series of events — with *notyet* collective — [UMZU](https://www.instagram.com/umzu_23/) Pavilion Bremen — [link](https://notyet.vercel.app/)</p>
 - *2023-07* <p>**Performance** *Endless Twist* — with Gabriela Valdespino and ap0teke — part of *Felgentaube* — [RAUM PRO](https://www.instagram.com/raumpro_bremen/) Bremen</p>
 - *2023-03* <p>**Performance** *as everything repeats and doubles itself, the ground moves under the feet* — Audiovisual performance in collaboration with Gabriela Valdespino — Schwankhalle theater Bremen — [link](https://www.schwankhalle.de/en/events/as-everything-repeats)</p>
 - *2023-02 – 2023-04* <p>**Online Residency** *A Glocal Class for Digital Performance* — together with Gabriela Valdespino — in the frame of *Tender Absence 2023* — [link](https://td.ongoing-project.org/#schedule)</p>
-- *2022-06*	<p>**Group performance** *Lacuna Inside a Dumpling* — HfK *Hochschultage 2022* exhibition — HfK Bremen</p>
+- *2022-06*	<p>**Group Performance & Installation** *Lacuna Inside a Dumpling* — HfK *Hochschultage 2022* exhibition — HfK Bremen</p>
 - *2022-06* <p>**Co-Curator** *RESTORE_ Interdisciplinary Performances in Context* — as member of *hacer sitio corp.* collective Bremen — [link](https://restore-bremen.space)</p>
-<!-- - *2021-12* <p>**Residency** — together with artist assembly *Chatroom 101* — *Die Biest* Nuremberg — [link](https://www.instagram.com/die.biest/)</p> -->
+- *2021-12* <p>**Residency** — together with artist assembly *Chatroom 101* — *Die Biest* Nuremberg — [link](https://www.instagram.com/die.biest/)</p>
 - *2021-12*	<p>**Installation** *Übersee-stock* (one-channel video) — *Conditions of a Necessity* exhibition — Kunsthalle Baden-Baden — [link](https://kunsthalle-baden-baden.de/en/programm/conditions-of-a-necessity-ausstellung)</p>
 - *2021-08*	<p>**Installation** *How to get lost in the neighborhood* (two-channel video) — *Temporal Redirections* exhibition — Open Space Domshof Bremen — [link](https://influencerstaubenheim.de/kalender/kunst-design/delay-2.html)</p>
 - *2021-04*	<p>**Online residency** *Listen to my postcard* — in dialogue with sound Yara Mekawei — Thealit F.K.L Bremen — [showcase](https://www.thealit.de/lab/coapparation/en/listen-to-my-postcard)</p>
@@ -29,6 +30,7 @@ order: 2
 
 ## Selected Commissions
 
+- *2024-04* <p>**Stage Design** for the performance *There is Always Negotiation in Murmuration* by Gabriela Valdespino — Galerie Dechanatstraße HfK Bremen — [trailer](https://www.youtube.com/watch?v=rdrDZmg37bc&feature=youtu.be)</p>
 - *2023-10* <p>**Web design and development** — website for the project *moyo* by perspActives e.V. — [link](https://moyo-breme.space)</p>
 - *2023-03 – 2023-06*	<p>**Script Coach & Digital Space Design** *there is no place like before:* a digital time-travel — in the frame of nota Open Source Gala — a digital theater from [nota association](https://verein.nota.space/) & theater DERIVAT — at TATWERK Berlin — [link](https://theaterderivat.net/digital-time-travel/)</p>
 - *2022-12* <p>**3D & graphic design** — poster for *Crystal Room* by Binational Artistic PhD Program — launched at Gesellschaft für Aktuelle Kunst (GAK) Bremen — [link](https://artisticphd-hfkbremen.net/events/crystal-room)</p>

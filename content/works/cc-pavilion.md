@@ -5,25 +5,14 @@ slug: cc-pavilion
 thumb: ./_thumbs/cc-pavilion.jpg
 ---
 
-**Co-Created Pavilion** aims to recapture the idea that our environments we live in are in fact getting reproduced and co-created based on our interactions with them by performing the practice of space [re]production (digital and physical) based on the activities between the author's own bodily experiences and their living room—While the existing space is represented by an enclosing cube, the bodily experience generates corresponding form. The co-created space is the void as the result of subtraction of either forms.
+# Co-created Pavilion
 
-For more about conceptual development and fabrication methodologies visit the relevant [Dynamic Archive](https://www.thedynamicarchive.net/component/personal-architecture/) component.
+- Rectangular wood strips, steel bolts and nuts
+- Exhibition: Hochschultage 2020 of University of the Arts Bremen
+- February 2020
 
-<!-- fabrication methods + cardboard etc. 3d to actual -->
+The pavilion installation explores the idea that the environments we live in are continuously reproduced and co-created through our interactions with them. This concept is expressed by performing the practice of space [re]production—both digital and physical—based on the relationship between the author's bodily experiences and their living room. While the existing space is represented by an enclosing cube, the bodily experience generates a corresponding form. The co-created space emerges as the void resulting from the subtraction of either form.
 
-The second version of Co-Created Pavilion build with a different fabrication methodology. For more information about its theoretical and design background check the links below.
+For more about conceptual development and fabrication methodologies visit the relevant [The Dynamic Archive](https://www.thedynamicarchive.net/component/personal-architecture/) component.
 
-- `date` February 2020
-- `exhibition` HfK Hochschultage 2020
-- `where` Gallery Nebenflut Bremen
-
-<div class="gallery cc-v2" data-credits="photos by Farzad Golghasemi"></div>
-
-
-### Initial Installation
-
-- `date` April 2019
-- `exhibition` Raw Data Material Narration
-- `location` Tor 40 Bremen Güterbahnhof 
-
-<div class="gallery cc-v1" data-credits=""></div>
+<div class="gallery cc-v2" data-credits="Photos by Farzad Golghasemi"></div>

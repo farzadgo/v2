@@ -42,7 +42,7 @@ The exhibition of master's projects by master's students in digital media Bremen
   </video>
 </div> -->
 
-<div class="gallery ui-22" data-credits="Adrift UI"></div>
+<div class="gallery ui-22 portrait" data-credits="Adrift UI"></div>
 
 <!-- ### Audio walk expansion for Tender Absence -->
 <!-- In collboration with Gabriela Valdespino, has been implemented in the app, enabling... -->

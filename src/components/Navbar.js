@@ -31,7 +31,7 @@ const Navbar = ({ info }) => {
   // const pathWords = pathname.split('/').filter(e => e)
   // const depth = pathWords.length
 
-  const breakpoint = 901;
+  const breakpoint = 1001;
   const [home, setHome] = useState(false);
   const width = useWindowSize();
   
@@ -42,7 +42,7 @@ const Navbar = ({ info }) => {
   const style = {
     width: wideNavbar ? '100%' : '360px',
     backgroundColor: home ? '#00000000' : 'var(--very-white)',
-    borderRight: wideNavbar ? 'none' : `1px solid var(--light-gray)`,
+    borderRightWidth: wideNavbar ? '0' : '1px',
   }
 
   useEffect(() => {

@@ -7,6 +7,7 @@ import { graphql } from 'gatsby';
 import { Helmet } from 'react-helmet';
 import WorkList from '../components/WorkList';
 import useWindowSize from '../hooks/useWindowSize';
+import useDragScroll from '../hooks/useDragScroll';
 
 
 const WorkDetails = ({ data }) => {
@@ -25,6 +26,8 @@ const WorkDetails = ({ data }) => {
   
   const [show, setShow] = useState(0);
   const width = useWindowSize();
+
+  const applyDragScroll = useDragScroll();
 
   const groupImages = (imgs) => {
     const grouped = {}
@@ -46,6 +49,7 @@ const WorkDetails = ({ data }) => {
             image={getImage(img)}
             alt={img.name}
             className={styles.image}
+            draggable={false}
           />
         </div>
       )
@@ -57,7 +61,13 @@ const WorkDetails = ({ data }) => {
     if (!root) {
       let root = createRoot(container);
       setRoot(root);
-      let allContent = [caption, images];
+      // let allContent = [caption, images];
+      let allContent = (
+        <>
+          {caption}
+          <div className="carousel"> {images} </div>
+        </>
+      );
       // root.render(images);
       root.render(allContent);
     }
@@ -75,13 +85,19 @@ const WorkDetails = ({ data }) => {
 
 
   useEffect(() => {
-
     setTimeout(() => {
       setShow(1);
     }, 100);
 
     if (htmlRef.current) {
       let imageContainers = htmlRef.current.querySelectorAll('.gallery');
+      imageContainers.forEach((container) => {
+        const subGallery = container.querySelector('.carousel');
+        if (subGallery) {
+          applyDragScroll(subGallery);
+        }
+      });
+
       if (imageContainers.length > 1) {
         appendImagesInGroups(htmlRef.current, images);
         setShowAlt(false);
@@ -97,7 +113,7 @@ const WorkDetails = ({ data }) => {
       }
     }
 
-  }, [appendImages, appendImagesInGroups, images])
+  }, [appendImages, appendImagesInGroups, images, applyDragScroll])
 
 
   return (
@@ -105,7 +121,7 @@ const WorkDetails = ({ data }) => {
       <Helmet title={title} />
       <main className="main">
 
-        {width > 900 && <WorkList dir={'../'}/>}
+        {width > 1000 && <WorkList dir={'../'}/>}
 
         <div className={styles.container} style={{opacity: show}}>
           <header><h1 style={{display: 'none'}}> {title} </h1></header>

@@ -2,62 +2,69 @@
   overflow-y: auto;
   flex: 1;
   margin-top: var(--nav-height);
-  padding: var(--padding);
+  padding: var(--padding) 0;
   transition: opacity 0.2s ease-in-out;
 }
 
 .html {
   font-size: var(--font-md);
   line-height: var(--line-height);
-  margin-bottom: 20px;  
+}
+.html > * {
+  margin-left: var(--padding);
+  padding-right: var(--padding);
 }
 
 .html > h1,
 .html > h2,
-.html > h3 {
+.html > h3,
+.html > p,
+.html > ul,
+.html > hr,
+.html > blockquote {
+  max-width: 730px;
+  margin-bottom: 1.6rem;
+}
+.html > h1 {
   font-size: var(--font-lg);
   font-weight: 400;
-  max-width: 700px;
-  margin-bottom: 1.6rem;
+  line-height: 1.2;
 }
 .html > h2,
 .html > h3 {
-  padding-top: 3rem;
+  font-size: var(--font-md);
+  font-weight: 500;
+  padding-top: 2rem;
 }
 
-.html > p {
-  max-width: 700px;
-  margin-bottom: 1.6rem;
-}
 .html > ul {
-  max-width: 700px;
-  margin-bottom: 1.6rem;
-  padding-top: 1.6rem;
-}
-.html > ul > li {
-  margin-bottom: 0.6rem;
-}
-
-.html > ul code {
-  font-family: var(--code-font);
-  font-size: var(--font-sm);
-  font-weight: bold;
-  margin-right: 0.5rem;
+  font-size: 0.9em;
+  margin-top: 50px;
+  margin-right: var(--padding);
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  padding: 1em;
+  background-color: hsl(0, 0%, 91%);
 }
 
-blockquote {
-  margin-bottom: 1.6rem;
-  max-width: 700px;
-  padding-left: var(--padding);
-  border-left: 5px solid #c0c0c0;
-  font-family: var(--text-font);
+.html > blockquote {
+  font-style: italic;
+  padding-left: 1em;
+  border-left: 5px solid var(--light-white);
 }
-blockquote p:last-child {
+.html > blockquote p:last-child {
   margin-top: 1rem;
 }
 
+.html > hr {
+  height: 200px;
+  border: none;
+}
+
 .html a {
-  color: blue;
+  color: #0000ff;
+  /* white-space: nowrap; */
 }
 .html a::after {
   display: inline-block;
@@ -72,36 +79,42 @@ blockquote p:last-child {
   position: relative;
   bottom: -1px;
 }
+.html a:hover::after {
+  transform: skew(-0.16rad);
+}
 
 .image-container {
   display: inline-block;
+  max-width: calc(100% - var(--padding) * 2);
   margin-right: var(--padding);
+  margin-bottom: 1rem;
 }
-.image-container .image {
-  display: flex;
-  width: 90vw;
-  height: auto;
+.image-container:last-child {
+  margin-right: 0;
+}
+.image-container img {
+  display: block;
+  max-height: 65vh;
+  user-select: none;
 }
 .caption {
-  margin-bottom: 0.5rem;
+  margin-left: var(--padding);
   font-size: var(--font-sm);
   width: fit-content;
 }
+/* TODO: add image counter */
 
 /* ---------------- desktop ---------------- */
-@media (min-width: 901px) {
+@media (min-width: 1001px) {
   .container {
     margin-top: 0;
-    padding: calc(var(--nav-height) + var(--padding)) calc(var(--padding) * 2);
+    padding: calc(var(--nav-height) + var(--padding)) 0;
   }
-  .image-container {
-    margin-bottom: 20px;
+  .html > *,
+  .caption {
+    margin-left: calc(var(--padding) * 2);
   }
   .image-container:last-child {
-    margin-right: 0;
-  }
-  .image-container .image {
-    height: 50vh;
-    width: auto;
+    margin-right: calc(var(--padding) * 2);
   }
 }
