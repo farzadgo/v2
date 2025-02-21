@@ -39,7 +39,7 @@
 
 .html > ul {
   font-size: 0.9em;
-  margin-top: 50px;
+  /* margin-top: 50px; */
   margin-right: var(--padding);
   display: flex;
   flex-direction: column;
@@ -58,7 +58,7 @@
 }
 
 .html > hr {
-  height: 200px;
+  height: 50px;
   border: none;
 }
 
@@ -102,6 +102,7 @@
   font-size: var(--font-sm);
   width: fit-content;
 }
+
 /* TODO: add image counter */
 
 /* ---------------- desktop ---------------- */
@@ -112,7 +113,13 @@
   }
   .html > *,
   .caption {
-    margin-left: calc(var(--padding) * 2);
+    margin-left: calc(var(--padding) * 2 + 360px);
+  }
+  .html > ul {
+    margin-top: 50px;
+  }
+  .html > hr {
+    height: 200px;
   }
   .image-container:last-child {
     margin-right: calc(var(--padding) * 2);

@@ -41,7 +41,6 @@ const Navbar = ({ info }) => {
 
   const style = {
     width: wideNavbar ? '100%' : '360px',
-    backgroundColor: home ? '#00000000' : 'var(--very-white)',
     borderRightWidth: wideNavbar ? '0' : '1px',
   }
 

@@ -16,10 +16,4 @@ To walk is to give yourself access to a full experience of the path which leads 
 
 *t owalk thec ity* invites you to recreate momentary perspectives of the artists in your own three dimensional experience. In a digital drawing on a continuous fabric sourced from cloud based metadata about individual dynamics in the urban fabric during two years time you are invited to learn about the aesthetics of visualizing such information.
 
-<!-- wood and on glasses, plotter print on fabric -->
-<!-- - `date` March 2020
-- `in collaboration with` Lucas Jaspar Kalmus
-- `exhibition` [How to Situate Spaces of Uncertainty](https://circa106.info/exhibitions/spaces-of-uncertainty/)
-- `location` [Circa 106 Bremen](https://circa106.info) -->
-
 <div class="gallery" data-credits="Photos by Victor Artiga Rodriguez"></div>

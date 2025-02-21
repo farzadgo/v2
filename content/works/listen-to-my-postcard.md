@@ -20,7 +20,7 @@ thumb: ./_thumbs/listen-to-my-postcard.jpg
 
 The result of this residency as a dialogue between artists Yara Mekawei and Farzad Golghasemi can be visited on the [Listen to my postcard](https://www.thealit.de/lab/coapparation/en/listen-to-my-postcard) *COAPPARATION Lab* page. Farzad's work includes architectural photography of selected Bremen (Germany) landmarks related to the modern architecture and war memorials, associated with literary writings.
 
-<div class="gallery postcard-web" data-credits="Screen captures from COAPPARATION LAB's Virtales Arbeitszimmer"></div>
+<div class="gallery postcard-web" data-credits="Screen captures from COAPPARATION LAB's Virtuales Arbeitszimmer"></div>
 
 <hr>
 

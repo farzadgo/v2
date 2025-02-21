@@ -29,7 +29,7 @@ the open access publication can be reached at [endlesstwist.xyz/publication](htt
 
 # Exhibition at Jahresausstellung 2023
 
-- 1–channel projection of endlesstwist.xyz on a worn-out advertising banner belonging to a construction site in Bremen Überseestadt, 2-channel audio composition
+- 1–channel projection of *endlesstwist.xyz* on a worn-out advertising banner belonging to a construction site in Bremen Überseestadt, 2-channel audio composition
 - Steel scaffold tubes, cast iron scaffolding couplers, wireless mouse and keyboard
 - 18:00 minutes loop
 - Exhibition: Jahresausstellung, Speicher XI A, Bremen Germany
@@ -39,21 +39,21 @@ The installation at the 2023 HfK Bremen Graduate Show ([Jahresausstellung](https
 
 Farzad Golghasemi received [special commendation](https://www.hfk-bremen.de/en/news/frese-design-preise-2023/1014) (besondere belobigungen) from the jury members of Frese-Design-Award which was composed of Marie du Chastel, Simon Busse, and Serge Rompza.
 
-<div class="gallery endless-jahres" data-credits="photos by Gabriela Valdespino"></div>
+<div class="gallery endless-jahres" data-credits="Photos by Gabriela Valdespino"></div>
 
 <hr>
 
 # Open rehearsal at RAUM PRO
 
-- Reading, live electronics, live 3D-modelling performance projected on the exhibition wall, projection of endlesstwist.xyz on construction banner
+- Reading, live electronics, live 3D-modelling performance projected on the exhibition wall, projection of *endlesstwist.xyz* on construction banner
 - 50:00 minutes
 - Sound:  Gabriela Valdespino, [ap0teke](https://www.instagram.com/ap0teke/)
 - Performance: AG Felgentaube, RAUM PRO Bremen Germany
-- 27\. Juli 2023
+- 27\. July 2023
 
 As a situation and performance Endless Twist was invited by Felix Dreesen and Lucas Kalmus to be part of *AG Felgentaube* in [RAUMPRO Bremen](https://raumpro-bremen.de/). In addition to the live 3D navigation of the project's webpage, the performance consisted of reading and 3D modeling by Farzad Golghasemi and live electronic by Gabriela Valdespino and ap0teke.
 
-<div class="gallery endless-raumpro" data-credits="photos by Noelle BuAbbud"></div>
+<div class="gallery endless-raumpro" data-credits="Photos by Noelle BuAbbud"></div>
 
 <hr>
 
@@ -66,7 +66,7 @@ As a situation and performance Endless Twist was invited by Felix Dreesen and Lu
 
 Participation of Farzad Golghasemi and Gabriela Valdespino during [Tender Ansence](https://ta.peira.space/#schedule) online residency *A Glocal Class for Digital Performance*, supported the development of this project which resulted in duo's audiovisual performance [*as everything repeats and doubles itself, the ground moves under the feet*](https://www.schwankhalle.de/en/events/as-everything-repeats). Special thanks to [Peira](https://www.peira.space/) collective for their support.
 
-<div class="gallery endless-schwankhalle" data-credits="photos by Guida Ribeiro"></div>
+<div class="gallery endless-schwankhalle" data-credits="Photos by Guida Ribeiro"></div>
 
 <hr>
 

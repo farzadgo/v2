@@ -86,7 +86,7 @@ strong, b, h1, h2, h3, h4, h5, h6 {
   overflow-y: hidden;
   padding-top: var(--padding);
   margin-bottom: calc(var(--padding) * 2);
-  margin-left: 0;
+  /* margin-left: 0; */
   scrollbar-width: none;
 }
 .carousel::-webkit-scrollbar {
@@ -126,6 +126,7 @@ strong, b, h1, h2, h3, h4, h5, h6 {
   } */
 
   .carousel {
-    padding-left: calc(var(--padding) * 2);
+    padding-left:calc(var(--padding) * 2 + 360px);
+    /* padding-right: var(--padding); */
   }
 }

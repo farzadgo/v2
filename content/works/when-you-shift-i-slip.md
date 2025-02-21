@@ -9,8 +9,7 @@ thumb: ./_thumbs/when-you-shift.jpg
 
 - Artists: Farzad Golghasemi, Gabriela Valdespino, Konstanze Spät
 - Exhibition: FRAPPANT Hamburg
-- Funded by SENATOR FÜR KULTUR Bremen
+- Funded by Senator für Kultur Bremen
 
-Upcomming exhibition WHEN YOU SHIFT, I SLIP (Working Title) is an interdisciplinary exhibition that will is set to premiere in October 2025 at FRAPPANT Gallery in Hamburg.
-
-More information about this work coming soon...
+The upcoming exhibition *WHEN YOU SHIFT, I SLIP* (Working Title) is an interdisciplinary show set to take place in October 2025 at FRAPPANT Gallery in Hamburg.
+More details will be announced soon.

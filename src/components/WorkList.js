@@ -39,7 +39,7 @@ const WorkList = ({ dir }) => {
   const activeSlug = pathname.split('/').filter(e => e.length > 0 && e !== 'works')[0];
 
   const works = data.allMarkdownRemark.nodes;
-  
+
   const width = useWindowSize();
   const container = useRef(null);
 
@@ -48,6 +48,10 @@ const WorkList = ({ dir }) => {
 
   const [yPos, setYPos] = useState(50);
   const [shiftThumb, setShiftThumb] = useState(false);
+
+  const containerStyle = {
+    width: hovered.thumb && width > 1000 ? '100%' : width < 1000 ? '100%' : '360px'
+  }
 
   const handleMouseMove = throttle((event) => {
     setYPos(event.clientY - 40);
@@ -68,31 +72,33 @@ const WorkList = ({ dir }) => {
   }, [hovered]);
 
   useEffect(() => {
-    let worklistContainer = null;
+    let workListContainer = null;
     if (container.current) {
       container.current.addEventListener('mousemove', handleMouseMove);
-      worklistContainer = container.current;
+      workListContainer = container.current;
     }
     return () => {
-      if (worklistContainer) {
-        worklistContainer.removeEventListener('mousemove', handleMouseMove);
+      if (workListContainer) {
+        workListContainer.removeEventListener('mousemove', handleMouseMove);
       }
     }
   }, [handleMouseMove])
 
 
   return (      
-    <div className={styles.container} ref={container}>
+    <div className={styles.container} ref={container} style={containerStyle}>
 
-      {works.map((e, i) =>
-        <WorkItem
-          key={i}
-          work={e}
-          dir={dir}
-          activeSlug={activeSlug}
-          handleHover={handleHover}
-        />
-      )}
+      <div className={styles.workList}>
+        {works.map((e, i) =>
+          <WorkItem
+            key={i}
+            work={e}
+            dir={dir}
+            activeSlug={activeSlug}
+            handleHover={handleHover}
+          />
+        )}
+      </div>
 
       {hovered.thumb && width > 1000 && <div className={styles.thumbContainer}>
         <div className={styles.thumbImage} style={{top: `${shiftThumb ? yPos - 270 : yPos}px`}}>

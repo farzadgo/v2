@@ -7,7 +7,7 @@ thumb: ./_thumbs/sonic-tactics.jpg
 
 # Sonic Tactics
 
-- Curation, sound sculpture: aluminium pipes, 4 speakers, steel mobile structure
+- Curation, sound sculpture: aluminum pipes, 4 speakers, steel mobile structure
 - 2-day program, live performances, readings, collective listening sessions, audiovisual performances and screenings
 - September 2024
 
