@@ -50,7 +50,7 @@ const WorkList = ({ dir }) => {
   const [shiftThumb, setShiftThumb] = useState(false);
 
   const containerStyle = {
-    width: hovered.thumb && width > 1000 ? '100%' : width < 1000 ? '100%' : '360px'
+    width: hovered.thumb && width > 1000 ? '100%' : width < 1000 ? '100%' : 'var(--nav-width)',
   }
 
   const handleMouseMove = throttle((event) => {
@@ -100,7 +100,7 @@ const WorkList = ({ dir }) => {
         )}
       </div>
 
-      {hovered.thumb && width > 1000 && <div className={styles.thumbContainer}>
+      {hovered.thumb && width >= 1000 && <div className={styles.thumbContainer}>
         <div className={styles.thumbImage} style={{top: `${shiftThumb ? yPos - 270 : yPos}px`}}>
           <p> {hovered.date.split('-')[0]} </p>
           <GatsbyImage image={getImage(hovered.thumb)} alt={hovered.title} />

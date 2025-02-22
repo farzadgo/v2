@@ -6,8 +6,7 @@
   align-items: center;
   padding: 0 var(--padding);
   z-index: 20;
-  border: 0 solid var(--light-gray);
-  border-bottom-width: 1px;
+  border-bottom: 1px solid var(--light-gray);
   scrollbar-width: none;
 }
 .container::before {
@@ -17,8 +16,8 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(240, 240, 240, 0.5);
-  backdrop-filter: blur(10px);
+  background-color: var(--trans-light);
+  backdrop-filter: var(--blur);
   z-index: -1;
 }
 
@@ -87,6 +86,9 @@
 
 /* ------------- desktop -------------- */
 @media (min-width: 1000px) {
+  .container {
+    border-right: 1px solid var(--light-gray);
+  }
   .nav-item svg {
     height: 24px;
     width: 24px;

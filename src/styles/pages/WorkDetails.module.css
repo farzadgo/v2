@@ -39,7 +39,6 @@
 
 .html > ul {
   font-size: 0.9em;
-  /* margin-top: 50px; */
   margin-right: var(--padding);
   display: flex;
   flex-direction: column;
@@ -106,14 +105,14 @@
 /* TODO: add image counter */
 
 /* ---------------- desktop ---------------- */
-@media (min-width: 1001px) {
+@media (min-width: 1000px) {
   .container {
     margin-top: 0;
     padding: calc(var(--nav-height) + var(--padding)) 0;
   }
   .html > *,
   .caption {
-    margin-left: calc(var(--padding) * 2 + 360px);
+    margin-left: calc(var(--padding) * 2 + var(--nav-width));
   }
   .html > ul {
     margin-top: 50px;

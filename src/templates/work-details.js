@@ -121,7 +121,7 @@ const WorkDetails = ({ data }) => {
       <Helmet title={title} />
       <main className="main">
 
-        {width > 1000 && <WorkList dir={'../'}/>}
+        {width >= 1000 && <WorkList dir={'../'}/>}
 
         <div className={styles.container} style={{opacity: show}}>
           <header><h1 style={{display: 'none'}}> {title} </h1></header>
