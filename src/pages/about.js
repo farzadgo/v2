@@ -46,7 +46,7 @@ const About = ({ data }) => {
           </div>
 
           <div className={styles.print}>
-            <button onClick={() => window.print()}> <Printer {...{size: 32, strokeWidth: 0.5}}/> </button>
+            <button onClick={() => window.print()}> <Printer {...{size: 32, strokeWidth: 0.5}} style={{stroke: 'var(--very-gray)'}}/> </button>
           </div>
 
           <div className={styles.vitae} dangerouslySetInnerHTML={{__html: vitae}}/>

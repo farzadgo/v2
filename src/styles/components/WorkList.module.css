@@ -32,13 +32,15 @@
   white-space: nowrap;
 }
 .work-item:hover {
-  background-color: rgb(53, 52, 77);
-  color: var(--very-white);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
 }
 .work-item.active {
   font-style: italic;
   font-family: var(--text-font);
   font-weight: 600;
+  text-decoration: none;
 }
 
 .work-item.active:hover {

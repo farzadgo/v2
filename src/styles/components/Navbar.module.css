@@ -6,8 +6,13 @@
   align-items: center;
   padding: 0 var(--padding);
   z-index: 20;
-  border-bottom: 1px solid var(--light-gray);
+  border-width: 0;
+  border-style: solid;
+  border-color: var(--light-gray);
+  border-bottom-width: 1px;
   scrollbar-width: none;
+  display: flex;
+  justify-content: space-between;
 }
 .container::before {
   content: '';
@@ -52,6 +57,24 @@
   font-family: var(--text-font);
 }
 
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: none;
+  padding: 2px;
+}
+.theme-toggle:hover {
+  cursor: pointer;
+}
+.theme-toggle svg {
+  height: 20px;
+  width: 20px;
+  stroke: var(--dark-gray);
+  stroke-width: 1.5px;
+}
+
 /* ------------- DropMenu ------------- */
 .drop-menu {
   display: flex;
@@ -86,10 +109,8 @@
 
 /* ------------- desktop -------------- */
 @media (min-width: 1000px) {
-  .container {
-    border-right: 1px solid var(--light-gray);
-  }
-  .nav-item svg {
+  .nav-item svg,
+  .theme-toggle svg {
     height: 24px;
     width: 24px;
   }

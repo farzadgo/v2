@@ -44,7 +44,7 @@
   flex-direction: column;
   gap: 0.8rem;
   padding: 1em;
-  background-color: hsl(0, 0%, 91%);
+  background-color: var(--light-white);
 }
 
 .html > blockquote {
@@ -62,7 +62,7 @@
 }
 
 .html a {
-  color: #0000ff;
+  color: var(--link-color);
   /* white-space: nowrap; */
 }
 .html a::after {

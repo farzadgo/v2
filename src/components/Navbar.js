@@ -6,7 +6,7 @@ import { pages } from '../config';
 import useWindowSize from '../hooks/useWindowSize';
 
 
-const Navbar = ({ info }) => {
+const Navbar = ({ info, theme, themeToggle }) => {
 
   const data = useStaticQuery(graphql`
     query WorkNav {
@@ -38,9 +38,9 @@ const Navbar = ({ info }) => {
   const wideNavbar = directory === 'about' || width < breakpoint || home;
   const homeTitle = width < breakpoint && workTitle ? 'farzad' : 'farzad golghasemi';
 
-
-  const style = {
+  const containerStyle = {
     width: wideNavbar ? '100%' : 'var(--nav-width)',
+    borderRightWidth: wideNavbar ? '0px' : '1px'
   }
 
   useEffect(() => {
@@ -49,12 +49,15 @@ const Navbar = ({ info }) => {
 
 
   return (
-    <nav className={styles.container} style={style}>
+    <nav className={styles.container} style={containerStyle}>
       <ul className={styles.directory}>
         <NavItem home={home}> {homeTitle} </NavItem>
         {!home && <NavItem list={dirList}> {directory} </NavItem>}
         {width < breakpoint && workTitle && <NavItem list={workList} deep={true}> {workTitle} </NavItem>}
       </ul>
+      <button className={styles.themeToggle} onClick={themeToggle} aria-label="Toggle Theme">
+        {theme === 'light' ? <Icon.Moon /> : <Icon.Sun />}
+      </button>
     </nav>
   )
 }
