@@ -19,7 +19,7 @@ discussions with an oxelized reading, we active listened to field recordings, sp
 narratives, and engaged with live sonic experimentation.
 
 ### Participants:
-Pablo Someone Ruano, Vicc Repasi, Vafa Aminikia, Paria Moraghebi, Farzad Golghasemi,
-Abd Tammaa, Yara Mekawei, Gabriela Valdspino, Ap0teke
+Pablo Somonte Ruano, Vicc Repasi, Vafa Aminikia, Paria Moraghebi, Farzad Golghasemi,
+Abd Tammaa, Yara Mekawei, Gabriela Valdespino, Ap0teke
 
 <div class="gallery" data-credits="Photos by Gabriela Valdespino"></div>

@@ -5,16 +5,26 @@ import Navbar from './Navbar';
 
 const Layout = ({ children, info }) => {
   const [theme, setTheme] = useState(() => {
-    const savedTheme = window.localStorage.getItem('theme');
-    return savedTheme ? savedTheme : 'light';
+    if (typeof window !== 'undefined') {
+      const savedTheme = localStorage.getItem('theme');
+      return savedTheme ? savedTheme : 'light';
+    }
   })
 
   const themeToggle = () => {
-    setTheme(prev => (prev === 'light' ? 'dark' : 'light'))
-  }
+    setTheme(prev => {
+      const newTheme = prev === 'light' ? 'dark' : 'light';
+      if (typeof window !== 'undefined') {
+        localStorage.setItem('theme', newTheme);
+      }
+      return newTheme;
+    });
+  };
 
   useEffect(() => {
-      window.localStorage.setItem('theme', theme);
+      if (typeof window !== 'undefined') {
+        localStorage.setItem('theme', theme);
+      }
   }, [theme]);
 
   return (
