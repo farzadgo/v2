@@ -1,10 +1,9 @@
 import { Sky } from 'three/examples/jsm/objects/Sky';
 
-import { Scene, Color, AmbientLight, HemisphereLight, DirectionalLight, Vector3, MathUtils } from 'three';
+import { Scene, AmbientLight, HemisphereLight, DirectionalLight, Vector3, MathUtils } from 'three';
 
 export const scene = new Scene();
-scene.background = new Color('#494949');
-
+// scene.background = new Color(0x4287F5);
 
 // ------ LIGHTS ------
 

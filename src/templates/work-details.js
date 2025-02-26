@@ -48,7 +48,6 @@ const WorkDetails = ({ data }) => {
           <GatsbyImage
             image={getImage(img)}
             alt={img.name}
-            className={styles.image}
             draggable={false}
           />
         </div>

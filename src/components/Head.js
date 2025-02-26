@@ -2,10 +2,13 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
 import { useLocation } from '@reach/router'
+import { useTheme } from './Layout'
 
 
 const Head = ({ title, description, image }) => {
   const { pathname } = useLocation()
+
+  const { theme } = useTheme();
 
   const { site } = useStaticQuery(
     graphql`
@@ -40,7 +43,7 @@ const Head = ({ title, description, image }) => {
 
   return (
     <Helmet title={title} defaultTitle={seo.title} titleTemplate={`%s | ${defaultTitle}`}>
-      <html lang="en" />
+      <html lang="en" data-theme={theme}/>
 
       <meta name="description" content={seo.description} />
       <meta name="image" content={seo.image} />

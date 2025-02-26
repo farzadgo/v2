@@ -56,13 +56,11 @@
   padding: 0;
 }
 
-html, body, #root {
-  height: 100%;
-  width: 100%;
+html, body {
+  background-color: var(--very-white);
 }
 
 #root {
-  background-color: var(--very-white);
   color: var(--very-gray);
   font-family: var(--sans-font);
   font-weight: 300;

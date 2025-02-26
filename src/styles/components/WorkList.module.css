@@ -31,11 +31,6 @@
   line-height: var(--line-height);
   white-space: nowrap;
 }
-.work-item:hover {
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  text-decoration-thickness: 1px;
-}
 .work-item.active {
   font-style: italic;
   font-family: var(--text-font);

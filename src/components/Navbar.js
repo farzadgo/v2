@@ -1,12 +1,14 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { useStaticQuery, graphql, Link, navigate } from 'gatsby';
+import React, { useState, useEffect } from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
 import * as styles from '../styles/components/Navbar.module.css';
-import * as Icon from 'react-feather';
+import NavItem from './NavItem';
+import { ToggleLeft, ToggleRight } from 'react-feather';
 import { pages } from '../config';
 import useWindowSize from '../hooks/useWindowSize';
+import { themes, useTheme } from './Layout';
 
 
-const Navbar = ({ info, theme, themeToggle }) => {
+const Navbar = ({ info }) => {
 
   const data = useStaticQuery(graphql`
     query WorkNav {
@@ -23,6 +25,8 @@ const Navbar = ({ info, theme, themeToggle }) => {
       }
     }
   `)
+
+  const {theme, setTheme} = useTheme();
 
   const { directory, workTitle } = info;
   const workList = data.allMarkdownRemark.nodes.map(e => e.frontmatter);
@@ -43,6 +47,14 @@ const Navbar = ({ info, theme, themeToggle }) => {
     borderRightWidth: wideNavbar ? '0px' : '1px'
   }
 
+  const themeToggle = () => setTheme(theme === themes.light ? themes.dark : themes.light);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('theme', theme);
+    }
+  }, [theme]);
+
   useEffect(() => {
     if (!directory && !workTitle) setHome(true);
   }, [directory, workTitle])
@@ -56,70 +68,10 @@ const Navbar = ({ info, theme, themeToggle }) => {
         {width < breakpoint && workTitle && <NavItem list={workList} deep={true}> {workTitle} </NavItem>}
       </ul>
       <button className={styles.themeToggle} onClick={themeToggle} aria-label="Toggle Theme">
-        {theme === 'light' ? <Icon.Moon /> : <Icon.Sun />}
+        {theme === 'light' ? <ToggleLeft /> : <ToggleRight />}
       </button>
     </nav>
   )
 }
 
 export default Navbar
-
-
-const NavItem = ({ home, list, deep, children }) => {
-  const [open, setOpen] = useState(false)
-  const node = useRef()
-
-  const handleClickOn = () => {
-    if (list) {
-      setOpen(!open)
-    } else if (!home || !list) {
-      navigate("/")
-    }
-  }
-
-  const handleClickOut = e => {
-    if (node.current.contains(e.target)) {
-      return
-    }
-    setOpen(false)
-  }
-
-  useEffect(() => {
-    document.addEventListener("mousedown", handleClickOut)
-    return () => {
-      document.removeEventListener("mousedown", handleClickOut)
-    }
-  }, [])
-
-  return (
-    <li ref={node}>
-
-      <div className={styles.navItem} onClick={handleClickOn} onKeyDown={(e) => e.key === 'Enter' && handleClickOn()} role="button" tabIndex="0">
-        {list && <span className={styles.navItemArrow}>
-          <Icon.ChevronRight {...{strokeWidth: 1}}/>
-        </span>}
-        <span>
-          {children}
-        </span>
-      </div>
-
-      {open && list && <div className={styles.dropMenu}>
-        {list.map((e, i) => <DropItem key={i} item={e} deep={deep}/>)}
-      </div>}
-
-    </li>
-  )
-}
-
-
-const DropItem = ({ item, deep }) => {
-  let link, title;
-  if (deep) {
-    link = `../${item.slug}`
-    title = item.title
-  } else {
-    link = item.slug
-    title = item.directory
-  }
-  return <Link to={link}> {title} </Link>
-}

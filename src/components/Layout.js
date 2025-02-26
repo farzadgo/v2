@@ -1,40 +1,35 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useContext, createContext } from 'react';
 import Head from './Head';
 import Navbar from './Navbar';
 
+export const themes = {
+  light: 'light',
+  dark: 'dark'
+}
+
+export const ThemeContext = createContext({
+  theme: undefined,
+  setTheme: async (theme) => null
+});
+
+export const useTheme = () => useContext(ThemeContext);
 
 const Layout = ({ children, info }) => {
   const [theme, setTheme] = useState(() => {
     if (typeof window !== 'undefined') {
       const savedTheme = localStorage.getItem('theme');
-      return savedTheme ? savedTheme : 'light';
+      return savedTheme ? savedTheme : themes.light;
     }
   })
 
-  const themeToggle = () => {
-    setTheme(prev => {
-      const newTheme = prev === 'light' ? 'dark' : 'light';
-      if (typeof window !== 'undefined') {
-        localStorage.setItem('theme', newTheme);
-      }
-      return newTheme;
-    });
-  };
-
-  useEffect(() => {
-      if (typeof window !== 'undefined') {
-        localStorage.setItem('theme', theme);
-      }
-  }, [theme]);
-
   return (
-    <>
+    <ThemeContext.Provider value={{theme, setTheme}}>
       <Head />
-      <div id="root" data-theme={theme}>
-        <Navbar info={info} themeToggle={themeToggle} theme={theme} />
+      <div id="root">
+        <Navbar info={info} />
         <div id="content"> {children} </div>
       </div>
-    </>
+      </ThemeContext.Provider>
   )
 }
 
