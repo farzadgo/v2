@@ -1,6 +1,6 @@
-import React, { useState, useContext, createContext } from 'react';
-import Head from './Head';
-import Navbar from './Navbar';
+import React, { useState, useContext, createContext } from 'react'
+import Head from './Head'
+import Navbar from './Navbar'
 
 export const themes = {
   light: 'light',
@@ -12,13 +12,13 @@ export const ThemeContext = createContext({
   setTheme: async (theme) => null
 });
 
-export const useTheme = () => useContext(ThemeContext);
+export const useTheme = () => useContext(ThemeContext)
 
 const Layout = ({ children, info }) => {
   const [theme, setTheme] = useState(() => {
     if (typeof window !== 'undefined') {
-      const savedTheme = localStorage.getItem('theme');
-      return savedTheme ? savedTheme : themes.light;
+      const savedTheme = localStorage.getItem('theme')
+      return savedTheme ? savedTheme : themes.light
     }
   })
 

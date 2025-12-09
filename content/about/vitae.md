@@ -11,6 +11,10 @@ order: 2
 
 ## Artistic Practice
 
+- *2025-XX* <p>**Installation** Push/Pull</p>
+- *2025-XX* <p>**Group Performance** Schwankhalle Turvis</p>
+- *2025-XX* <p>**Group Performance & Installation** Sonic Tactics II</p>
+- *2025-XX* <p>**Performance** 3D modelling at Jalsa Weserburg</p>
 - *2024-09* <p>**Group Performance & Installation** SUDORA*ع* presents: Sonic Tactics — GB OPEN 24 — Güterbahnhof Bremen — [link](https://gb-bremen.de/veranstaltungen/2024/09/gb-open-24)</p>
 - *2023-11* <p>**Installation** *Endless Twist* — University of the Arts Bremen (HfK) *[Jahresausstellung](https://www.instagram.com/jahresausstellung_hfk/) 2023* exhibition — Speicher XIa Bremen — [link](https://www.hfk-bremen.de/de/neuigkeiten/frese-design-preise-2023/1014)</p>
 - *2023-08* <p>**Co-curator** *MINE* Research-based series of events — with *notyet* collective — [UMZU](https://www.instagram.com/umzu_23/) Pavilion Bremen — [link](https://notyet.vercel.app/)</p>
@@ -30,6 +34,7 @@ order: 2
 
 ## Selected Commissions
 
+- *2025-XX* <p>Aria's video</p>
 - *2024-04* <p>**Stage Design** for the performance *There is Always Negotiation in Murmuration* by Gabriela Valdespino — Galerie Dechanatstraße HfK Bremen — [trailer](https://www.youtube.com/watch?v=rdrDZmg37bc&feature=youtu.be)</p>
 - *2023-10* <p>**Web design and development** — website for the project *moyo* by perspActives e.V. — [link](https://moyo-breme.space)</p>
 - *2023-03 – 2023-06*	<p>**Script Coach & Digital Space Design** *there is no place like before:* a digital time-travel — in the frame of nota Open Source Gala — a digital theater from [nota association](https://verein.nota.space/) & theater DERIVAT — at TATWERK Berlin — [link](https://theaterderivat.net/digital-time-travel/)</p>

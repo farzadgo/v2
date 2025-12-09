@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { Link, navigate } from 'gatsby';
-import * as styles from '../styles/components/Navbar.module.css';
-import { ChevronRight } from 'react-feather';
+import React, { useState, useEffect, useRef } from 'react'
+import { Link, navigate } from 'gatsby'
+import * as styles from '../styles/components/Navbar.module.css'
+import { ChevronRight } from 'react-feather'
 
 const NavItem = ({ home, list, deep, children }) => {
   const [open, setOpen] = useState(false)
@@ -53,7 +53,7 @@ export default NavItem
 
 
 const DropItem = ({ item, deep }) => {
-  let link, title;
+  let link, title
   if (deep) {
     link = `../${item.slug}`
     title = item.title

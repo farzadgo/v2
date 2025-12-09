@@ -1,6 +1,6 @@
-import React from 'react';
-import Layout from '../components/Layout';
-import { Helmet } from 'react-helmet';
+import React from 'react'
+import Layout from '../components/Layout'
+import { Helmet } from 'react-helmet'
 
 const NotFound = () => {
   const info = { directory: '', workTitle: ''}

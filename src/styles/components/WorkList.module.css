@@ -25,7 +25,7 @@
   user-select: none;
 }
 .work-item:first-child {
-  padding-top: var(--padding);
+  padding-top: calc(var(--padding) + 8px);
 }
 .work-item p {
   line-height: var(--line-height);

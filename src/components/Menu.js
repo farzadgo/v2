@@ -1,19 +1,19 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'gatsby';
-import * as styles from '../styles/components/Menu.module.css';
-import { pages } from '../config';
-import Spinner from './Spinner';
+import React, { useState, useEffect } from 'react'
+import { Link } from 'gatsby'
+import * as styles from '../styles/components/Menu.module.css'
+import { pages } from '../config'
+import Spinner from './Spinner'
 
 const Menu = ({ pause, mobile, modelLoaded }) => {
   const { about, works } = pages
-  const [waited, setWaited] = useState(false);
+  const [waited, setWaited] = useState(false)
 
   useEffect(() => {
-    setWaited(false);
+    setWaited(false)
     if (pause) {
       setTimeout(() => {
-        setWaited(true);
-      }, 1000);
+        setWaited(true)
+      }, 1000)
     }
   }, [pause])
   

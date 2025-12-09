@@ -19,6 +19,8 @@ the open access publication can be reached at [endlesstwist.xyz/publication](htt
 
 <div class="gallery endlesstwist" data-credits="Screen captures from endlesstwist.xyz"></div>
 
+<hr>
+
 ### Previously shows and performances
 
 — Exhibition @ HfK Bremen Graduate Show (Jahresausstellung 2023) ⬎ <br>
@@ -29,8 +31,7 @@ the open access publication can be reached at [endlesstwist.xyz/publication](htt
 
 # Exhibition at Jahresausstellung 2023
 
-- 1–channel projection of *endlesstwist.xyz* on a worn-out advertising banner belonging to a construction site in Bremen Überseestadt, 2-channel audio composition
-- Steel scaffold tubes, cast iron scaffolding couplers, wireless mouse and keyboard
+- 1–channel projection of *endlesstwist.xyz* on a worn-out advertising banner belonging to a construction site in Bremen Überseestadt, 2-channel audio composition, steel scaffold tubes, cast iron scaffolding couplers, wireless mouse and keyboard
 - 18:00 minutes loop
 - Exhibition: Jahresausstellung, Speicher XI A, Bremen Germany
 - 17 – 22 November 2023
@@ -64,7 +65,7 @@ As a situation and performance Endless Twist was invited by Felix Dreesen and Lu
 - Performance: Schwankhalle Bremen
 - 18\. March 2023
 
-Participation of Farzad Golghasemi and Gabriela Valdespino during [Tender Ansence](https://ta.peira.space/#schedule) online residency *A Glocal Class for Digital Performance*, supported the development of this project which resulted in duo's audiovisual performance [*as everything repeats and doubles itself, the ground moves under the feet*](https://www.schwankhalle.de/en/events/as-everything-repeats). Special thanks to [Peira](https://www.peira.space/) collective for their support.
+Participation of Farzad Golghasemi and Gabriela Valdespino during [Tender Ansence](https://www.peira.space/de/projekte/tender-absence-2023?row=Tender+Absence) online residency *A Glocal Class for Digital Performance*, supported the development of this project which resulted in duo's audiovisual performance [*as everything repeats and doubles itself, the ground moves under the feet*](https://www.schwankhalle.de/en/events/as-everything-repeats). Special thanks to [Peira](https://www.peira.space/) collective for their support.
 
 <div class="gallery endless-schwankhalle" data-credits="Photos by Guida Ribeiro"></div>
 

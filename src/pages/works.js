@@ -1,18 +1,18 @@
-import React, { useState, useEffect } from 'react';
-import Layout from '../components/Layout';
-import { Helmet } from 'react-helmet';
-import { pages } from '../config';
-import WorkList from '../components/WorkList';
+import React, { useState, useEffect } from 'react'
+import Layout from '../components/Layout'
+import { Helmet } from 'react-helmet'
+import { pages } from '../config'
+import WorkList from '../components/WorkList'
 
 
 const Works = () => {
-  const info = pages.works;
-  const [show, setShow] = useState(0);
+  const info = pages.works
+  const [show, setShow] = useState(0)
 
   useEffect(() => {
     setTimeout(() => {
-      setShow(1);
-    }, 100);
+      setShow(1)
+    }, 100)
   }, [])
   
   return (

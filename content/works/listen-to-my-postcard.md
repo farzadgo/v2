@@ -22,8 +22,4 @@ The result of this residency as a dialogue between artists Yara Mekawei and Farz
 
 <div class="gallery postcard-web" data-credits="Screen captures from COAPPARATION LAB's Virtuales Arbeitszimmer"></div>
 
-<hr>
-
-### Publication
-
-coming soon...
+<!-- ### Publication -->

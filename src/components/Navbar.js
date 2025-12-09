@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
-import * as styles from '../styles/components/Navbar.module.css';
-import NavItem from './NavItem';
-import { ToggleLeft, ToggleRight } from 'react-feather';
-import { pages } from '../config';
-import useWindowSize from '../hooks/useWindowSize';
-import { themes, useTheme } from './Layout';
+import React, { useState, useEffect } from 'react'
+import { useStaticQuery, graphql } from 'gatsby'
+import * as styles from '../styles/components/Navbar.module.css'
+import NavItem from './NavItem'
+import { ToggleLeft, ToggleRight } from 'react-feather'
+import { pages } from '../config'
+import useWindowSize from '../hooks/useWindowSize'
+import { themes, useTheme } from './Layout'
 
 
 const Navbar = ({ info }) => {
@@ -26,37 +26,37 @@ const Navbar = ({ info }) => {
     }
   `)
 
-  const {theme, setTheme} = useTheme();
+  const {theme, setTheme} = useTheme()
 
-  const { directory, workTitle } = info;
-  const workList = data.allMarkdownRemark.nodes.map(e => e.frontmatter);
+  const { directory, workTitle } = info
+  const workList = data.allMarkdownRemark.nodes.map(e => e.frontmatter)
   const dirList = [ pages.works, pages.about ]
   // const { pathname } = useLocation()
   // const pathWords = pathname.split('/').filter(e => e)
   // const depth = pathWords.length
 
-  const breakpoint = 1000;
-  const [home, setHome] = useState(false);
-  const width = useWindowSize();
+  const breakpoint = 1000
+  const [home, setHome] = useState(false)
+  const width = useWindowSize()
   
-  const wideNavbar = directory === 'about' || width < breakpoint || home;
-  const homeTitle = width < breakpoint && workTitle ? 'farzad' : 'farzad golghasemi';
+  const wideNavbar = directory === 'about' || width < breakpoint || home
+  const homeTitle = width < breakpoint && workTitle ? 'farzad' : 'farzad golghasemi'
 
   const containerStyle = {
     width: wideNavbar ? '100%' : 'var(--nav-width)',
     borderRightWidth: wideNavbar ? '0px' : '1px'
   }
 
-  const themeToggle = () => setTheme(theme === themes.light ? themes.dark : themes.light);
+  const themeToggle = () => setTheme(theme === themes.light ? themes.dark : themes.light)
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      localStorage.setItem('theme', theme);
+      localStorage.setItem('theme', theme)
     }
-  }, [theme]);
+  }, [theme])
 
   useEffect(() => {
-    if (!directory && !workTitle) setHome(true);
+    if (!directory && !workTitle) setHome(true)
   }, [directory, workTitle])
 
 

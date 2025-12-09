@@ -8,7 +8,7 @@ import { useTheme } from './Layout'
 const Head = ({ title, description, image }) => {
   const { pathname } = useLocation()
 
-  const { theme } = useTheme();
+  const { theme } = useTheme()
 
   const { site } = useStaticQuery(
     graphql`
@@ -32,7 +32,7 @@ const Head = ({ title, description, image }) => {
     siteUrl,
     defaultImage,
     twitterUsername,
-  } = site.siteMetadata;
+  } = site.siteMetadata
 
   const seo = {
     title: title || defaultTitle,

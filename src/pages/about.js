@@ -2,25 +2,25 @@ import React, { useEffect, useState } from 'react'
 import { graphql } from 'gatsby'
 import { Helmet } from 'react-helmet'
 import Layout from '../components/Layout'
-import { Instagram, Mail, Printer } from 'react-feather';
+import { Instagram, Mail, Printer } from 'react-feather'
 import * as styles from '../styles/pages/About.module.css'
 import { pages, email, socialMedia } from '../config'
 
 
 const About = ({ data }) => {
   
-  const info = pages.about;
-  const nodes = data.allMarkdownRemark.nodes;
-  const [ bio, vitae, imprint ] = nodes.map(e => e.html);
+  const info = pages.about
+  const nodes = data.allMarkdownRemark.nodes
+  const [ bio, vitae, imprint ] = nodes.map(e => e.html)
 
-  const [show, setShow] = useState(0);
+  const [show, setShow] = useState(0)
 
-  const insta = socialMedia.filter(e => e.title === 'Instagram')[0];
+  const instagram = socialMedia.filter(e => e.title === 'Instagram')[0]
 
   useEffect(() => {
     setTimeout(() => {
-      setShow(1);
-    }, 100);
+      setShow(1)
+    }, 100)
   }, [])
 
 
@@ -39,8 +39,8 @@ const About = ({ data }) => {
             </div>
             <div>
               <Instagram />
-              <a href={insta.url} aria-label='Instagram Link' target="_blank" rel="noreferrer">
-                {insta.username}
+              <a href={instagram.url} aria-label='Instagram Link' target="_blank" rel="noreferrer">
+                {instagram.username}
               </a>
             </div>
           </div>

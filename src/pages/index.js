@@ -1,36 +1,36 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { Helmet } from 'react-helmet';
-import Layout from '../components/Layout';
-import Menu from '../components/Menu';
-import { pages } from '../config';
+import React, { useEffect, useRef, useState } from 'react'
+import { Helmet } from 'react-helmet'
+import Layout from '../components/Layout'
+import Menu from '../components/Menu'
+import { pages } from '../config'
 
-import { Clock, WebGLRenderer, ACESFilmicToneMapping } from 'three';
-import { updatePlayer, controls, teleportPlayerIfOob, keydownFunc, keyupFunc } from '../3dcore/player';
-import { camera } from '../3dcore/camera';
-import { scene } from '../3dcore/scene';
-import { manager, loadModels } from '../3dcore/loader';
+import { Clock, WebGLRenderer, ACESFilmicToneMapping } from 'three'
+import { updatePlayer, controls, teleportPlayerIfOob, keydownFunc, keyupFunc } from '../3dcore/player'
+import { camera } from '../3dcore/camera'
+import { scene } from '../3dcore/scene'
+import { manager, loadModels } from '../3dcore/loader'
 
 
 const isMobile = () => {
   if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-    return true;
+    return true
   } else {
-    return false;
+    return false
   }
 }
 
 
 const Foyer = () => {
-  // restart the space (if prefered) from here
+  // restart the space (if preferred) from here
   // and send it other modules e.g. camera.js
   
-  const info = pages.home;
-  const [show, setShow] = useState(0);
-  const [mobile, setMobile] = useState(false);
-  const mountRef = useRef(null);
-  const [modelLoaded, setModelLoaded] = useState(false);
-  // const [modelError, setModelError] = useState(false);
-  const [pause, setPause] = useState(true);
+  const info = pages.home
+  const [show, setShow] = useState(0)
+  const [mobile, setMobile] = useState(false)
+  const mountRef = useRef(null)
+  const [modelLoaded, setModelLoaded] = useState(false)
+  // const [modelError, setModelError] = useState(false)
+  const [pause, setPause] = useState(true)
 
   const mainStyle = {
     width: '100%',
@@ -64,44 +64,44 @@ const Foyer = () => {
 
   useEffect(() => {
 
-    let animID;
-    const STEPS_PER_FRAME = 5;
-    const clock = new Clock();
+    let animID
+    const STEPS_PER_FRAME = 5
+    const clock = new Clock()
 
 
-    const container = document.querySelector('.webgl-container');
-    const renderer = new WebGLRenderer({antialias: true});
-    renderer.setPixelRatio(window.devicePixelRatio);
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.toneMapping = ACESFilmicToneMapping;
-    renderer.toneMappingExposure = 0.48;
-    container.appendChild(renderer.domElement);
+    const container = document.querySelector('.webgl-container')
+    const renderer = new WebGLRenderer({antialias: true})
+    renderer.setPixelRatio(window.devicePixelRatio)
+    renderer.setSize(window.innerWidth, window.innerHeight)
+    renderer.toneMapping = ACESFilmicToneMapping
+    renderer.toneMappingExposure = 0.48
+    container.appendChild(renderer.domElement)
 
 
     const mousemoveFunc = event => {
       if (document.pointerLockElement === document.body) {
-        camera.rotation.y -= event.movementX / 500;
-        camera.rotation.x -= event.movementY / 500;
+        camera.rotation.y -= event.movementX / 500
+        camera.rotation.x -= event.movementY / 500
       }
     }
 
     const clickFunc = event => {
-      let mainClass;
-      let allClass = event.target.className;
+      let mainClass
+      let allClass = event.target.className
       if (typeof allClass === 'string') {
-        mainClass = allClass.split(' ')[0];
+        mainClass = allClass.split(' ')[0]
       }
       if (mainClass === 'play-btn') {
-        document.body.requestPointerLock();
-        animate();
-        setPause(false);
+        document.body.requestPointerLock()
+        animate()
+        setPause(false)
       }
     }
 
     const onPointerLockChange = () => {
       if (document.pointerLockElement !== document.body) {
-        stopAnim();
-        setPause(true);
+        stopAnim()
+        setPause(true)
       }
     }
 
@@ -111,66 +111,66 @@ const Foyer = () => {
     }
 
     const onWindowResize = () => {
-      camera.aspect = window.innerWidth / window.innerHeight;
-      camera.updateProjectionMatrix();
-      updateRenderer();
+      camera.aspect = window.innerWidth / window.innerHeight
+      camera.updateProjectionMatrix()
+      updateRenderer()
     }
 
-    document.addEventListener('click', clickFunc);
-    document.addEventListener('pointerlockchange', onPointerLockChange);
-    document.addEventListener('keydown', keydownFunc);
-    document.addEventListener('keyup', keyupFunc);
-    document.body.addEventListener('mousemove', mousemoveFunc);
-    window.addEventListener('resize', onWindowResize);
+    document.addEventListener('click', clickFunc)
+    document.addEventListener('pointerlockchange', onPointerLockChange)
+    document.addEventListener('keydown', keydownFunc)
+    document.addEventListener('keyup', keyupFunc)
+    document.body.addEventListener('mousemove', mousemoveFunc)
+    window.addEventListener('resize', onWindowResize)
 
 
     if (!isMobile()) {
-      loadModels();
+      loadModels()
     } else {
-      setMobile(true);
+      setMobile(true)
     }
     
     manager.onLoad = () => {
-      console.log('Loading complete!');
-      setModelLoaded(true);
+      console.log('Loading complete!')
+      setModelLoaded(true)
     }
     manager.onProgress = (_url, itemsLoaded, itemsTotal) => {
-      console.log(`loaded: ${itemsLoaded}/${itemsTotal}`);
+      console.log(`loaded: ${itemsLoaded}/${itemsTotal}`)
     }
     manager.onError = (url) => {
-      console.log('error loading ' + url);
-      // setModelError(true);
+      console.log('error loading ' + url)
+      // setModelError(true)
     }
 
     const animate = () => {
-      const deltaTime = Math.min( 0.05, clock.getDelta()) / STEPS_PER_FRAME;
+      const deltaTime = Math.min( 0.05, clock.getDelta()) / STEPS_PER_FRAME
       for (let i = 0; i < STEPS_PER_FRAME; i ++) {
-        controls(deltaTime);
-        updatePlayer(deltaTime);
-        teleportPlayerIfOob();
+        controls(deltaTime)
+        updatePlayer(deltaTime)
+        teleportPlayerIfOob()
       }
-      renderer.render(scene, camera);
-      animID = requestAnimationFrame(animate);
+      renderer.render(scene, camera)
+      animID = requestAnimationFrame(animate)
     }
 
     const stopAnim = () => {
-      cancelAnimationFrame(animID);
-      // console.log(camera.position);
+      cancelAnimationFrame(animID)
+      // console.log(camera.position)
     }
 
-    setShow(1);
+    setShow(1)
 
     return () => {
-      console.log('unmount getlost');
-      document.removeEventListener('click', clickFunc);
-      document.removeEventListener('pointerlockchange', onPointerLockChange);
-      document.removeEventListener('keydown', keydownFunc);
-      document.removeEventListener('keyup', keyupFunc);
-      document.body.removeEventListener('mousemove', mousemoveFunc);
-      window.removeEventListener('resize', onWindowResize);
+      console.log('unmount getLost')
+      document.removeEventListener('click', clickFunc)
+      document.removeEventListener('pointerlockchange', onPointerLockChange)
+      document.removeEventListener('keydown', keydownFunc)
+      document.removeEventListener('keyup', keyupFunc)
+      document.body.removeEventListener('mousemove', mousemoveFunc)
+      window.removeEventListener('resize', onWindowResize)
     }
 
-  }, []);
+  }, [])
 
   
   return (

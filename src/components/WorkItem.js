@@ -1,10 +1,10 @@
-import React, { memo } from 'react';
-import * as styles from '../styles/components/WorkList.module.css';
-import { Link } from 'gatsby';
+import React, { memo } from 'react'
+import * as styles from '../styles/components/WorkList.module.css'
+import { Link } from 'gatsby'
 
 const WorkItem = ({ work, dir, activeSlug, handleHover }) => {
-  const { title, thumb, slug, date } = work.frontmatter;
-  let active = activeSlug === slug;
+  const { title, thumb, slug, date } = work.frontmatter
+  let active = activeSlug === slug
 
   return (
     <Link
@@ -18,4 +18,4 @@ const WorkItem = ({ work, dir, activeSlug, handleHover }) => {
   )
 }
 
-export default memo(WorkItem);
+export default memo(WorkItem)

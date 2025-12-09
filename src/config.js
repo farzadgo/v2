@@ -5,8 +5,8 @@ module.exports = {
   socialMedia: [
     {
       title: 'Instagram',
-      url: 'https://www.instagram.com/dis___orient',
-      username: '@dis___orient'
+      url: 'https://www.instagram.com/fagosemi/',
+      username: '@fagosemi'
     },
     {
       title: 'GitHub',

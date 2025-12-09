@@ -2,7 +2,7 @@
   overflow-y: auto;
   flex: 1;
   margin-top: var(--nav-height);
-  padding: var(--padding) 0;
+  padding: calc(var(--padding) * 2) 0;
   transition: opacity 0.2s ease-in-out;
 }
 
@@ -21,20 +21,21 @@
 .html > p,
 .html > ul,
 .html > hr,
-.html > blockquote {
+.html > blockquote,
+.html > table,
+.caption {
   max-width: 730px;
-  margin-bottom: 1.6rem;
+  margin-bottom: 2rem;
 }
 .html > h1 {
   font-size: var(--font-lg);
   font-weight: 400;
-  line-height: 1.2;
+  line-height: 1.1;
 }
 .html > h2,
 .html > h3 {
   font-size: var(--font-md);
   font-weight: 500;
-  padding-top: 2rem;
 }
 
 .html > ul {
@@ -57,7 +58,7 @@
 }
 
 .html > hr {
-  height: 50px;
+  height: 25px;
   border: none;
 }
 
@@ -85,11 +86,14 @@
 .image-container {
   display: inline-block;
   max-width: calc(100% - var(--padding) * 2);
-  margin-right: var(--padding);
+  margin-right: calc(var(--padding) * 0.75);
   margin-bottom: 1rem;
 }
+.image-container:first-child {
+  margin-left: var(--padding);
+}
 .image-container:last-child {
-  margin-right: 0;
+  margin-right: var(--padding);
 }
 .image-container img {
   display: block;
@@ -102,7 +106,20 @@
   width: fit-content;
 }
 
-/* TODO: add image counter */
+.html > table {
+  font-size: var(--font-sm);
+}
+.html table th {
+  text-align: left;
+}
+.html table tr td {
+  padding: 5px 0;
+}
+.html table tr td:first-child {
+  padding-right: var(--padding);
+  white-space: nowrap;
+  vertical-align: top;
+}
 
 /* ---------------- desktop ---------------- */
 @media (min-width: 1000px) {
@@ -116,9 +133,16 @@
   }
   .html > ul {
     margin-top: 50px;
+    margin-bottom: 50px;
   }
   .html > hr {
-    height: 200px;
+    height: 50px;
+  }
+  .image-container {
+    margin-right: var(--padding);
+  }
+  .image-container:first-child {
+    margin-left: 0;
   }
   .image-container:last-child {
     margin-right: calc(var(--padding) * 2);

@@ -1,11 +1,11 @@
-import React, { useEffect, useState, useRef, useCallback } from 'react';
-import { graphql, useStaticQuery } from 'gatsby';
-import * as styles from '../styles/components/WorkList.module.css';
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-import { useLocation } from '@reach/router';
-import useWindowSize from '../hooks/useWindowSize';
-import { throttle } from '../utilities/helpers';
-import WorkItem from './WorkItem';
+import React, { useEffect, useState, useRef, useCallback } from 'react'
+import { graphql, useStaticQuery } from 'gatsby'
+import * as styles from '../styles/components/WorkList.module.css'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import { useLocation } from '@reach/router'
+import useWindowSize from '../hooks/useWindowSize'
+import { throttle } from '../utilities/helpers'
+import WorkItem from './WorkItem'
 
 
 const WorkList = ({ dir }) => {
@@ -35,51 +35,51 @@ const WorkList = ({ dir }) => {
     }
   `)
 
-  const { pathname } = useLocation();
-  const activeSlug = pathname.split('/').filter(e => e.length > 0 && e !== 'works')[0];
+  const { pathname } = useLocation()
+  const activeSlug = pathname.split('/').filter(e => e.length > 0 && e !== 'works')[0]
 
-  const works = data.allMarkdownRemark.nodes;
+  const works = data.allMarkdownRemark.nodes
 
-  const width = useWindowSize();
-  const container = useRef(null);
+  const width = useWindowSize()
+  const container = useRef(null)
 
   const active = {title: '', thumb: '', date: ''}
-  const [hovered, setHovered] = useState(active);
+  const [hovered, setHovered] = useState(active)
 
-  const [yPos, setYPos] = useState(50);
-  const [shiftThumb, setShiftThumb] = useState(false);
+  const [yPos, setYPos] = useState(50)
+  const [shiftThumb, setShiftThumb] = useState(false)
 
   const containerStyle = {
     width: hovered.thumb && width > 1000 ? '100%' : width < 1000 ? '100%' : 'var(--nav-width)',
   }
 
   const handleMouseMove = throttle((event) => {
-    setYPos(event.clientY - 40);
+    setYPos(event.clientY - 40)
     if (event.clientY > window.innerHeight - 330) {
       setShiftThumb(true)
     } else {
       setShiftThumb(false)
     }
-  }, 20);
+  }, 20)
 
   // const changeToSemanticDate = (date) => {
-  //   const d = new Date(date);
-  //   return d.toLocaleDateString('en-US', { year: 'numeric', month: 'long' });
+  //   const d = new Date(date)
+  //   return d.toLocaleDateString('en-US', { year: 'numeric', month: 'long' })
   // }
 
   const handleHover = useCallback((title, thumb, date) => {
-    setHovered({...hovered, title, thumb, date});
-  }, [hovered]);
+    setHovered({...hovered, title, thumb, date})
+  }, [hovered])
 
   useEffect(() => {
-    let workListContainer = null;
+    let workListContainer = null
     if (container.current) {
-      container.current.addEventListener('mousemove', handleMouseMove);
-      workListContainer = container.current;
+      container.current.addEventListener('mousemove', handleMouseMove)
+      workListContainer = container.current
     }
     return () => {
       if (workListContainer) {
-        workListContainer.removeEventListener('mousemove', handleMouseMove);
+        workListContainer.removeEventListener('mousemove', handleMouseMove)
       }
     }
   }, [handleMouseMove])
