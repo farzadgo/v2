@@ -25,7 +25,7 @@
 .html > table,
 .caption {
   max-width: 730px;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5em;
 }
 .html > h1 {
   font-size: var(--font-lg);
@@ -107,13 +107,18 @@
 }
 
 .html > table {
-  font-size: var(--font-sm);
+  font-size: 0.9em;
 }
 .html table th {
   text-align: left;
 }
+.html table tr th,
 .html table tr td {
-  padding: 5px 0;
+  padding-bottom: 10px;
+}
+.html table tr th {
+  white-space: nowrap;
+  font-weight: 500;
 }
 .html table tr td:first-child {
   padding-right: var(--padding);
@@ -132,7 +137,7 @@
     margin-left: calc(var(--padding) * 2 + var(--nav-width));
   }
   .html > ul {
-    margin-top: 50px;
+    /* margin-top: 50px; */
     margin-bottom: 50px;
   }
   .html > hr {

@@ -105,8 +105,6 @@ strong, b, h1, h2, h3, h4, h5, h6 {
   overflow-x: auto;
   overflow-y: hidden;
   padding-top: 1rem;
-  margin-bottom: 1rem;
-  /* margin-left: 0; */
   scrollbar-width: none;
 }
 .carousel::-webkit-scrollbar {
