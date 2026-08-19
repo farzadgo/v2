@@ -56,12 +56,13 @@
 /* ---------- cv (html) ---------- */
 .vitae > h2 {
   position: relative;
-  font-size: var(--font-lg);
-  margin-bottom: 2.5rem;
-  padding-top: 2.5rem;
+  font-size: var(--font-md);
+  margin-bottom: 1.5rem;
+  padding-top: 2rem;
+  text-transform: uppercase;
 }
 .vitae > ul > li {
-  margin-bottom: 2rem;
+  margin-bottom: 1.2rem;
 }
 .vitae > ul > li > p {
   padding-top: 0.6rem;
@@ -89,14 +90,14 @@
 /* ----------- desktop ----------- */
 @media (min-width: 900px), print {
   .vitae > h2 {
-    left: 220px;
+    left: 200px;
   }
   .vitae > ul > li {
     display: flex;
   }
   .vitae > ul > li > em {
     font-style: normal;
-    min-width: 220px;
+    min-width: 200px;
     word-break: normal;
   }
   .vitae > ul > li > p {
