@@ -65,6 +65,7 @@
 .html a {
   color: var(--link-color);
   /* white-space: nowrap; */
+  line-height: 1;
 }
 .html a::after {
   display: inline-block;
