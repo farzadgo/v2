@@ -1,52 +1,12 @@
 import React, { useEffect, useState, useRef, useCallback } from 'react'
-import { graphql, useStaticQuery } from 'gatsby'
 import * as styles from '../styles/components/WorkList.module.css'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
-import { useLocation } from '@reach/router'
 import useWindowSize from '../hooks/useWindowSize'
 import { throttle } from '../utilities/helpers'
-import WorkItem from './WorkItem'
+import WorkListItems from './WorkListItems'
 
 
 const WorkList = () => {
-
-  const data = useStaticQuery(graphql`
-    query WorkList {
-      allMarkdownRemark(
-        filter: {fileAbsolutePath: {regex: "/works/"}}
-        sort: {frontmatter: {date: DESC}}
-      ) {
-        nodes {
-          frontmatter {
-            title
-            slug
-            date
-            category
-            parent
-            thumb {
-              childImageSharp {
-                gatsbyImageData(
-                  layout: CONSTRAINED,
-                  transformOptions: {cropFocus: CENTER},
-                )
-              }
-            }
-          }
-        }
-      }
-    }
-  `)
-
-  const { pathname } = useLocation()
-  const activeSlug = pathname.split('/').filter(e => e.length > 0)[0]
-
-  const works = data.allMarkdownRemark.nodes
-
-  const groups = [
-    { key: 'artistic-practice', heading: null, works: works.filter(w => w.frontmatter.category === 'artistic-practice') },
-    { key: 'collaborative', heading: 'curation and collaboration', works: works.filter(w => w.frontmatter.category === 'collaborative' && !w.frontmatter.parent) },
-    { key: 'sudora3', heading: 'sudora3', works: works.filter(w => w.frontmatter.category === 'collaborative' && w.frontmatter.parent === 'sudora3') },
-  ]
 
   const width = useWindowSize()
   const container = useRef(null)
@@ -70,11 +30,6 @@ const WorkList = () => {
       setShiftThumb(false)
     }
   }, 20)
-
-  // const changeToSemanticDate = (date) => {
-  //   const d = new Date(date)
-  //   return d.toLocaleDateString('en-US', { year: 'numeric', month: 'long' })
-  // }
 
   const handleHover = useCallback((title, thumb, date) => {
     if (thumb) {
@@ -105,26 +60,10 @@ const WorkList = () => {
   return (
     <div className={styles.container} ref={container} style={containerStyle}>
 
-      <ul className={styles.workList}>
-        {groups.map(group => (
-          <React.Fragment key={group.key}>
-            {group.heading && <li className={styles.groupHeading}>{group.heading}</li>}
-            {group.works.map((e, i) => (
-              <WorkItem
-                key={e.frontmatter.slug}
-                work={e}
-                // showYear={i === 0 || e.frontmatter.date.split('-')[0] !== group.works[i - 1].frontmatter.date.split('-')[0]}
-                activeSlug={activeSlug}
-                handleHover={handleHover}
-              />
-            ))}
-          </React.Fragment>
-        ))}
-      </ul>
+      <WorkListItems className={styles.workList} onHover={handleHover} />
 
       <div className={`${styles.thumbContainer} ${visible ? styles.visible : ''}`}>
         <div className={styles.thumbImage} style={{top: `${shiftThumb ? yPos - 270 : yPos}px`}}>
-          {/* <p> {hovered.date.split('-')[0]} </p> */}
           <GatsbyImage image={getImage(hovered.thumb)} alt={hovered.title} />
         </div>
       </div>

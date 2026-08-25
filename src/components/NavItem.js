@@ -1,15 +1,15 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { Link, navigate } from 'gatsby'
+import { navigate } from 'gatsby'
 import * as styles from '../styles/components/Navbar.module.css'
 
-const NavItem = ({ home, about, list, deep, children }) => {
+const NavItem = ({ home, about, dropdown, children }) => {
   const [open, setOpen] = useState(false)
   const node = useRef()
 
   const handleClickOn = () => {
-    if (list) setOpen(!open)
-    if (!list && home) navigate("/")
-    if (!list && about) navigate("/about")
+    if (dropdown) { setOpen(!open); return }
+    if (home) navigate("/")
+    if (about) navigate("/about")
   }
 
   const handleClickOut = e => {
@@ -33,16 +33,8 @@ const NavItem = ({ home, about, list, deep, children }) => {
           {children}
         </span>
       </div>
-      {open && list && <div className={styles.dropMenu}>
-        {list.map((e, i) => {
-          const link = `../${e.slug}`
-          const title = e.title
-          return (
-            <Link key={i} to={link}>
-              {title}
-            </Link>
-          )
-        })}
+      {open && dropdown && <div className={styles.dropMenu}>
+        {dropdown}
       </div>}
     </li>
   )
