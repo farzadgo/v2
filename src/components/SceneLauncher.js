@@ -182,9 +182,13 @@ const SceneLauncher = () => {
     <>
       <div className={styles.boxBtnContainer}>
         <div className={styles.boxBtn} onClick={() => setOpen(true)} aria-label="Get lost">
-          <div className={styles.box}>
-            <div className={styles.face}> get lost </div>
-            <div className={`${styles.side} ${styles.face}`}> somewhere </div>
+          <div className={styles.cube}>
+            <div className={`${styles.face} ${styles.front}`}>get</div>
+            <div className={`${styles.face} ${styles.right}`}>lost</div>
+            <div className={`${styles.face} ${styles.back}`}>get</div>
+            <div className={`${styles.face} ${styles.left}`}>lost</div>
+            {/* <div className={`${styles.face} ${styles.top}`}></div> */}
+            {/* <div className={`${styles.face} ${styles.bottom}`}></div> */}
           </div>
         </div>
       </div>
