@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { graphql } from 'gatsby'
 import { Helmet } from 'react-helmet'
 import Layout from '../components/Layout'
-import { Instagram, Mail, Printer } from 'react-feather'
+import { Instagram, Mail } from 'react-feather'
 import * as styles from '../styles/pages/About.module.css'
 import { pages, email, socialMedia } from '../config'
 
@@ -11,7 +11,7 @@ const About = ({ data }) => {
   
   const info = pages.about
   const nodes = data.allMarkdownRemark.nodes
-  const [ bio, vitae, imprint ] = nodes.map(e => e.html)
+  const [ bio, vitae ] = nodes.map(e => e.html)
 
   const [show, setShow] = useState(0)
 
@@ -27,11 +27,9 @@ const About = ({ data }) => {
   return (
     <Layout info={info}>
       <Helmet title={info.directory} />
-      <main className="main" style={{transition: 'opacity 0.2s ease-in-out' , opacity: show}}>
-        <div className={styles.body}>
-          
+      <main className="main">
+        <div className={styles.container} style={{opacity: show}}>
           <div className={styles.bio} dangerouslySetInnerHTML={{__html: bio}}/>
-
           <div className={styles.contact}>
             <div>
               <Mail />
@@ -44,14 +42,7 @@ const About = ({ data }) => {
               </a>
             </div>
           </div>
-
-          <div className={styles.print}>
-            <button onClick={() => window.print()}> <Printer {...{size: 32, strokeWidth: 0.5}} style={{stroke: 'var(--very-gray)'}}/> </button>
-          </div>
-
           <div className={styles.vitae} dangerouslySetInnerHTML={{__html: vitae}}/>
-          <div className={styles.imprint} dangerouslySetInnerHTML={{__html: imprint}}/>
-
         </div>
       </main>
     </Layout>

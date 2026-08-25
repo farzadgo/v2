@@ -8,7 +8,7 @@ import { throttle } from '../utilities/helpers'
 import WorkItem from './WorkItem'
 
 
-const WorkList = ({ dir }) => {
+const WorkList = () => {
 
   const data = useStaticQuery(graphql`
     query WorkList {
@@ -36,7 +36,7 @@ const WorkList = ({ dir }) => {
   `)
 
   const { pathname } = useLocation()
-  const activeSlug = pathname.split('/').filter(e => e.length > 0 && e !== 'works')[0]
+  const activeSlug = pathname.split('/').filter(e => e.length > 0)[0]
 
   const works = data.allMarkdownRemark.nodes
 
@@ -50,7 +50,7 @@ const WorkList = ({ dir }) => {
   const [shiftThumb, setShiftThumb] = useState(false)
 
   const containerStyle = {
-    width: hovered.thumb && width > 1000 ? '100%' : width < 1000 ? '100%' : 'var(--nav-width)',
+    width: hovered.thumb ? '100%' : 'var(--nav-width)',
   }
 
   const handleMouseMove = throttle((event) => {
@@ -84,23 +84,23 @@ const WorkList = ({ dir }) => {
     }
   }, [handleMouseMove])
 
+  if (width < 1000) return null
 
-  return (      
+  return (
     <div className={styles.container} ref={container} style={containerStyle}>
 
-      <div className={styles.workList}>
+      <ul className={styles.workList}>
         {works.map((e, i) =>
           <WorkItem
             key={i}
             work={e}
-            dir={dir}
             activeSlug={activeSlug}
             handleHover={handleHover}
           />
         )}
-      </div>
+      </ul>
 
-      {hovered.thumb && width >= 1000 && <div className={styles.thumbContainer}>
+      {hovered.thumb && <div className={styles.thumbContainer}>
         <div className={styles.thumbImage} style={{top: `${shiftThumb ? yPos - 270 : yPos}px`}}>
           <p> {hovered.date.split('-')[0]} </p>
           <GatsbyImage image={getImage(hovered.thumb)} alt={hovered.title} />

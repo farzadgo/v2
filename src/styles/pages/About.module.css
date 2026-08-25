@@ -1,25 +1,26 @@
-.body {
-  width: 100%;
+.container {
   overflow-y: auto;
+  flex: 1;
   margin-top: var(--nav-height);
-  padding: var(--padding);
+  padding: calc(var(--padding) * 2) var(--padding);
   transition: opacity 0.2s ease-in-out;
   font-family: var(--sans-font);
   font-size: var(--font-md);
   line-height: var(--line-height);
 }
 
-.body > * {
-  margin-bottom: 40px;
-  max-width: 980px;
-}
-
 /* --------- bio (html) ---------- */
+.bio {
+  max-width: 730px;
+}
 .bio > p {
   margin-bottom: 1.5rem;
 }
 
 /* ---------- contact ----------- */
+.contact {
+  margin-bottom: 3rem;
+}
 .contact > div {
   display: flex;
   gap: 20px;
@@ -29,28 +30,6 @@
   stroke-width: 1;
   height: var(--fontmd);
   width: var(--font-md);
-}
-
-/* ------------ print ------------ */
-.print {
-  display: flex;
-  justify-content: center;
-}
-.print button {
-  display: flex;
-  border: none;
-  background: none;
-  cursor: pointer;
-}
-
-@media print {
-  .body {
-    margin-top: 0;
-  }
-  .print,
-  .imprint {
-    display: none;
-  }
 }
 
 /* ---------- cv (html) ---------- */
@@ -71,13 +50,16 @@
     font-weight: 400;
   }
 }
+.vitae > ul > li > em {
+  font-style: normal;
+}
 .vitae > ul > li code {
   font-family: var(--sans-font);
   font-size: var(--font-sm);
 }
-.vitae > ul:last-child {
+/* .vitae > ul:last-child {
   margin-bottom: 150px;
-}
+} */
 .vitae a {
   color: var(--link-color);
   opacity: 0.5;
@@ -104,27 +86,16 @@
   transform: skew(-0.16rad);
 }
 
-/* ----------- imprint ----------- */
-.imprint {
-  font-size: calc(var(--font-sm) * 0.9);
-  padding: 20px 20px 10px;
-  border: 1px dotted var(--light-gray);
-}
-.imprint p {
-  margin-bottom: 1.5rem;
-}
-
-
 /* ----------- desktop ----------- */
-@media (min-width: 900px), print {
-  .vitae > h2 {
-    left: 180px;
+@media (min-width: 1000px) {
+  .container {
+    margin-top: 0;
+    margin-left: var(--nav-width);
   }
   .vitae > ul > li {
     display: flex;
   }
   .vitae > ul > li > em {
-    font-style: normal;
     min-width: 180px;
     word-break: normal;
   }

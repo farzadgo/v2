@@ -1,6 +1,7 @@
 import React, { useState, useContext, createContext } from 'react'
 import Head from './Head'
 import Navbar from './Navbar'
+import WorkList from './WorkList'
 
 export const themes = {
   light: 'light',
@@ -27,9 +28,10 @@ const Layout = ({ children, info }) => {
       <Head />
       <div id="root">
         <Navbar info={info} />
+        <WorkList />
         <div id="content"> {children} </div>
       </div>
-      </ThemeContext.Provider>
+    </ThemeContext.Provider>
   )
 }
 

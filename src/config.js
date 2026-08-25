@@ -1,3 +1,16 @@
+const pages = {
+  home: {
+    slug: '/',
+    directory: '',
+    workTitle: '',
+  },
+  about: {
+    slug: '/about',
+    directory: 'about',
+    workTitle: '',
+  }
+}
+
 module.exports = {
   email: 'fagosemi@gmail.com',
 
@@ -15,21 +28,5 @@ module.exports = {
     }
   ],
 
-  pages: {
-    home: {
-      slug: '/',
-      directory: '',
-      workTitle: '',
-    },
-    about: {
-      slug: '/about',
-      directory: 'about',
-      workTitle: '',
-    },
-    works: {
-      slug: '/works',
-      directory: 'works',
-      workTitle: '',
-    }
-  }
+  pages,
 }

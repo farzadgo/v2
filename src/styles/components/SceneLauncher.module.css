@@ -1,42 +1,20 @@
-.container {
+/* -------------- get lost launcher -------------- */
+.box-btn-container {
   position: fixed;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  z-index: 10;
-  /* background-color: hsla(0, 0%, 88%, 0.6); */
-  background-color: var(--trans-mid);
+  right: var(--padding);
+  bottom: var(--padding);
+  z-index: 5;
 }
-.nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100%;
-}
-.nav ul {
-  width: 250px;
-} 
-.nav li {
-  display: flex;
-  align-items: center;
-  font-size: var(--font-lg);
-  margin-bottom: 15px;
-  user-select: none;
-  -webkit-user-select: none;
-}
-
-/* -------------- Play Cube -------------- */
-.box-scene { /* .play-btn */
+.box-btn { /* .play-btn */
   perspective: 300px;
   -webkit-perspective: 300px;
-  margin-bottom: 10px;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.5s ease-in-out;
   height: 60px;
+  border: none;
+  background: none;
+  padding: 0;
   cursor: pointer;
 }
-.box-scene:hover .box {
+.box-btn:hover .box {
   transform: rotateX(90deg);
   font-style: italic;
   font-family: var(--text-font);
@@ -72,10 +50,7 @@
   top: 60px;
 }
 
-/* -------------- spinner -------------- */
-.spinner-container {
-  margin-bottom: 25px;
-}
+/* -------------- loader spinner -------------- */
 .spinner {
   width: 60px;
   height: 60px;
@@ -91,14 +66,67 @@
 }
 
 @keyframes sk-rotateplane {
-  0% { 
+  0% {
     transform: perspective(120px) rotateX(0deg) rotateY(0deg);
-    -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg) 
-  } 50% { 
+    -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg)
+  } 50% {
     transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
-    -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg) 
-  } 100% { 
+    -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg)
+  } 100% {
     transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
     -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
   }
+}
+
+/* -------------- modal (scene and overlay) -------------- */
+.modal-root {
+  position: fixed;
+  inset: 20px 20px;
+  z-index: 100;
+  overflow: hidden;
+  background-color: #141414;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+
+.overlay-container {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  background-color: var(--trans-mid);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* backdrop-filter: var(--blur); */
+}
+.start-button {
+  width: 140px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--dark-gray);
+  cursor: pointer;
+  user-select: none;
+  font-size: var(--font-md);
+}
+
+.close-button {
+  position: absolute;
+  top: var(--padding);
+  right: var(--padding);
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+.close-button svg {
+  height: 36px;
+  width: 36px;
+  stroke: var(--dark-gray);
+  stroke-width: 1;
 }

@@ -23,8 +23,8 @@
   
   --link-color: #0000ff;
 
-  --font-lg: 1.4rem;
-  --font-md: 1.1rem;
+  --font-lg: 1.3rem;
+  --font-md: 1.05rem;
   --font-sm: 0.95rem;
   --line-height: 1.5;
 
@@ -125,14 +125,14 @@ strong, b, h1, h2, h3, h4, h5, h6 {
 /* ----------------- DESKTOP ----------------- */
 @media (min-width: 1000px) {
   :root {
-  --font-lg: 2rem;
-  --font-md: 1.3rem;
-  --font-sm: 1.1rem;
+  --font-lg: 1.7rem;
+  --font-md: 1.2rem;
+  --font-sm: 1.05rem;
   --padding: 30px;
   }
   
   .carousel {
-    padding-left:calc(var(--padding) * 2 + var(--nav-width));
+    padding-left:calc(var(--nav-width) + var(--padding));
   }
 
   ::-webkit-scrollbar {

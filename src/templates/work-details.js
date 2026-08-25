@@ -5,8 +5,6 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import * as styles from '../styles/pages/WorkDetails.module.css'
 import { graphql } from 'gatsby'
 import { Helmet } from 'react-helmet'
-import WorkList from '../components/WorkList'
-import useWindowSize from '../hooks/useWindowSize'
 import useDragScroll from '../hooks/useDragScroll'
 
 
@@ -16,16 +14,15 @@ const WorkDetails = ({ data }) => {
   const { title } = data.markdownRemark.frontmatter
   const images = data.allFile.nodes
 
-  const info = {directory: 'works', workTitle: title}
+  const info = { workTitle: title }
   const htmlRef = useRef(null)
 
   const [showAlt, setShowAlt] = useState(true)
   const altGalleryRef = useRef(null)
 
   const [root, setRoot] = useState(null)
-  
+
   const [show, setShow] = useState(0)
-  const width = useWindowSize()
 
   const applyDragScroll = useDragScroll()
 
@@ -119,15 +116,11 @@ const WorkDetails = ({ data }) => {
     <Layout info={info} >
       <Helmet title={title} />
       <main className="main">
-
-        {width >= 1000 && <WorkList dir={'../'}/>}
-
         <div className={styles.container} style={{opacity: show}}>
           <header><h1 style={{display: 'none'}}> {title} </h1></header>
           <div className={styles.html} dangerouslySetInnerHTML={{__html: html}} ref={htmlRef}/>
           {showAlt && <div><div ref={altGalleryRef} className='gallery'></div></div>}
         </div>
-
       </main>
     </Layout>
   )
