@@ -2,15 +2,17 @@ import React, { memo } from 'react'
 import * as styles from '../styles/components/WorkList.module.css'
 import { Link } from 'gatsby'
 
-const WorkItem = ({ work, activeSlug, handleHover }) => {
+const WorkItem = ({ work, showYear, activeSlug, handleHover }) => {
   const { title, thumb, slug, date } = work.frontmatter
   let active = activeSlug === slug
 
   return (
-    <li>
+    <li className={styles.workItem}>
+      {/* <span className={styles.workYear}> {showYear ? date.split('-')[0] : ''} </span> */}
+      <span className={styles.workYear}> {date.split('-')[0]} </span>
       <Link
         to={`/${slug}`}
-        className={`${styles.workItem} ${active ? styles.active : ''}`}
+        className={`${styles.workTitle} ${active ? styles.active : ''}`}
         onMouseEnter={active ? null : () => handleHover(title, thumb, date)}
         onMouseLeave={() => handleHover('', '', '')}
       >

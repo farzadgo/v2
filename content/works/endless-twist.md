@@ -1,7 +1,9 @@
 ---
 title: Endless Twist
-date: '2023-02'
+date: 2023-02
 slug: endless-twist
+category: artistic-practice
+parent:
 thumb: ./_thumbs/endless-twist.jpg
 ---
 

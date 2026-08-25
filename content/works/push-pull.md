@@ -2,6 +2,8 @@
 title: Push/Pull
 date: 2025-10
 slug: push-pull
+category: artistic-practice
+parent:
 thumb: ./_thumbs/push-pull.jpg
 ---
 

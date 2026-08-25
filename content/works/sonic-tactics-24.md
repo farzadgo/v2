@@ -1,8 +1,10 @@
 ---
 title: Sonic Tactics
 date: 2024-09
-slug: sonic-tactics
-thumb: ./_thumbs/sonic-tactics.jpg
+slug: sonic-tactics-24
+category: collaborative
+parent: sudora3
+thumb: ./_thumbs/sonic-tactics-24.jpg
 ---
 
 # Sonic Tactics (2024)

@@ -1,8 +1,10 @@
 ---
 title: t owalk thec ity
-date: '2020-03'
-slug: towalkthecity
-thumb: ./_thumbs/towalkthecity.jpg
+date: 2020-03
+slug: t-owalk-thec-ity
+category: artistic-practice
+parent:
+thumb: ./_thumbs/t-owalk-thec-ity.jpg
 ---
 
 # t owalk thec ity

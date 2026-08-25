@@ -18,7 +18,7 @@
   --dark-gray: hsl(0, 0%, 9%);
   --very-gray: hsl(0, 0%, 6%);
 
-  --trans-light: rgba(240, 240, 240, 0.5);
+  --trans-light: rgba(240, 240, 240, 0.2);
   --trans-mid: rgba(180, 180, 180, 0.6);
   
   --link-color: #0000ff;
@@ -38,8 +38,8 @@
   --very-white: hsl(0, 0%, 16%);
   --light-white: hsl(0, 0%, 25%);
   --dark-white: hsl(0, 0%, 30%);
-  --mid-gray: hsl(0, 0%, 55%);
-  --light-gray: hsl(0, 0%, 73%);
+  --mid-gray: hsl(0, 0%, 60%);
+  --light-gray: hsl(0, 0%, 72%);
   --dark-gray: hsl(0, 0%, 85%);
   --very-gray: hsl(0, 0%, 91%);
 
@@ -63,7 +63,7 @@ html, body {
 #root {
   color: var(--very-gray);
   font-family: var(--sans-font);
-  font-weight: 300;
+  font-weight: 400;
 }
 
 a {

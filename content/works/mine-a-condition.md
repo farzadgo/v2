@@ -2,6 +2,8 @@
 title: 'MINE: A Condition'
 date: 2023-08
 slug: mine-a-condition
+category: collaborative
+parent:
 thumb: ./_thumbs/mine-a-condition.jpg
 ---
 

@@ -1,7 +1,9 @@
 ---
 title: JALSA
-date: '2025-07'
+date: 2025-07
 slug: jalsa-weserburg
+category: collaborative
+parent: sudora3
 thumb: ./_thumbs/jalsa-weserburg.jpg
 ---
 

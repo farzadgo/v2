@@ -1,7 +1,9 @@
 ---
 title: Co-created Pavilion
-date: '2019-04'
+date: 2019-04
 slug: cc-pavilion
+category: artistic-practice
+parent:
 thumb: ./_thumbs/cc-pavilion.jpg
 ---
 

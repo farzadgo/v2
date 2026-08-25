@@ -1,7 +1,9 @@
 ---
 title: Listen to my postcard
-date: '2021-03'
+date: 2021-03
 slug: listen-to-my-postcard
+category: artistic-practice
+parent:
 thumb: ./_thumbs/listen-to-my-postcard.jpg
 ---
 

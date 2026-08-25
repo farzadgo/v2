@@ -1,8 +1,10 @@
 ---
 title: Sonic Tactics II
 date: 2025-09
-slug: sonic-tactics-ii
-thumb: ./_thumbs/sonic-tactics-ii.jpg
+slug: sonic-tactics-25
+category: collaborative
+parent: sudora3
+thumb: ./_thumbs/sonic-tactics-25.jpg
 ---
 
 # Sonic Tactics (2025)

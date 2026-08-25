@@ -1,7 +1,9 @@
 ---
 title: TURVIS
-date: '2025-09'
+date: 2025-09
 slug: turvis-schwankhalle
+category: collaborative
+parent: sudora3
 thumb: ./_thumbs/turvis-schwankhalle.jpg
 ---
 

@@ -1,7 +1,9 @@
 ---
 title: Adrift
-date: '2020-06'
+date: 2020-06
 slug: adrift
+category: artistic-practice
+parent:
 thumb: ./_thumbs/adrift.jpg
 ---
 

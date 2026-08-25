@@ -1,8 +1,10 @@
 ---
 title: RESTORE_
-date: '2022-06'
-slug: restore_
-thumb: ./_thumbs/restore_.jpg
+date: 2022-06
+slug: restore_bremen
+category: collaborative
+parent:
+thumb: ./_thumbs/restore_bremen.jpg
 ---
 
 # RESTORE_ Bremen
