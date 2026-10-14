@@ -99,6 +99,7 @@ strong, b, h1, h2, h3, h4, h5, h6 {
 .gallery {
   margin-left: 0 !important;
   padding-right: 0 !important;
+  margin-bottom: 1.5em;
 }
 .carousel {
   white-space: nowrap;
@@ -125,9 +126,9 @@ strong, b, h1, h2, h3, h4, h5, h6 {
 /* ----------------- DESKTOP ----------------- */
 @media (min-width: 1000px) {
   :root {
-  --font-lg: 1.7rem;
+  --font-lg: 1.8rem;
   --font-md: 1.2rem;
-  --font-sm: 1.05rem;
+  --font-sm: 1.0rem;
   --padding: 30px;
   }
   

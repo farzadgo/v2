@@ -21,7 +21,6 @@
 .group-heading {
   padding: var(--padding) 0 10px var(--padding);
   padding-bottom: 10px;
-  text-transform: uppercase;
   color: var(--mid-gray);
 }
 

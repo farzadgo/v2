@@ -1,13 +1,12 @@
 ---
 title: RESTORE_
+subtitle: 'Performance Program: three temporary occupations'
 date: 2022-06
 slug: restore_bremen
 category: collaborative
 parent:
 thumb: ./_thumbs/restore_bremen.jpg
 ---
-
-# RESTORE_ Bremen
 
 - Series of interdisciplinary group performances in urban context
 - Curation and organization: Farzad Golghasemi, [Gabriela Valdespino](https://gvaldespino.xyz), [Neus Ledesma Vidal](https://www.neusledesma.eu/)

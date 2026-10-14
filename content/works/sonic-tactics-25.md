@@ -1,19 +1,11 @@
 ---
-title: Sonic Tactics II
+title: Sonic Tactics ²
 date: 2025-09
 slug: sonic-tactics-25
 category: collaborative
 parent: sudora3
 thumb: ./_thumbs/sonic-tactics-25.jpg
 ---
-
-# Sonic Tactics (2025)
-
-- Installation and series of performances
-- Collaborative curation and facilitation by SUDORAع
-- Installation: Steel scaffolding pipes, cast iron couplers, stage platforms, 4 speakers, 2 subwoofers, microphones
-- 2-day program: live performances, collaborative reading (turvis), and collective listening sessions
-- September 2025
 
 <div class="gallery" data-credits="Photos by Joya Bahkyi"></div>
 
@@ -25,6 +17,12 @@ ever-changing way of structuring an encounter through mutual listening. It is a 
 that situates our work within broader disciplines. We approached a collection of text fragments by adopting
 different modes of attention, specific moves/roles and distributing speaking time to generate a dynamic diversity
 of perspectives.
+
+- Installation and series of performances
+- Collaborative curation and facilitation by SUDORAع
+- Installation: Steel scaffolding pipes, cast iron couplers, stage platforms, 4 speakers, 2 subwoofers, microphones
+- 2-day program: live performances, collaborative reading (turvis), and collective listening sessions
+- September 2025
 
 <br>
 

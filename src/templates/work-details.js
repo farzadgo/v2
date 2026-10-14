@@ -11,14 +11,13 @@ import useDragScroll from '../hooks/useDragScroll'
 const WorkDetails = ({ data }) => {
   
   const { html } = data.markdownRemark
-  const { title } = data.markdownRemark.frontmatter
+  const { title, subtitle, date } = data.markdownRemark.frontmatter
   const images = data.allFile.nodes
+
+  const year = date ? new Date(date).getFullYear() : ''
 
   const info = { workTitle: title }
   const htmlRef = useRef(null)
-
-  const [showAlt, setShowAlt] = useState(true)
-  const altGalleryRef = useRef(null)
 
   const [root, setRoot] = useState(null)
 
@@ -96,16 +95,8 @@ const WorkDetails = ({ data }) => {
 
       if (imageContainers.length > 1) {
         appendImagesInGroups(htmlRef.current, images)
-        setShowAlt(false)
       } else if (imageContainers.length === 1) {
         appendImages(imageContainers[0], images)
-        setShowAlt(false)
-      } else {
-        if (images.length > 0) {
-          appendImages(altGalleryRef.current, images)
-        } else {
-          setShowAlt(false)
-        }
       }
     }
 
@@ -117,9 +108,11 @@ const WorkDetails = ({ data }) => {
       <Helmet title={title} />
       <main className="main">
         <div className={styles.container} style={{opacity: show}}>
-          <header><h1 style={{display: 'none'}}> {title} </h1></header>
-          <div className={styles.html} dangerouslySetInnerHTML={{__html: html}} ref={htmlRef}/>
-          {showAlt && <div><div ref={altGalleryRef} className='gallery'></div></div>}
+          <header>
+            <h1 className={styles.pageTitle}> {title} </h1>
+            <h2 className={styles.pageSubtitle}> {subtitle} <i> {subtitle && '—'} {year} </i></h2>
+          </header>
+          <div className={styles.pageHtml} dangerouslySetInnerHTML={{__html: html}} ref={htmlRef}/>
         </div>
       </main>
     </Layout>
@@ -135,6 +128,7 @@ export const query = graphql`
       html
       frontmatter {
         title
+        subtitle
         date
       }
     }

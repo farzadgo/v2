@@ -43,8 +43,8 @@ const WorkListItems = ({ className, onHover }) => {
 
   const groups = [
     { key: 'artistic-practice', heading: null, works: works.filter(w => w.frontmatter.category === 'artistic-practice') },
-    { key: 'collaborative', heading: 'curation and collaboration', works: works.filter(w => w.frontmatter.category === 'collaborative' && !w.frontmatter.parent) },
-    { key: 'sudora3', heading: 'sudoraع', works: works.filter(w => w.frontmatter.category === 'collaborative' && w.frontmatter.parent === 'sudora3') },
+    { key: 'collaborative', heading: 'Curation & Collaboration', works: works.filter(w => w.frontmatter.category === 'collaborative' && !w.frontmatter.parent) },
+    { key: 'sudora3', heading: 'SUDORAع', works: works.filter(w => w.frontmatter.category === 'collaborative' && w.frontmatter.parent === 'sudora3') },
   ]
 
   return (

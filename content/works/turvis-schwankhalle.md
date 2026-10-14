@@ -1,13 +1,13 @@
 ---
-title: TURVIS
-date: 2025-09
+title: 'TURVIS'
+date: 2025-10
 slug: turvis-schwankhalle
 category: collaborative
 parent: sudora3
 thumb: ./_thumbs/turvis-schwankhalle.jpg
 ---
 
-# SUDORAع presents: turvis
+<div class="gallery"></div>
 
 turvis refers to an always changing way of structuring an encounter of mutual listening.
 

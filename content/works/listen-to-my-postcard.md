@@ -1,27 +1,18 @@
 ---
 title: Listen to my postcard
+subtitle: Digital photography, Audio composition, Text
 date: 2021-03
 slug: listen-to-my-postcard
 category: artistic-practice
 parent:
 thumb: ./_thumbs/listen-to-my-postcard.jpg
 ---
-
-# Listen to my postcard
-
-- Digital photography, literary text, digital sound
-- Sound artist: Yara Mekawei
-- Residency and online exhibit: [COAPPARATION](https://thealit.de/en/lab_coapparation) by Thealit F.K.L.
-- March – April 2021
-
-> Sound is everywhere, that it is like air, but rather that it is more diffuse, and deeper impact, that air has a sound, and the sound is alive to die, never-ending, that the sound never silences. Over the years, the relationship and analogy between music/sound art/sound design and architecture have been explored in several aspects. In the same way, architecture works over the solid materials, visual spaces, geometry, abstract realities, or social contexts, it does over the aural realities, the sonic dimension. When it comes to space, sound can be valued in an architectural process, just as architecture is also sonic.
->
-> — *Yara Mekawei*
-
 <div class="gallery postcard" data-credits="Bremen 2020-21 © Farzad Golghasemi"></div>
 
-The result of this residency as a dialogue between artists Yara Mekawei and Farzad Golghasemi can be visited on the [Listen to my postcard](https://www.thealit.de/lab/coapparation/en/listen-to-my-postcard) *COAPPARATION Lab* page. Farzad's work includes architectural photography of selected Bremen (Germany) landmarks related to the modern architecture and war memorials, associated with literary writings.
+Listen to my postcard unfolds as a long-distance correspondence developed during the COAPPARATION residency at thealit Frauen.Kultur.Labor. Working in dialogue across the distance between Bremen and Cairo, Farzad Golghasemi and sound artist Yara Mekawei address a series of the city’s buildings—wartime bunkers, a harbor with colonial tracers, and modernist constructs—as recipients of an imagined postcard.
+Each structure is met twice: through Golghasemi’s architectural photography and accompanying texts on memory, material, and displacement, and through Mekawei’s soundtracks and verse. Neither translation arrives intact; the correspondence proceeds as a mutual estrangement, listening to architecture as one might read a message sent from elsewhere.
 
-<div class="gallery postcard-web" data-credits="Screen captures from COAPPARATION LAB's Virtuales Arbeitszimmer"></div>
-
-<!-- ### Publication -->
+- Photography and text: Farzad Golghasemi
+- Sound and text: Yara Mekawei
+- Residency: [COAPPARATION](https://www.thealit.de/lab/coapparation/en) Part II – thealit Frauen.Kultur.Labor Bremen, Germany
+- Showcase on thealit [Mediathek](https://www.thealit.de/lab/coapparation/en/listen-to-my-postcard)

@@ -1,40 +1,39 @@
 ---
 title: Adrift
-date: 2020-06
+subtitle: Web app, Walking Performances
+date: 2021-06
 slug: adrift
 category: artistic-practice
 parent:
 thumb: ./_thumbs/adrift.jpg
 ---
 
-***Adrift*** deconstructs Google Maps direction text* and by doing so it offers a new set of directions based on the original one, thus it enables the performers to get lost in their very own environment. "Getting lost" refers to the perception of the urban fabric in a different way than what we usually experience in everyday life.
-
-During the walk to nowhere, the performers are being asked a set of questions regarding their surrounding and offered the opportunity to record answers in the form of conversations between them, hoping to initiate another level of observation and meaning-making through the act of walking and mapping.
-
-For more on the artistic methodology, visit the relevant [The Dynamic Archive](https://thedynamicarchive.net/component/how-to-get-lost-in-the-neighborhood) component.
-
-- `date` June 2020
-- `concept, design, programming` Farzad Golghasemi
-- `access link` [Adrift](https://adrift.city)
+<div class="gallery neustadt" data-credits="June 2020 Neustadt Bremen — Photos by Carla Anacker"></div>
 
 <div class="audio-container">
   <audio controls controlsList="nodownload noplaybackrate" src="https://cloud.disorient.xyz/s/AN3WY3K4ZfZYmf3/download/Adrift_2020-06_neustadt_audio.mp3"></audio>
 </div>
 
-<div class="gallery neustadt" data-credits="June 2020 Neustadt Bremen — Photos by Carla Anacker"></div>
+*Adrift* deconstructs Google Maps direction text and by doing so it offers a new set of directions based on the original one, thus it enables the group of performers to get lost in their very own environment. 'Getting lost' refers to the perception of the urban fabric in a different way than what we usually experience in everyday life.
 
+During the walk to nowhere, the performers are being asked a set of questions regarding their surrounding and offered the opportunity to record answers in the form of conversations between them, hoping to initiate another level of observation and meaning-making through the act of walking and mapping.
 
-## Temporal Redirections exhibition
+- Concept, design, and programming: Farzad Golghasemi
+- Link to [adrift](https://adrift.city)
+- Artistic methodology on [The Dynamic Archive](https://www.thedynamicarchive.net/component/how-to-get-lost-in-the-neighborhood/)
 
-The two channel video installation depicting a *drift* performance using Adrift app in Viertel neighborhood of Bremen.
+<hr>
 
-The exhibition of master's projects by master's students in digital media Bremen. The exhibitions included projects ranging from multimedia installations to performances and video projections. Playing with the term "Temporal Redirections" is a way to summarize, joke, reflect, and exorcise the long gestation of this exhibition, which was actually scheduled for April 2021, in hopes of a good ending.
-
-- `date` August 2021
-- `location` Open Space Domshof Bremen
-- [exhibition link](https://influencerstaubenheim.de/kalender/kunst-design/delay-2.html)
+## Temporal Redirections
 
 <div class="gallery temporal-redirections" data-credits="Photos by Lucas Klose"></div>
+
+*How to Get Lost* presents *Adrift* as an installation, across two screens displaying the software’s interface and a video documentation of a selected drift.
+
+- 2-channel video installation
+- Contributions: Iulia Radu, Icaro Lopez de Mesa, Victor Artiga Rodriguez, Elshan Rahbarazadi, Tom Geibel-Lane
+- Exhibition: [Temporal Redirections](https://influencerstaubenheim.de/kalender/kunst-design/delay-2.html) part of The Influencers Taubenheim – Open Space Domshof Bremen, Germany
+- July 2021
 
 <!-- <div class="video-container">
   <video width="100%" height="100%"
@@ -43,8 +42,3 @@ The exhibition of master's projects by master's students in digital media Bremen
     <source src="https://cloud.disorient.xyz/s/Lq8mt4aj4KfbbQe/download/adrift-in-viertel_2021-07.m4v" type="video/mp4">
   </video>
 </div> -->
-
-<div class="gallery ui-22 portrait" data-credits="Adrift UI"></div>
-
-<!-- ### Audio walk expansion for Tender Absence -->
-<!-- In collaboration with Gabriela Valdespino, has been implemented in the app, enabling... -->

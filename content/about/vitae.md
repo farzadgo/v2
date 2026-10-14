@@ -20,9 +20,9 @@ order: 2
 
 ## Selected Performances
 
-- *2026 `(upcoming)`* <p>*Pre-late Corrupted Abstraction* — with Abd Tammaa — part of *Sonic Tactics* — GB Open Spedition Bremen &nbsp;[link](https://gb-bremen.de/veranstaltungen/2026/09/gb-open)</p>
+- *2026* <p>*Pre-late Corrupted Abstraction* — with Abd Tammaa — part of *Sonic Tactics* — GB Open Spedition Bremen &nbsp;[link](https://gb-bremen.de/veranstaltungen/2026/09/gb-open)</p>
 - *2025* <p>*Turvis: Fragmented Readings on Collaborative Tactics* — with SUDORAع — Schwankhalle Bremen &nbsp;[link](https://www.schwankhalle.de/en/events/sudora-turvis)</p>
-- *2025* <p>*JALSA* — with Abd Tammaa & Gabriela Valdespino — Weserburg Museum für moderne Kunst Bremen &nbsp;[link](https://www.hfk-bremen.de/de/neuigkeiten/jetzt-eroeffnet-meisterschueler-innen-ausstellung-in-der-weserburg/1128)</p>
+- *2025* <p>*JALSA* — with Abd Tammaa and Gabriela Valdespino — Weserburg Museum für moderne Kunst Bremen &nbsp;[link](https://www.hfk-bremen.de/de/neuigkeiten/jetzt-eroeffnet-meisterschueler-innen-ausstellung-in-der-weserburg/1128)</p>
 - *2023* <p>*Endless Twist* — with Gabriela Valdespino and ap0teke, as part of *Felgentaube* — RAUM PRO Bremen &nbsp;[link](https://www.instagram.com/raumpro_bremen/)</p>
 - *2023* <p>*as everything repeats and doubles itself, the ground moves under the feet* — with Gabriela Valdespino — Schwankhalle Bremen &nbsp;[link](https://www.schwankhalle.de/en/events/as-everything-repeats)</p>
 - *2020* <p>*Muhatap: A Domestic Revolution* — with Temporary Spaces — Kunsthalle Baden-Baden &nbsp;[link](https://conditionsofanecessity.net/stream/klasse-serbest/)</p>
@@ -30,8 +30,9 @@ order: 2
 
 ## Curation / Facilitation
 
-- *2026 `(ongoing)`* <p>*To Hear What Lingers, Still* — co-curating with Gabriela Valdespino — Galerie Herold Bremen &nbsp;[link](https://galerieherold.de/in-vorbereitung-kein-titel)</p>
-- *2025* <p>*Sonic Tactics II* — presented by SUDORAع — GB Open Spedition Bremen &nbsp;[link](https://gb-bremen.de/veranstaltungen/2025/09/gb-open)</p>
+- *2026* <p>*Sonic Tactics <sup>3</sup>* — presented by SUDORAع — GB Open Spedition Bremen &nbsp;[link](https://gb-bremen.de/veranstaltungen/2026/09/gb-open)</p>
+- *2026* <p>*To Hear What Lingers, Still* — co-curating with Gabriela Valdespino — Galerie Herold Bremen &nbsp;[link](https://galerieherold.de/to-hear-what-lingers-still)</p>
+- *2025* <p>*Sonic Tactics <sup>2</sup>* — presented by SUDORAع — GB Open Spedition Bremen &nbsp;[link](https://gb-bremen.de/veranstaltungen/2025/09/gb-open)</p>
 - *2024* <p>*Sonic Tactics* — presented by SUDORAع — GB Open Spedition Bremen &nbsp;[link](https://gb-bremen.de/veranstaltungen/2024/09/gb-open-24)</p>
 - *2022* <p>*RESTORE_ Interdisciplinary Performances in Context* — co-curated with Neus Ledesma Vidal and Gabriela Valdespino (hacer sitio corp) — Bremen &nbsp;[link](https://restore-bremen.space)</p>
 

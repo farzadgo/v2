@@ -1,5 +1,6 @@
 ---
 title: Endless Twist
+subtitle: Mixed-media webpage, Publication, Installation, Performances
 date: 2023-02
 slug: endless-twist
 category: artistic-practice
@@ -7,72 +8,59 @@ parent:
 thumb: ./_thumbs/endless-twist.jpg
 ---
 
-# ENDLESS TWIST
+<div class="gallery endlesstwist-media" data-credits="Endless Twist mixed-media webpage as the camera moves through the reimagined space constructed using 3D fragments and a sound piece"></div>
 
-- Interactive mixed-media WebGL website (2023)
-- Concept, script, web and 3D development: Farzad Golghasemi
-- Sound, dramaturgy: [Gabriela Valdespino](https://gvaldespino.xyz)
-- Partially developed during *Tender Absence* 2023 online residency
+*Endless Twist* is a critical autoethnographic research on Bremen Überseestadt, a former colonial harbor under neoliberal renewal since the early 2000s. Golghasemi’s analysis takes place through a drift across a local site, affected by three entangled global apparatuses: Google Maps and the platform-capitalist conditioning of urban inhabitation; the masterplan entangled with planners, owners, and cultural institutions, converting colonial pasts into contemporary capital; and a patented modeling software homogenizing the built environment through a contagious algorithmic reductivism. Taking **getting lost** as both subject and method, Endless Twist folds biography into spatial argument, narrating from the position of an architect later displaced into wayfinding in the spaces the discipline itself is producing.
 
-*Endless Twist* is a guided walk through a 3D space that is constructed by urban fragments and personal memories. It is a multimedia web installation and audiovisual performance presenting the artist's critical perspective regarding the agency of the human and non-human, and by extension of architects, planners, and owners. While reflecting on the role of architecture as an apparatus that produces power dynamics, Farzad Golghasemi examines the corporeality associated with physical and digital spaces, through a techno-poetical interpretation of the contemporary state of political economy.
+- Script, Web programming, 3D: Farzad Golghasemi
+- Sound, Dramaturgy: Gabriela Valdespino
+- Duration ca. 18:00 minutes
+- Access the interactive mixed-media webpage on [endlesstwist.xyz](https://endlesstwist.xyz)
 
-For the mixed-media webpage visit [endlesstwist.xyz](https://endlesstwist.xyz/) and
-the open access publication can be reached at [endlesstwist.xyz/publication](https://endlesstwist.xyz/publication/).
+<div class="gallery endlesstwist-publication" data-credits=""></div>
 
-<div class="gallery endlesstwist" data-credits="Screen captures from endlesstwist.xyz"></div>
-
-<hr>
-
-### Previously shows and performances
-
-— Exhibition @ HfK Bremen Graduate Show (Jahresausstellung 2023) ⬎ <br>
-— Audiovisual performance @ RAUM PRO Bremen ⬎ <br>
-— Audiovisual performance @ Schwankhalle Bremen ⬎
+***Endless Twist: A critical autoethnographic approach to the current state of urban development***, exists as both a printed volume and an [online publication](https://endlesstwist.xyz/publication).
 
 <hr>
 
-# Exhibition at Jahresausstellung 2023
+## Jahresausstellung 2023
 
-- 1–channel projection of *endlesstwist.xyz* on a worn-out advertising banner belonging to a construction site in Bremen Überseestadt, 2-channel audio composition, steel scaffold tubes, cast iron scaffolding couplers, wireless mouse and keyboard
+<div class="gallery endlesstwist-jahresausstellung" data-credits="Photos by Gabriela Valdespino"></div>
+
+*Endless Twist* **installation** at the Universty of the Arts Bremen 2023 Graduate Show which received [special commendation](https://www.hfk-bremen.de/en/news/frese-design-preise-2023/1014) (besondere Belobigungen) from the jury members of Frese-Design-Award which was composed of Marie du Chastel, Simon Busse, and Serge Rompza.
+
+- Video projection, stereo audio, construction banner, steel scaffold tubes, cast iron couplers, wireless mouse and keyboard
+- 250 x 400 x 100 cm
 - 18:00 minutes loop
-- Exhibition: Jahresausstellung, Speicher XI A, Bremen Germany
-- 17 – 22 November 2023
-
-The installation at the 2023 HfK Bremen Graduate Show ([Jahresausstellung](https://instagram.com/jahresausstellung_hfk)) consisted of collected construction site artifacts assembled to function as a screen for the projection of the Endless Twist mixed-media webpage. The visitors were invited to use a wireless mouse to look around the virtual environment of the web page which is a reconstruction of the urban area where the newly built exhibition building exists which is a reflection on the storyline that involves the author's past experiences associated with urban renewal narratives.
-
-Farzad Golghasemi received [special commendation](https://www.hfk-bremen.de/en/news/frese-design-preise-2023/1014) (besondere belobigungen) from the jury members of Frese-Design-Award which was composed of Marie du Chastel, Simon Busse, and Serge Rompza.
-
-<div class="gallery endless-jahres" data-credits="Photos by Gabriela Valdespino"></div>
+- Exhibition: [Jahresausstellung](https://www.hfk-bremen.de/de/neuigkeiten/jahresausstellung-2023-der-absolvent-innen-der-digitalen-medien-und-des-integrierten-designs/1009) – Speicher XI A Bremen, Germany
+- November 2023
 
 <hr>
 
-# Open rehearsal at RAUM PRO
+## Open rehearsal at RAUM PRO
 
-- Reading, live electronics, live 3D-modelling performance projected on the exhibition wall, projection of *endlesstwist.xyz* on construction banner
-- 50:00 minutes
-- Sound:  Gabriela Valdespino, [ap0teke](https://www.instagram.com/ap0teke/)
-- Performance: AG Felgentaube, RAUM PRO Bremen Germany
-- 27\. July 2023
+<div class="gallery endlesstwist-raumpro" data-credits="Photos by Noelle BuAbbud"></div>
 
-As a situation and performance Endless Twist was invited by Felix Dreesen and Lucas Kalmus to be part of *AG Felgentaube* in [RAUMPRO Bremen](https://raumpro-bremen.de/). In addition to the live 3D navigation of the project's webpage, the performance consisted of reading and 3D modeling by Farzad Golghasemi and live electronic by Gabriela Valdespino and ap0teke.
+As an **audiovisual performance**, *Endless Twist* was invited by Felix Dreesen and Lucas Kalmus to be part of the exhibition *AG Felgentaube* in RAUM PRO Bremen.
 
-<div class="gallery endless-raumpro" data-credits="Photos by Noelle BuAbbud"></div>
+- Reading, 3D modeling and navigation: Farzad Golghasemi
+- Live electronics: Gabriela Valdespino and Ap0teke
+- 45:00 minutes
+- Exhibition: [RAUM PRO](https://www.instagram.com/raumpro_bremen/) Bremen, Germany
+- July 2023
 
 <hr>
 
-# *as everything repeats and doubles itself, the ground moves under the feet*
+## *as everything repeats and doubles itself, the ground moves under the feet*
 
-- 4–channel audio composition, 1-channel video projection, live electronics, live 3D modeling
+<div class="gallery endlesstwist-schwankhalle" data-credits="Photos by Guida Ribeiro"></div>
+
+*as everything repeats and doubles itself, the ground moves under the feet*
+is an **audiovisual performance** developed during [Tender Absence](https://www.peira.space/de/projekte/tender-absence-2023?row=Tender+Absence) online residency: *A Glocal
+Class for Digital Performance*.
+
+- 3D modeling: Farzad Golghasemi, Live electronics: Gabriela Valdespino
 - 30:00 minutes
-- Performance: Schwankhalle Bremen
-- 18\. March 2023
-
-Participation of Farzad Golghasemi and Gabriela Valdespino during [Tender Ansence](https://www.peira.space/de/projekte/tender-absence-2023?row=Tender+Absence) online residency *A Glocal Class for Digital Performance*, supported the development of this project which resulted in duo's audiovisual performance [*as everything repeats and doubles itself, the ground moves under the feet*](https://www.schwankhalle.de/en/events/as-everything-repeats). Special thanks to [Peira](https://www.peira.space/) collective for their support.
-
-<div class="gallery endless-schwankhalle" data-credits="Photos by Guida Ribeiro"></div>
-
-<hr>
-
-### Publication
-
-*Endless Twist: A critical autoethnographic approach to the current state of urban development* as the M.A. thesis ...
+- Venue: [Schwankhalle](https://schwankhalle.de/de/veranstaltungen/as-everything-repeats) Bremen, Germany
+- March 2023
+- Recorded streaming on [YouTube](https://www.youtube.com/watch?v=WGpSSu5oqyw&ab_channel=Peira)
