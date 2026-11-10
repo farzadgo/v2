@@ -1,5 +1,6 @@
 ---
 title: Sonic Tactics
+subtitle: '2-day Happening: Installation, Performances, Readings/Listening sessions, Screening, DJ-set'
 date: 2024-09
 slug: sonic-tactics-24
 category: collaborative
@@ -9,25 +10,12 @@ thumb: ./_thumbs/sonic-tactics-24.jpg
 
 <div class="gallery" data-credits="Photos by Gabriela Valdespino"></div>
 
-Sonic Tactics was a two-day event as part of the GB Open Days 2024 in Güterbahnhof
-Bremen-Areal für Kunst. It was an experiment about sharing, where sound becomes a way of
-being, a practice of gathering. The event gathered artists and performers who explored the
-tactical use of sonic expression. Through different forms we engaged on theoretical
-discussions with an oxelized reading, we active listened to field recordings, speculative
-narratives, and engaged with live sonic experimentation.
+The first iteration of *Sonic Tactics* gathered artists and performers around the tactical use of sonic expression — an oxidized reading, active listening to field recordings, speculative narratives, and live sonic experimentation. The Happening approached sound as a way of being and a practice of gathering, reflecting on the collective’s shared work and the tactics required to sustain it.
 
-- Installation and Series of performances
-- Collaborative curation and facilitation by SUDORAع
-- Aluminum pipes, steel couplers, 4 speakers, mobile steel structure
-- 2-day program: live performances, readings, collective listening sessions, audiovisual performances and screenings
+- Collaborations: Vafa Aminikia, Ap0teke, Farzad Golghasemi, Yara Mekawei, Paria Moraghebi, Vicc Repasi, Pablo Somonte Ruano, Abd Tammaa, Gabriela Valdespino
+- Installation: Aluminum pipes, steel couplers, speakers, mobile steel structure
+- Exhibition: [GB OPEN 24](https://gb-bremen.de/veranstaltungen/2024/09/gb-open-24) – Güterbahnhof Areal für Kunst und Kultur
 - September 2024
-
-<br>
-
-### Participants:
-
-Pablo Somonte Ruano, Vicc Repasi, Vafa Aminikia, Paria Moraghebi, Farzad Golghasemi,
-Abd Tammaa, Yara Mekawei, Gabriela Valdespino, Ap0teke
 
 <br>
 

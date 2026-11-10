@@ -57,6 +57,10 @@
   margin-top: 1rem;
 }
 
+.page-html > :global(.audio-container) audio {
+  width: 100%;
+}
+
 .page-html a {
   color: var(--link-color);
   /* white-space: nowrap; */

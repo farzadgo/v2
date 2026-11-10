@@ -1,0 +1,31 @@
+/* like the carousel images: as wide as the content area, but never taller than 65vh */
+.video {
+  --area-width: calc(100vw - var(--padding) * 2);
+  width: min(var(--area-width), calc(50vh * var(--ratio)));
+  margin: 0 var(--padding) 2.5em;
+  padding-top: 1rem;
+}
+.frame {
+  aspect-ratio: var(--ratio);
+  background-color: var(--dark-white);
+}
+.frame iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+.credits {
+  max-width: var(--content-width);
+  margin-top: 1rem;
+  font-size: var(--font-sm);
+  line-height: 1.3;
+}
+
+/* ---------------- desktop ---------------- */
+@media (min-width: 1000px) {
+  .video {
+    --area-width: calc(100vw - var(--nav-width) - var(--padding) * 3);
+    margin-left: calc(var(--nav-width) + var(--padding));
+  }
+}

@@ -1,27 +1,39 @@
 import React, { useEffect, useState } from 'react'
 import Layout from '../components/Layout'
 import Carousel from '../components/Carousel'
+import Video from '../components/Video'
 import { getImage } from 'gatsby-plugin-image'
 import * as styles from '../styles/pages/WorkDetails.module.css'
 import { graphql } from 'gatsby'
 import { Helmet } from 'react-helmet'
 
 
-// <div class="gallery [prefix]" data-credits="..."></div> placeholders in the markdown
-const GALLERY_PATTERN = /<div class="gallery\s*([^"]*)"([^>]*)>\s*<\/div>/g
+// empty-div placeholders in the markdown:
+// <div class="gallery [prefix]" data-credits="..."></div>
+// <div class="video" data-src="https://player.vimeo.com/video/..." data-ratio="16/9" data-credits="..."></div>
+const PLACEHOLDER_PATTERN = /<div class="(gallery|video)(?=[\s"])\s*([^"]*)"([^>]*)>\s*<\/div>/g
 
-// splits the markdown html into html chunks and gallery placeholders, in order
+const attribute = (attrs, name) => {
+  const match = attrs.match(new RegExp(`data-${name}="([^"]*)"`))
+  return match ? match[1] : ''
+}
+
+// splits the markdown html into html chunks and placeholders, in order
 const splitHtml = (html) => {
   const parts = []
   let last = 0
-  for (const match of html.matchAll(GALLERY_PATTERN)) {
+  for (const match of html.matchAll(PLACEHOLDER_PATTERN)) {
+    const [whole, type, classes, attrs] = match
     parts.push({ type: 'html', html: html.slice(last, match.index) })
-    const credits = match[2].match(/data-credits="([^"]*)"/)
-    parts.push({ type: 'gallery', prefix: match[1].trim().split(/\s+/)[0], credits: credits ? credits[1] : '' })
-    last = match.index + match[0].length
+    if (type === 'gallery') {
+      parts.push({ type, prefix: classes.trim().split(/\s+/)[0], credits: attribute(attrs, 'credits') })
+    } else {
+      parts.push({ type, src: attribute(attrs, 'src'), ratio: attribute(attrs, 'ratio'), credits: attribute(attrs, 'credits') })
+    }
+    last = match.index + whole.length
   }
   parts.push({ type: 'html', html: html.slice(last) })
-  return parts.filter(part => part.type === 'gallery' || part.html.trim())
+  return parts.filter(part => part.type !== 'html' || part.html.trim())
 }
 
 // with a single gallery it takes every image, otherwise each takes the images whose
@@ -113,6 +125,9 @@ const WorkDetails = ({ data }) => {
           {parts.map((part, i) => {
             if (part.type === 'html') {
               return <div key={i} className={styles.pageHtml} dangerouslySetInnerHTML={{__html: part.html}} />
+            }
+            if (part.type === 'video') {
+              return part.src && <Video key={i} src={part.src} title={title} ratio={part.ratio} credits={part.credits} />
             }
             const images = imagesFor(part, galleryCount, galleryImages)
             return images.length > 0 && <Carousel key={i} images={images} credits={part.credits} />

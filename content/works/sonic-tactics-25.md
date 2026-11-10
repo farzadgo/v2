@@ -1,5 +1,6 @@
 ---
-title: Sonic Tactics ²
+title: Sonic Tactics
+subtitle: '2-day Happening: Installation, Performances, Readings/Listening sessions, DJ-sets'
 date: 2025-09
 slug: sonic-tactics-25
 category: collaborative
@@ -9,42 +10,23 @@ thumb: ./_thumbs/sonic-tactics-25.jpg
 
 <div class="gallery" data-credits="Photos by Joya Bahkyi"></div>
 
-As SUDORAع we have been working on this format since Sonic Tactics 2024 and this year was nice to have been able
-to try it again in a more performative setting. ***Turvis: Fragmented Readings on CollaborativeTactics*** is an
-ever-changing way of structuring an encounter through mutual listening. It is a role-based reading practice
-that situates our work within broader disciplines. We approached a collection of text fragments by adopting
-different modes of attention, specific moves/roles and distributing speaking time to generate a dynamic diversity
-of perspectives.
+*Sonic Tactics* is a shared laboratory that treats sound as operative material for making relations, rhythms, and possibilities. It holds irresolution as resource and trains auditory as a collective capacity, staging moments of attentiveness — listening circles, reading sessions, public activations.
 
-- Installation and series of performances
-- Collaborative curation and facilitation by SUDORAع
+- Collaborations: Farzad Golghasemi, Gabriela Valdespino, Abd Tammaa, Pablo Somonte Ruano, Vicc Repasi , Mahmoud Tamaa , O-PTPT, PPS
 - Installation: Steel scaffolding pipes, cast iron couplers, stage platforms, 4 speakers, 2 subwoofers, microphones
-- 2-day program: live performances, collaborative reading (turvis), and collective listening sessions
-- September 2025
-
-<br>
-
-### With:
-
-Pablo Somonte Ruano [@palabro_](https://www.instagram.com/palabro_/) <br>
-Abd Tammaa <br>
-Vicc Repasi [@viccrepasi](https://www.instagram.com/viccrepasi/) <br>
-Farzad Golghasemi [@fagosemi](https://www.instagram.com/fagosemi/) <br>
-Gabriela Valdespino [@gabb_vldspn](https://www.instagram.com/gabb_vldspn/) <br>
-Mahmoud Tamaa [@mahmoud_tamaa](https://www.instagram.com/mahmoud_tamaa/)
-
-Photos by Joya Bahkyi [@joya_photo](https://www.instagram.com/joya_photo/)
+- Exhibition: [GB OPEN 25](https://gb-bremen.de/veranstaltungen/2025/09/gb-open) – Güterbahnhof Areal für Kunst und Kultur
+- September 202
 
 <br>
 
 ### Program
 
-| Sat. 6.9.2025 |                                                                 |
-| ------------- | --------------------------------------------------------------- |
-| 17:00         | SUDORAع — *Turvis: Fragmented Readings on CollaborativeTactics* |
-| 19:00         | Mahmoud Tamaa — *Habaju - هبجوا*                                 |
+| Sat. 6.9.2025 |                                                                  |
+| ------------- | ---------------------------------------------------------------- |
+| 17:00         | SUDORAع — *Turvis: Fragmented Readings on Collaborative Tactics* |
+| 19:00         | Mahmoud Tamaa — *Habaju - هبجوا*                                  |
 | 19:30         | Gabriela Valdespino — *From the Crackle, A Factual Tale: Sonic Fiction as Sonic Tactic* |
-| 21:00         | O-PTPT — DJ Set                                                 |
+| 21:00         | O-PTPT — DJ Set                                                  |
 
 | Sun. 7.9.2025 |                                                        |
 | ------------- | ------------------------------------------------------ |
