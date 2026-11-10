@@ -17,11 +17,14 @@ thumb: ./_thumbs/endless-twist.jpg
 - Duration ca. 18:00 minutes
 - Access the interactive mixed-media webpage on [endlesstwist.xyz](https://endlesstwist.xyz)
 
+<br>
+
 <div class="gallery endlesstwist-publication" data-credits=""></div>
 
 ***Endless Twist: A critical autoethnographic approach to the current state of urban development***, exists as both a printed volume and an [online publication](https://endlesstwist.xyz/publication).
 
-<hr>
+<br>
+<br>
 
 ## Jahresausstellung 2023
 
@@ -35,7 +38,8 @@ thumb: ./_thumbs/endless-twist.jpg
 - Exhibition: [Jahresausstellung](https://www.hfk-bremen.de/de/neuigkeiten/jahresausstellung-2023-der-absolvent-innen-der-digitalen-medien-und-des-integrierten-designs/1009) – Speicher XI A Bremen, Germany
 - November 2023
 
-<hr>
+<br>
+<br>
 
 ## Open rehearsal at RAUM PRO
 
@@ -49,7 +53,8 @@ As an **audiovisual performance**, *Endless Twist* was invited by Felix Dreesen 
 - Exhibition: [RAUM PRO](https://www.instagram.com/raumpro_bremen/) Bremen, Germany
 - July 2023
 
-<hr>
+<br>
+<br>
 
 ## *as everything repeats and doubles itself, the ground moves under the feet*
 

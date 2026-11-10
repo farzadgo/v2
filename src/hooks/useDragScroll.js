@@ -1,95 +1,96 @@
-import { useRef } from 'react'
+import { useEffect } from 'react'
 
-const useDragScroll = () => {
-  const isDragging = useRef(false)
-  const startX = useRef(0)
-  const scrollLeft = useRef(0)
-  const velocity = useRef(0)
-  const animationFrame = useRef(null)
-  const lastX = useRef(0)
-  const lastTime = useRef(0)
-
-  const easeOut = (velocity) => {
-    if (Math.abs(velocity) < 0.01) return 0
-    return velocity * 0.98 // Adjust this value for faster or slower deceleration
-  }
-
-  const animateMomentum = (element) => {
+// mouse drag-to-scroll with momentum for a horizontally scrolling element
+// clicks that end a drag are swallowed so they don't open the image under the cursor
+const useDragScroll = (ref) => {
+  useEffect(() => {
+    const element = ref.current
     if (!element) return
 
-    velocity.current = easeOut(velocity.current)
-    element.scrollLeft -= velocity.current
+    let isDragging = false
+    let startX = 0
+    let startScroll = 0
+    let moved = 0
+    let velocity = 0
+    let lastX = 0
+    let lastTime = 0
+    let frame = null
 
-    if (Math.abs(velocity.current) > 0) {
-      animationFrame.current = requestAnimationFrame(() =>
-        animateMomentum(element)
-      )
-    } else {
-      cancelAnimationFrame(animationFrame.current)
-    }
-  }
-
-  const handleMouseDown = (e) => {
-    isDragging.current = true
-    startX.current = e.pageX
-    scrollLeft.current = e.currentTarget.scrollLeft
-    lastX.current = e.pageX
-    lastTime.current = Date.now()
-
-    e.currentTarget.style.cursor = "grabbing"
-    cancelAnimationFrame(animationFrame.current) // Stop any momentum animation if dragging resumes
-  }
-
-  const handleMouseMove = (e) => {
-    if (!isDragging.current) return
-    e.preventDefault()
-
-    const x = e.pageX
-    const distance = x - startX.current
-
-    e.currentTarget.scrollLeft = scrollLeft.current - distance
-
-    const now = Date.now()
-    const deltaTime = now - lastTime.current
-    if (deltaTime > 0) {
-      velocity.current = (x - lastX.current) / deltaTime // Calculate velocity
+    const endMomentum = () => {
+      cancelAnimationFrame(frame)
+      element.style.scrollSnapType = ''
     }
 
-    lastX.current = x
-    lastTime.current = now
-  }
-
-  const handleMouseUpOrLeave = (e) => {
-    if (!isDragging.current) return
-    isDragging.current = false
-
-    e.currentTarget.style.cursor = "grab"
-
-    // Start momentum animation
-    animateMomentum(e.currentTarget)
-  }
-
-  const applyDragScroll = (element) => {
-    if (!element) return
-
-    element.style.cursor = "grab"
-
-    const cleanUp = () => {
-      element.removeEventListener("mousedown", handleMouseDown)
-      element.removeEventListener("mousemove", handleMouseMove)
-      element.removeEventListener("mouseup", handleMouseUpOrLeave)
-      element.removeEventListener("mouseleave", handleMouseUpOrLeave)
+    const animateMomentum = () => {
+      velocity *= 0.98 // adjust for faster or slower deceleration
+      element.scrollLeft -= velocity
+      if (Math.abs(velocity) > 0.01) {
+        frame = requestAnimationFrame(animateMomentum)
+      } else {
+        endMomentum()
+      }
     }
 
-    element.addEventListener("mousedown", handleMouseDown)
-    element.addEventListener("mousemove", handleMouseMove)
-    element.addEventListener("mouseup", handleMouseUpOrLeave)
-    element.addEventListener("mouseleave", handleMouseUpOrLeave)
+    const handleMouseDown = (e) => {
+      isDragging = true
+      moved = 0
+      startX = lastX = e.pageX
+      startScroll = element.scrollLeft
+      lastTime = Date.now()
+      velocity = 0
 
-    return cleanUp
-  }
+      cancelAnimationFrame(frame)
+      element.style.cursor = 'grabbing'
+      element.style.scrollSnapType = 'none' // snapping would fight the drag
+    }
 
-  return applyDragScroll
+    const handleMouseMove = (e) => {
+      if (!isDragging) return
+      e.preventDefault()
+
+      const x = e.pageX
+      moved = Math.max(moved, Math.abs(x - startX))
+      element.scrollLeft = startScroll - (x - startX)
+
+      const now = Date.now()
+      const deltaTime = now - lastTime
+      if (deltaTime > 0) velocity = (x - lastX) / deltaTime
+      lastX = x
+      lastTime = now
+    }
+
+    const handleMouseUpOrLeave = () => {
+      if (!isDragging) return
+      isDragging = false
+      element.style.cursor = 'grab'
+      // a pause before releasing means no fling
+      if (Date.now() - lastTime > 80) velocity = 0
+      animateMomentum()
+    }
+
+    const handleClick = (e) => {
+      if (moved > 5) {
+        e.preventDefault()
+        e.stopPropagation()
+      }
+    }
+
+    element.style.cursor = 'grab'
+    element.addEventListener('mousedown', handleMouseDown)
+    element.addEventListener('mousemove', handleMouseMove)
+    element.addEventListener('mouseup', handleMouseUpOrLeave)
+    element.addEventListener('mouseleave', handleMouseUpOrLeave)
+    element.addEventListener('click', handleClick, true)
+
+    return () => {
+      endMomentum()
+      element.removeEventListener('mousedown', handleMouseDown)
+      element.removeEventListener('mousemove', handleMouseMove)
+      element.removeEventListener('mouseup', handleMouseUpOrLeave)
+      element.removeEventListener('mouseleave', handleMouseUpOrLeave)
+      element.removeEventListener('click', handleClick, true)
+    }
+  }, [ref])
 }
 
 export default useDragScroll

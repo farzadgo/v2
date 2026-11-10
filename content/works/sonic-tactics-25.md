@@ -9,8 +9,6 @@ thumb: ./_thumbs/sonic-tactics-25.jpg
 
 <div class="gallery" data-credits="Photos by Joya Bahkyi"></div>
 
-<br>
-
 As SUDORAع we have been working on this format since Sonic Tactics 2024 and this year was nice to have been able
 to try it again in a more performative setting. ***Turvis: Fragmented Readings on CollaborativeTactics*** is an
 ever-changing way of structuring an encounter through mutual listening. It is a role-based reading practice

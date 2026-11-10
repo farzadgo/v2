@@ -20,6 +20,7 @@ order: 2
 
 ## Selected Performances
 
+- *2026* <p>Audiovisual performance with Hanieh Fatouraee — part of *Rehearsals* — Apollo Galerie Mainz &nbsp;[link](https://kunsthochschule-mainz.de/rehearsals-hanieh-fatouraee-kitso-lynn-lelliott/)</p>
 - *2026* <p>*Pre-late Corrupted Abstraction* — with Abd Tammaa — part of *Sonic Tactics* — GB Open Spedition Bremen &nbsp;[link](https://gb-bremen.de/veranstaltungen/2026/09/gb-open)</p>
 - *2025* <p>*Turvis: Fragmented Readings on Collaborative Tactics* — with SUDORAع — Schwankhalle Bremen &nbsp;[link](https://www.schwankhalle.de/en/events/sudora-turvis)</p>
 - *2025* <p>*JALSA* — with Abd Tammaa and Gabriela Valdespino — Weserburg Museum für moderne Kunst Bremen &nbsp;[link](https://www.hfk-bremen.de/de/neuigkeiten/jetzt-eroeffnet-meisterschueler-innen-ausstellung-in-der-weserburg/1128)</p>

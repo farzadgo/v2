@@ -1,107 +1,104 @@
-import React, { useEffect, useRef, useState, useCallback } from 'react'
-import { createRoot } from 'react-dom/client'
+import React, { useEffect, useState } from 'react'
 import Layout from '../components/Layout'
-import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import Carousel from '../components/Carousel'
+import { getImage } from 'gatsby-plugin-image'
 import * as styles from '../styles/pages/WorkDetails.module.css'
 import { graphql } from 'gatsby'
 import { Helmet } from 'react-helmet'
-import useDragScroll from '../hooks/useDragScroll'
+
+
+// <div class="gallery [prefix]" data-credits="..."></div> placeholders in the markdown
+const GALLERY_PATTERN = /<div class="gallery\s*([^"]*)"([^>]*)>\s*<\/div>/g
+
+// splits the markdown html into html chunks and gallery placeholders, in order
+const splitHtml = (html) => {
+  const parts = []
+  let last = 0
+  for (const match of html.matchAll(GALLERY_PATTERN)) {
+    parts.push({ type: 'html', html: html.slice(last, match.index) })
+    const credits = match[2].match(/data-credits="([^"]*)"/)
+    parts.push({ type: 'gallery', prefix: match[1].trim().split(/\s+/)[0], credits: credits ? credits[1] : '' })
+    last = match.index + match[0].length
+  }
+  parts.push({ type: 'html', html: html.slice(last) })
+  return parts.filter(part => part.type === 'gallery' || part.html.trim())
+}
+
+// with a single gallery it takes every image, otherwise each takes the images whose
+// filename starts with its prefix followed by '_', e.g. 'neustadt' -> neustadt_adrift-01.jpg
+const imagesFor = (gallery, galleryCount, images) => {
+  if (galleryCount === 1) return images
+  return images.filter(img => img.name.split('_')[0] === gallery.prefix)
+}
+
+
+// const Cover = ({ image }) => {
+//   const width = useWindowSize()
+//   const [opened, setOpened] = useState(false)
+//   const [showInfo, setShowInfo] = useState(false)
+//   const canOpen = width && width < 1000
+
+//   // on mobile captions live in the lightbox, so the info button opens it
+//   const handleInfo = () => canOpen ? setOpened(true) : setShowInfo(!showInfo)
+
+//   return (
+//     <figure className={styles.cover} style={{ '--ratio': image.ratio }}>
+//       <div className={styles.coverFrame} onClick={canOpen ? () => setOpened(true) : undefined}>
+//         <GatsbyImage image={image.image} alt={image.alt} className={styles.coverImage} loading="eager" />
+//         {image.caption && <InfoCaption text={image.caption} visible={showInfo} />}
+//       </div>
+//       {image.caption && (
+//         <div className={styles.coverControls}>
+//           <InfoButton active={showInfo} onClick={handleInfo} />
+//         </div>
+//       )}
+//       {opened && <Lightbox images={[image]} startIndex={0} onClose={() => setOpened(false)} />}
+//     </figure>
+//   )
+// }
 
 
 const WorkDetails = ({ data }) => {
-  
+
   const { html } = data.markdownRemark
-  const { title, subtitle, date } = data.markdownRemark.frontmatter
-  const images = data.allFile.nodes
+  const { title, subtitle, date, cover, captions } = data.markdownRemark.frontmatter
 
   const year = date ? new Date(date).getFullYear() : ''
 
   const info = { workTitle: title }
-  const htmlRef = useRef(null)
-
-  const [root, setRoot] = useState(null)
 
   const [show, setShow] = useState(0)
 
-  const applyDragScroll = useDragScroll()
+  useEffect(() => {
+    const timer = setTimeout(() => setShow(1), 100)
+    return () => clearTimeout(timer)
+  }, [])
 
-  const groupImages = (imgs) => {
-    const grouped = {}
-    imgs.forEach((img) => {
-      const prefix = img.name.split('_')[0]
-      if (!grouped[prefix]) {
-        grouped[prefix] = []
-      }
-      grouped[prefix].push(img)
-    })
-    return grouped
+  // captions can be keyed by filename with or without extension
+  const captionFor = (node) => {
+    const entry = (captions || []).find(c => c.file === node.base || c.file === node.name)
+    return entry ? entry.text : null
   }
 
-  const appendImages = useCallback((container, imgs) => {
-    const images = imgs.map((img) => {
-      return (
-        <div key={img.id} className={styles.imageContainer}>
-          <GatsbyImage
-            image={getImage(img)}
-            alt={img.name}
-            draggable={false}
-          />
-        </div>
-      )
-    })
-
-    const credits = container.getAttribute('data-credits')
-    const caption = credits ? <div key={container.className} className={styles.caption}> {credits} </div> : null
-
-    if (!root) {
-      let root = createRoot(container)
-      setRoot(root)
-      // let allContent = [caption, images]
-      let allContent = (
-        <>
-          <div className="carousel"> {images} </div>
-          {caption}
-        </>
-      )
-      // root.render(images)
-      root.render(allContent)
+  const allImages = data.allFile.nodes.map(node => {
+    const image = getImage(node)
+    const caption = captionFor(node)
+    return {
+      id: node.id,
+      name: node.name,
+      base: node.base,
+      image,
+      ratio: image.width / image.height,
+      caption,
+      alt: caption || title,
     }
-  }, [root])
+  })
 
-  const appendImagesInGroups = useCallback((container, imgs) => {
-    const groups = groupImages(imgs)
-    Object.keys(groups).forEach((prefix) => {
-      const imgContainer = container.querySelector(`.${prefix}`)
-      if (groups[prefix]) {
-        appendImages(imgContainer, groups[prefix])
-      }
-    })
-  }, [appendImages])
+  const coverImage = cover ? allImages.find(img => img.base === cover || img.name === cover) : null
+  const galleryImages = allImages.filter(img => img !== coverImage)
 
-
-  useEffect(() => {
-    setTimeout(() => {
-      setShow(1)
-    }, 100)
-
-    if (htmlRef.current) {
-      let imageContainers = htmlRef.current.querySelectorAll('.gallery')
-      imageContainers.forEach((container) => {
-        const subGallery = container.querySelector('.carousel')
-        if (subGallery) {
-          applyDragScroll(subGallery)
-        }
-      })
-
-      if (imageContainers.length > 1) {
-        appendImagesInGroups(htmlRef.current, images)
-      } else if (imageContainers.length === 1) {
-        appendImages(imageContainers[0], images)
-      }
-    }
-
-  }, [appendImages, appendImagesInGroups, images, applyDragScroll])
-
+  const parts = splitHtml(html)
+  const galleryCount = parts.filter(part => part.type === 'gallery').length
 
   return (
     <Layout info={info} >
@@ -112,7 +109,14 @@ const WorkDetails = ({ data }) => {
             <h1 className={styles.pageTitle}> {title} </h1>
             <h2 className={styles.pageSubtitle}> {subtitle} <i> {subtitle && '—'} {year} </i></h2>
           </header>
-          <div className={styles.pageHtml} dangerouslySetInnerHTML={{__html: html}} ref={htmlRef}/>
+          {/* {coverImage && <Cover image={coverImage} />} */}
+          {parts.map((part, i) => {
+            if (part.type === 'html') {
+              return <div key={i} className={styles.pageHtml} dangerouslySetInnerHTML={{__html: part.html}} />
+            }
+            const images = imagesFor(part, galleryCount, galleryImages)
+            return images.length > 0 && <Carousel key={i} images={images} credits={part.credits} />
+          })}
         </div>
       </main>
     </Layout>
@@ -130,6 +134,11 @@ export const query = graphql`
         title
         subtitle
         date
+        cover
+        captions {
+          file
+          text
+        }
       }
     }
     allFile(filter: {
@@ -138,6 +147,7 @@ export const query = graphql`
     ) {
       nodes {
         name
+        base
         id
         childImageSharp {
           gatsbyImageData(

@@ -1,0 +1,92 @@
+.gallery {
+  margin-bottom: 2.5em;
+  padding-top: 1rem;
+}
+
+/* the row height fits the widest image into the content width, capped at 65vh
+   on mobile the width leaves a sliver of the next image peeking in */
+.carousel {
+  --content-width: calc(100vw - var(--padding) * 2);
+  --row-height: min(65vh, calc(var(--content-width) / var(--row-ratio)));
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: calc(var(--padding) * 0.75);
+  padding-left: var(--padding);
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: var(--padding);
+  scrollbar-width: none;
+}
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+/* end spacer, padding-right is not reliably kept at the end of a scroll container */
+.carousel::after {
+  content: '';
+  flex: none;
+  width: calc(var(--padding) * 0.25);
+}
+
+.item {
+  flex: none;
+  width: calc(var(--row-height) * var(--ratio));
+  scroll-snap-align: start;
+}
+.image {
+  display: block;
+  width: 100%;
+  height: var(--row-height);
+  user-select: none;
+}
+.frame {
+  position: relative;
+}
+
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  max-width: 730px;
+  margin: 1rem var(--padding) 0;
+  font-size: var(--font-sm);
+}
+.credits {
+  line-height: 1.3;
+}
+.controls {
+  flex: none;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5em;
+  margin-left: auto;
+  padding-left: 1em;
+}
+.counter {
+  color: var(--mid-gray);
+  font-variant-numeric: tabular-nums;
+}
+.controls svg {
+  stroke-width: 2;
+  height: var(--fontmd);
+  width: var(--font-md);
+}
+
+/* ---------------- desktop ---------------- */
+@media (min-width: 1000px) {
+  .carousel {
+    --content-width: calc(100vw - var(--nav-width) - var(--padding) * 3);
+    gap: var(--padding);
+    padding-left: calc(var(--nav-width) + var(--padding));
+    scroll-padding-inline: calc(var(--nav-width) + var(--padding)) var(--padding);
+    /* mouse dragging drives the scroll here, snapping would fight it */
+    scroll-snap-type: none;
+  }
+  .carousel::after {
+    width: var(--padding);
+  }
+  .footer {
+    margin-left: calc(var(--nav-width) + var(--padding));
+  }
+}
