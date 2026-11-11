@@ -13,7 +13,7 @@
   padding-right: var(--padding);
   font-size: var(--font-md);
   line-height: var(--line-height);
-  max-width: var(--content-width);
+  max-width: var(--text-content-width);
   margin-bottom: 1.5em;
 }
 

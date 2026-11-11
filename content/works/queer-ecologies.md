@@ -16,3 +16,7 @@ Ecologies, a field best described as an open invitation to intimacies with other
 - Contributions: Abdulghaffar Tammaa, Bonnie Wenzke, Emilia Sting, Farzad Golghasemi, Feng Zeng, Frank Wang, Hanna Stijnen, Kaja Poestges, Kate Chen, Livia Brocke, Lucy Liang, Maike Sophie Quenzer, Miljana Nikovic, Peng Liu, Recep-Ali Özyilmaz, Sanija Klavina, Yilei Sheng
 - Exhibition: [Conditions of a Necessity](https://kunsthalle-baden-baden.de/en/programm/conditions-of-a-necessity-ausstellung) – Kunstahlle Baden-Baden
 - December 2021
+
+<br>
+
+<div class="video" data-src="https://player.vimeo.com/video/663347352" data-ratio="1.778"></div>

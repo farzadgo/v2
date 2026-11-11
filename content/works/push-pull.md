@@ -20,6 +20,8 @@ thumb: ./_thumbs/push-pull.jpg
 - Funded by Senator für Kultur Bremen and Stadt Hamburg
 - October 2025
 
+<div class="video" data-src="https://player.vimeo.com/video/1245653214/" data-ratio="2"></div>
+
 ### About the exhibition
 
 [From Partial Fractures, May They Heal Anew](https://frappant.org/home/artikel/news/from-partial-fractures-may-they-heal-anew/) considers fragmentation, interruption, and decay as possibilities for a plot twist. It seeks to disrupt stagnant narratives. Historical continuity is averted through a building process that potentiates architectures infinitely open to benevolent transformations.

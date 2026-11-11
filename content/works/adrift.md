@@ -23,9 +23,8 @@ During the walk to nowhere, the performers are being asked a set of questions re
 - Artistic methodology on [The Dynamic Archive](https://www.thedynamicarchive.net/component/how-to-get-lost-in-the-neighborhood/)
 
 <br>
-<br>
 
-<div class="video" data-src="https://player.vimeo.com/video/591426969" data-ratio="1.775"></div>
+<div class="video" data-src="https://player.vimeo.com/video/591426969" data-ratio="1.778"></div>
 
 ## Temporal Redirections
 

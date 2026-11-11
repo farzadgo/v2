@@ -33,7 +33,7 @@
   --nav-width: 380px;
   --blur: blur(15px);
 
-  --content-width: 730px;
+  --text-content-width: 730px;
 }
 
 [data-theme="dark"] {
