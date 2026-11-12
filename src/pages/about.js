@@ -13,6 +13,8 @@ const About = ({ data }) => {
   const nodes = data.allMarkdownRemark.nodes
   const [ bio, vitae ] = nodes.map(e => e.html)
 
+  console.log(data)
+
   const [show, setShow] = useState(0)
 
   const instagram = socialMedia.filter(e => e.title === 'Instagram')[0]
@@ -60,20 +62,7 @@ export const query = graphql`
     ) {
       nodes {
         html
-        frontmatter {
-          thumb {
-            childImageSharp {
-              gatsbyImageData(
-                quality: 100,
-                transformOptions: {cropFocus: CENTER},
-              )
-            }
-          }
-        }
       }
     }
   }
 `
-
-// you can also define those "quality", "transformOptions", and
-// "placeholder" inside gatsby-config under gatsby-plugin-sharp

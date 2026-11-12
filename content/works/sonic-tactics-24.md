@@ -5,7 +5,7 @@ date: 2024-09
 slug: sonic-tactics-24
 category: collaborative
 parent: sudora3
-thumb: ./_thumbs/sonic-tactics-24.jpg
+thumb: sonic-tactics_web-06.jpg
 ---
 
 <div class="gallery" data-credits="Photos by Gabriela Valdespino"></div>

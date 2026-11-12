@@ -1,42 +1,26 @@
-import React from 'react'
-import { useStaticQuery, graphql, Link } from 'gatsby'
-import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import React, { useState } from 'react'
+import { Link } from 'gatsby'
 import * as styles from '../styles/components/WorksGrid.module.css'
+import useWorks from '../hooks/useWorks'
+import WorkPreview from './WorkPreview'
 
 const WorksGrid = () => {
 
-  const data = useStaticQuery(graphql`
-    query WorksGrid {
-      allMarkdownRemark(
-        filter: {fileAbsolutePath: {regex: "/works/"}}
-        sort: {frontmatter: {date: DESC}}
-      ) {
-        nodes {
-          frontmatter {
-            title
-            slug
-            thumb {
-              childImageSharp {
-                gatsbyImageData(
-                  layout: CONSTRAINED,
-                  transformOptions: {cropFocus: CENTER},
-                )
-              }
-            }
-          }
-        }
-      }
-    }
-  `)
-
-  const works = data.allMarkdownRemark.nodes
+  const works = useWorks()
+  const [hovered, setHovered] = useState(null)
 
   return (
     <div className={styles.grid}>
-      {works.map(({ frontmatter: { title, slug, thumb } }) => (
-        <Link key={slug} to={`/${slug}`} className={styles.item}>
-          <GatsbyImage image={getImage(thumb)} alt={title} />
-          <p>{title}</p>
+      {works.map(work => (
+        <Link
+          key={work.slug}
+          to={`/${work.slug}`}
+          className={styles.item}
+          onMouseEnter={() => setHovered(work.slug)}
+          onMouseLeave={() => setHovered(null)}
+        >
+          <WorkPreview work={work} active={hovered === work.slug} />
+          <p className={styles.title}>{work.title}</p>
         </Link>
       ))}
     </div>

@@ -5,7 +5,7 @@ date: 2025-10
 slug: turvis-schwankhalle
 category: collaborative
 parent: sudora3
-thumb: ./_thumbs/turvis-schwankhalle.jpg
+thumb: turvis-schwankhalle_web-01.jpg
 ---
 
 <div class="gallery"></div>

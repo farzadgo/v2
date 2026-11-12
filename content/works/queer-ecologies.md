@@ -5,7 +5,7 @@ date: 2021-12
 slug: queer-ecologies
 category: artistic-practice
 parent:
-thumb: ./_thumbs/queer-ecologies.jpg
+thumb: queer-ecologies_web-01.jpg
 ---
 
 <div class="gallery"></div>

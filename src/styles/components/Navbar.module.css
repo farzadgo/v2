@@ -55,7 +55,7 @@
 .drop-menu {
   position: fixed;
   top: 74px;
-  transform: translateX(-200px);
+  transform: translateX(-210px);
   background-color: var(--very-white);
   border: 1px solid var(--light-gray);
   z-index: 30;
@@ -69,7 +69,7 @@
   height: 12px;
   width: 12px;
   top: -7px;
-  right: 22%;
+  right: 12%;
   background-clip: content-box;
   transform: rotate( 45deg );
   -webkit-transform: rotate( 45deg );

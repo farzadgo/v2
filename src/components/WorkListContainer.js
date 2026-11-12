@@ -1,9 +1,9 @@
 import React, { useEffect, useState, useRef, useCallback } from 'react'
 import * as styles from '../styles/components/WorkList.module.css'
-import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import useWindowSize from '../hooks/useWindowSize'
 import { throttle } from '../utilities/helpers'
 import WorkList from './WorkList'
+import WorkPreview from './WorkPreview'
 
 
 const WorkListContainer = () => {
@@ -11,8 +11,7 @@ const WorkListContainer = () => {
   const width = useWindowSize()
   const container = useRef(null)
 
-  const active = {title: '', thumb: '', date: ''}
-  const [hovered, setHovered] = useState(active)
+  const [hovered, setHovered] = useState(null)
   const [visible, setVisible] = useState(false)
 
   const [yPos, setYPos] = useState(50)
@@ -31,9 +30,9 @@ const WorkListContainer = () => {
     }
   }, 20)
 
-  const handleHover = useCallback((title, thumb, date) => {
-    if (thumb) {
-      setHovered({ title, thumb, date })
+  const handleHover = useCallback((work) => {
+    if (work && work.previews && work.previews.length) {
+      setHovered(work)
       setVisible(true)
     } else {
       // leave `hovered` as-is so the image stays mounted while it fades
@@ -64,7 +63,7 @@ const WorkListContainer = () => {
 
       <div className={`${styles.thumbContainer} ${visible ? styles.visible : ''}`}>
         <div className={styles.thumbImage} style={{top: `${shiftThumb ? yPos - 270 : yPos}px`}}>
-          <GatsbyImage image={getImage(hovered.thumb)} alt={hovered.title} />
+          {hovered && <WorkPreview key={hovered.slug} work={hovered} active={visible} />}
         </div>
       </div>
 

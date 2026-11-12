@@ -5,7 +5,7 @@ date: 2023-02
 slug: endless-twist
 category: artistic-practice
 parent:
-thumb: ./_thumbs/endless-twist.jpg
+thumb: endlesstwist-jahresausstellung_web-02.jpg
 ---
 
 <div class="gallery endlesstwist-media" data-credits="Endless Twist mixed-media webpage as the camera moves through the reimagined space constructed using 3D fragments and a sound piece"></div>

@@ -1,0 +1,38 @@
+.preview {
+  position: relative;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* the next image fades in on top, the previous one fades out only after it */
+.preview .image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.6s ease 0.6s;
+}
+.preview .current {
+  opacity: 1;
+  z-index: 1;
+  transition-delay: 0s;
+}
+
+.infoDiv {
+  z-index: 2;
+  text-align: center;
+  font-family: var(--sans-font);
+  font-style: normal;
+  font-size: var(--font-md);
+  line-height: var(--line-height);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+.active .infoDiv {
+  opacity: 1;
+}

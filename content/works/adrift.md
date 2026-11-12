@@ -5,7 +5,7 @@ date: 2021-06
 slug: adrift
 category: artistic-practice
 parent:
-thumb: ./_thumbs/adrift.jpg
+thumb: neustadt_adrift-01.jpg
 ---
 
 <div class="gallery neustadt" data-credits="June 2020 Neustadt Bremen — Photos by Carla Anacker"></div>

@@ -5,7 +5,7 @@ date: 2021-03
 slug: listen-to-my-postcard
 category: artistic-practice
 parent:
-thumb: ./_thumbs/listen-to-my-postcard.jpg
+thumb: postcard_bunker-valentin-02.jpg
 ---
 <div class="gallery postcard" data-credits="Bremen 2020-21 © Farzad Golghasemi"></div>
 

@@ -5,7 +5,7 @@ date: 2026-09
 slug: corrupted-abstraction
 category: artistic-practice
 parent:
-thumb: ./_thumbs/prelate-corrupted-abstraction.jpg
+thumb: prelate-corrupted-abstraction_web-01.jpg
 # cover: prelate-corrupted-abstraction_web-01.jpg
 captions:
   - file: prelate-corrupted-abstraction_web-01.jpg

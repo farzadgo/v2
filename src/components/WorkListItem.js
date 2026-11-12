@@ -3,7 +3,7 @@ import * as styles from '../styles/components/WorkList.module.css'
 import { Link } from 'gatsby'
 
 const WorkListItem = ({ work, activeSlug, handleHover = () => {} }) => {
-  const { title, thumb, slug, date } = work.frontmatter
+  const { title, slug, date } = work
   let active = activeSlug === slug
 
   return (
@@ -13,8 +13,8 @@ const WorkListItem = ({ work, activeSlug, handleHover = () => {} }) => {
       <Link
         to={`/${slug}`}
         className={`${styles.workTitle} ${active ? styles.active : ''}`}
-        onMouseEnter={active ? null : () => handleHover(title, thumb, date)}
-        onMouseLeave={() => handleHover('', '', '')}
+        onMouseEnter={active ? null : () => handleHover(work)}
+        onMouseLeave={() => handleHover(null)}
       >
         {title}
       </Link>

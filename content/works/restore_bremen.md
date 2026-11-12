@@ -5,7 +5,7 @@ date: 2022-06
 slug: restore_bremen
 category: collaborative
 parent:
-thumb: ./_thumbs/restore_bremen.jpg
+thumb: restore_c-emptiness-01.jpg
 ---
 
 <div class="gallery restore" data-credits="Selected captions from the performances. Photos by Joya Bahkyi"></div>

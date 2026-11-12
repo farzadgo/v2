@@ -6,16 +6,16 @@
   padding: calc(var(--padding) * 2) var(--padding);
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--padding);
+  gap: calc(var(--padding) * 1.5) var(--padding);
 }
 
 .item {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
 }
-.item p {
-  font-size: var(--font-sm);
+.item .title {
+  font-size: var(--font-md);
   line-height: var(--line-height);
 }
 

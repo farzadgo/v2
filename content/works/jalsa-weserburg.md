@@ -5,7 +5,7 @@ date: 2025-07
 slug: jalsa-weserburg
 category: collaborative
 parent: sudora3
-thumb: ./_thumbs/jalsa-weserburg.jpg
+thumb: jalsa-weserburg_web-01.jpg
 ---
 
 <div class="gallery" data-credits="Photos by Andrea Álvarez"></div>

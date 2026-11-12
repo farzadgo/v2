@@ -5,7 +5,7 @@ date: 2019-04
 slug: cc-pavilion
 category: artistic-practice
 parent:
-thumb: ./_thumbs/cc-pavilion.jpg
+thumb: cc-v2_pavilion-01.jpg
 ---
 
 <div class="gallery cc-v2" data-credits="Photos by Farzad Golghasemi"></div>

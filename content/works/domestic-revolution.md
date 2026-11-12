@@ -5,7 +5,7 @@ date: 2020-09
 slug: domestic-revolution
 category: artistic-practice
 parent:
-thumb: ./_thumbs/domestic-revolution.jpg
+thumb: domestic-revolution_web-02_c Joshua Redfearn.jpg
 ---
 
 <div class="gallery" data-credits="Photos by Joshua Redfearn"></div>

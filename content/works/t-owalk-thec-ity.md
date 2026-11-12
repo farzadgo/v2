@@ -5,7 +5,7 @@ date: 2020-03
 slug: t-owalk-thec-ity
 category: artistic-practice
 parent:
-thumb: ./_thumbs/t-owalk-thec-ity.jpg
+thumb: towalkthecity-01.JPG
 ---
 
 <div class="gallery" data-credits="Photos by Victor Artiga Rodriguez"></div>

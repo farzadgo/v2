@@ -5,7 +5,7 @@ date: 2025-09
 slug: sonic-tactics-25
 category: collaborative
 parent: sudora3
-thumb: ./_thumbs/sonic-tactics-25.jpg
+thumb: sonic-tactics-ii_web-06.jpg
 ---
 
 <div class="gallery" data-credits="Photos by Joya Bahkyi"></div>
