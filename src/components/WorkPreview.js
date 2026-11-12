@@ -38,10 +38,6 @@ const WorkPreview = ({ work, active, interval = 1000, className = '' }) => {
           draggable={false}
         />
       ))}
-      <div className={styles.infoDiv}>
-        <p> {subtitle} </p>
-        <p> {year} </p>
-      </div>
     </div>
   )
 }

@@ -20,7 +20,7 @@ const WorksGrid = () => {
           onMouseLeave={() => setHovered(null)}
         >
           <WorkPreview work={work} active={hovered === work.slug} />
-          <p className={styles.title}>{work.title}</p>
+          <p className={styles.title}>{work.title} ({work.date.split('-')[0]})</p>
         </Link>
       ))}
     </div>
