@@ -2,7 +2,8 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,200;0,300;0,400;0,600;1,200;1,300;1,400;1,600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400;1,500&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400;1,500&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic&display=swap');
 
 :root {
@@ -23,9 +24,11 @@
   
   --link-color: #0000ff;
 
-  --font-lg: 1.3rem;
-  --font-md: 1.0rem;
-  --font-sm: 0.9rem;
+  --font-xl: 1.4rem;
+  --font-lg: 1.2rem;
+  --font-md: 0.95rem;
+  --font-sm: 0.85rem;
+  --font-xs: 0.75rem;
   --line-height: 1.5;
 
   --padding: 15px;
@@ -100,10 +103,12 @@ strong, b, h1, h2, h3, h4, h5, h6 {
 /* ----------------- DESKTOP ----------------- */
 @media (min-width: 1000px) {
   :root {
-  --font-lg: 1.8rem;
-  --font-md: 1.2rem;
-  --font-sm: 1.0rem;
-  --padding: 30px;
+    --font-xl: 2.2rem;
+    --font-lg: 1.7rem;
+    --font-md: 1.2rem;
+    --font-sm: 1.0rem;
+    --font-xs: 0.9rem;
+    --padding: 30px;
   }
 
   ::-webkit-scrollbar {

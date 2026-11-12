@@ -1,7 +1,7 @@
 import React from 'react'
 import * as styles from '../styles/components/Navbar.module.css'
 import NavItem from './NavItem'
-import WorkListItems from './WorkListItems'
+import WorkList from './WorkList'
 import useWindowSize from '../hooks/useWindowSize'
 
 
@@ -20,7 +20,7 @@ const Navbar = ({ info }) => {
       <ul className={styles.directory}>
         <NavItem home> farzad golghasemi </NavItem>
         {width < breakpoint && (
-          <NavItem dropdown={<WorkListItems className={styles.dropdownList} />}> works </NavItem>
+          <NavItem dropdown={<WorkList />}> works </NavItem>
         )}
         <NavItem about> about </NavItem>
       </ul>

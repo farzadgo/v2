@@ -18,13 +18,14 @@
 }
 
 .page-title {
-  font-size: calc(var(--font-lg) * 1.2);
-  margin-bottom: 0.4em;
+  font-size: var(--font-xl);
+  font-weight: 600;
+  margin-bottom: 0.2em;
 }
 .page-subtitle {
-  font-size: calc(var(--font-md) * 1.2);
-  margin-bottom: 0.8em;
+  font-size: var(--font-lg);
   font-weight: 400;
+  margin-bottom: 0.4em;
   i {
     font-style: normal;
     color: var(--mid-gray);

@@ -2,7 +2,7 @@ import React, { memo } from 'react'
 import * as styles from '../styles/components/WorkList.module.css'
 import { Link } from 'gatsby'
 
-const WorkItem = ({ work, activeSlug, handleHover = () => {} }) => {
+const WorkListItem = ({ work, activeSlug, handleHover = () => {} }) => {
   const { title, thumb, slug, date } = work.frontmatter
   let active = activeSlug === slug
 
@@ -22,4 +22,4 @@ const WorkItem = ({ work, activeSlug, handleHover = () => {} }) => {
   )
 }
 
-export default memo(WorkItem)
+export default memo(WorkListItem)
