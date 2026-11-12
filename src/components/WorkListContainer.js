@@ -63,7 +63,7 @@ const WorkListContainer = () => {
 
       <div className={`${styles.thumbContainer} ${visible ? styles.visible : ''}`}>
         <div className={styles.thumbImage} style={{top: `${shiftThumb ? yPos - 270 : yPos}px`}}>
-          {hovered && <WorkPreview key={hovered.slug} work={hovered} active={visible} />}
+          {hovered && <WorkPreview key={hovered.slug} work={hovered} active={visible} firstDelay={400} />}
         </div>
       </div>
 
