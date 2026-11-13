@@ -2,7 +2,7 @@
 .video {
   --area-width: calc(100vw - var(--padding) * 2);
   width: min(var(--area-width), calc(55vh * var(--ratio)));
-  margin: 0 var(--padding) 2.5em;
+  margin: 0 var(--padding) 2.5rem;
   padding-top: 1rem;
 }
 .frame {

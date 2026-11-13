@@ -14,7 +14,7 @@ thumb: push-pull_web-01.jpg
 
 - 1–channel video projection, stereo audio, aluminum pipes, cast iron couplers, print on construction banner
 - 250 × 400 × 200 cm
-- 18:00 minutes loop – [Link to video](https://cloud.disorient.xyz/s/bB3Tmxkxx3McAPK)
+- 18:00 minutes loop
 - Exhibition: *From Partial Fractures, May They Heal Anew* – Frappant Galerie Hamburg, Germany
 - Contributions: Farzad Golghasemi, Gabriela Valdespino, Konstanze Spät
 - Funded by Senator für Kultur Bremen and Stadt Hamburg

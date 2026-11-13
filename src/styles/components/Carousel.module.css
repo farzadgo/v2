@@ -1,6 +1,6 @@
 .gallery {
-  margin-bottom: 2.5em;
-  padding-top: 1rem;
+  margin-bottom: 2.0rem;
+  padding-top: 0.5rem;
 }
 
 /* the row height fits the widest image into the content width, capped at 65vh
@@ -59,9 +59,9 @@
   flex: none;
   display: flex;
   align-items: flex-start;
-  gap: 0.5em;
+  gap: 0.5rem;
   margin-left: auto;
-  padding-left: 1em;
+  padding-left: 1rem;
 }
 .counter {
   color: var(--mid-gray);
